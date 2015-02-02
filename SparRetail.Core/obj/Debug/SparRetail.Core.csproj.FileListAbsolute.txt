@@ -1,0 +1,8 @@
+D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\SparRetail.Core.dll
+D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\SparRetail.Core.pdb
+D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.dll
+D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.pdb
+D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.xml
+D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.csprojResolveAssemblyReference.cache
+D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.dll
+D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.pdb
