@@ -66,6 +66,10 @@
       <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
       <Name>SparRetail.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Interop\SparRetail.Interop.csproj">
+      <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
+      <Name>SparRetail.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
       <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
       <Name>SparRetail.Models</Name>

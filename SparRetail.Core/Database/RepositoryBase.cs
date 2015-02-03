@@ -19,7 +19,7 @@ namespace SparRetail.Core.Database
             this.ConfigCollection = configCollection;
         }
         
-        private IDatabaseConfigItem GetConfig(string databaseConfigKey)
+        protected IDatabaseConfigItem GetConfig(string databaseConfigKey)
         {
             if (ConfigCollection.KeyExists(databaseConfigKey))
                 return ConfigCollection.Get(databaseConfigKey);
@@ -42,14 +42,11 @@ namespace SparRetail.Core.Database
             }
         }
 
-        protected List<T> QueryList<T>(string storedProcedure, dynamic parameters, string databaseConfigKey) 
+        protected List<T> QueryList<T>(string storedProcedure, object parameters, string databaseConfigKey) where T : class
         {
             using (SqlConnection connection = new SqlConnection(GetConfig(databaseConfigKey).ConnectionString))
             {
-                var result = SqlMapper.Query(connection, storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure);
-                if (result != null)
-                    return (List<T>)result;
-                return new List<T>();
+                return connection.Query<T>(storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure).ToList();                
             }
         }
 
