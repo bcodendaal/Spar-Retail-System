@@ -1,0 +1,9 @@
+D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.dll
+D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.pdb
+D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.dll
+D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Models\bin\Debug\SparRetail.Models.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Models\bin\Debug\SparRetail.Models.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Models\obj\Debug\SparRetail.Models.csprojResolveAssemblyReference.cache
+D:\Projects\Spar-Retail-System-dev\SparRetail.Models\obj\Debug\SparRetail.Models.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Models\obj\Debug\SparRetail.Models.pdb
