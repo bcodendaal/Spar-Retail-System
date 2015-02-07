@@ -9,6 +9,5 @@ namespace SparRetail.ApiBroker
     public class ApiBrokerConfig : IApiBrokerConfig
     {
         public string EndPoint { get; set; }
-        public string ControllerSegment { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace SparRetail.Api
             {
                 var encryption = new Encryption.EncryptionService();
                 var dbConfig = new DatabaseConfigCollection();
-                dbConfig.Add(new DatabaseConfigItem() { Key = CommonConfigKeys.dbKeyMaster, ConnectionString = ConfigurationManager.ConnectionStrings["master"].ConnectionString, CommandTimeout = 100 });
+                dbConfig.Add(new DatabaseConfigItem() { Key = CommonConfigKeys.dbKeyMaster, ConnectionString = encryption.Decrypt(ConfigurationManager.ConnectionStrings["master"].ConnectionString), CommandTimeout = 100 });
                 builder.RegisterInstance(dbConfig).As<IDatabaseConfigCollection>().SingleInstance();
                 builder.RegisterApiControllers(SparRetail.Api.Controllers.IoCRegistry.GetAssembly()).InstancePerRequest();
                 SparRetail.Api.Controllers.IoCRegistry.Configure(builder);

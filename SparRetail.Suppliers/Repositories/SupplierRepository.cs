@@ -23,5 +23,8 @@ namespace SparRetail.Suppliers
         {
             return QueryList<Supplier>("usp_SelectAllSuppliers", null, CommonConfigKeys.dbKeyMaster);
         }
+
+
+     
     }
 }

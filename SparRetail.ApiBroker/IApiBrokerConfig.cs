@@ -8,7 +8,6 @@ namespace SparRetail.ApiBroker
 {
     public interface IApiBrokerConfig
     {
-        string EndPoint { get; set; }
-        string ControllerSegment { get; set; }
+        string EndPoint { get; set; }        
     }
 }

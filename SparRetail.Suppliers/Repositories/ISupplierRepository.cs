@@ -10,5 +10,6 @@ namespace SparRetail.Suppliers
     public interface ISupplierRepository
     {
         List<Supplier> All();
+       
     }
 }

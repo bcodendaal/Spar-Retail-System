@@ -11,7 +11,7 @@ namespace SparRetail.ApiBroker.Brokers
     public class SupplierBroker : ApiBrokerBase, ISupplierApi
     {
         public SupplierBroker(IApiBrokerConfig config)
-            : base(config)
+            : base(config, "supplier")
         { }
 
         public List<Supplier> All()

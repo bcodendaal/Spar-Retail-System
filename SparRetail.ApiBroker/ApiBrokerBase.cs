@@ -11,19 +11,32 @@ namespace SparRetail.ApiBroker
 {
     public class ApiBrokerBase
     {
-        protected IApiBrokerConfig config;
+        protected readonly IApiBrokerConfig config;
+        protected readonly string controllerSegment;
 
-        public ApiBrokerBase(IApiBrokerConfig config)
+        public ApiBrokerBase(IApiBrokerConfig config, string controllerSegment)
         {
             this.config = config;
+            this.controllerSegment = controllerSegment;
         }
 
         protected T Get<T>(string method)
         {
-            return ExcecuteCall<T>(x => x.GetAsync(string.Format("{0}/{1}", config.ControllerSegment, method)).Result);
+            return ExecuteCall<T>(x => x.GetAsync(string.Format("{0}/{1}", controllerSegment, method)).Result);
         }
 
-        protected T ExcecuteCall<T>(Func<HttpClient, HttpResponseMessage> callMethod)
+        protected T Get<T>(string method, Dictionary<string,string> querystringValues)
+        {
+            var queryString = querystringValues.Select(x => x.Key + "=" + x.Value).Aggregate((x, y) => x + "&" + y);
+            return ExecuteCall<T>(x => x.GetAsync(string.Format("{0}/{1}?{3}", controllerSegment, method, queryString)).Result);
+        }
+
+        protected TOutput Post<TOutput>(string method, object inputModel)
+        {
+            return ExecuteCall<TOutput>(x => x.PostAsync(string.Format("{0}/{1}", controllerSegment, method), new StringContent(JsonConvert.SerializeObject(inputModel), Encoding.UTF8, "application/json")).Result);
+        }
+
+        protected T ExecuteCall<T>(Func<HttpClient, HttpResponseMessage> callMethod)
         {
             try
             {
@@ -33,7 +46,7 @@ namespace SparRetail.ApiBroker
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = callMethod.Invoke(client);
+                    HttpResponseMessage response =  callMethod.Invoke(client);
                     if (response.IsSuccessStatusCode)
                     {
                         return JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);

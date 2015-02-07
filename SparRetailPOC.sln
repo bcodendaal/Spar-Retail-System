@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A98E310
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Api.Tests", "SparRetail.Api.Tests\SparRetail.Api.Tests.csproj", "{4C13D102-58DC-4CA7-AEFB-D6B5E48D2160}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Products", "SparRetail.Products\SparRetail.Products.csproj", "{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{4C13D102-58DC-4CA7-AEFB-D6B5E48D2160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C13D102-58DC-4CA7-AEFB-D6B5E48D2160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C13D102-58DC-4CA7-AEFB-D6B5E48D2160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,5 +100,6 @@ Global
 		{1B5B1899-D697-4050-A31F-CFACD8C4BFEE} = {A85D9EDF-9B06-44AC-BD99-6C5B7643A601}
 		{40F1ED6F-D7DC-43EC-9839-F4D8B81C65C1} = {A85D9EDF-9B06-44AC-BD99-6C5B7643A601}
 		{4C13D102-58DC-4CA7-AEFB-D6B5E48D2160} = {9A98E310-5CDF-4C15-A9A8-5A2B6414365A}
+		{3EFA8B6C-03F3-44D3-B008-526D4E2A76E2} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 	EndGlobalSection
 EndGlobal

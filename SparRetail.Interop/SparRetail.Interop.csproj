@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IProductApi.cs" />
     <Compile Include="ISupplierApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
