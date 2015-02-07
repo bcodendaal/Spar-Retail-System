@@ -4,9 +4,11 @@ using SparRetail.Core.Database;
 using SparRetail.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace SparRetail.Suppliers
 {
@@ -16,8 +18,6 @@ namespace SparRetail.Suppliers
         {
 
         }
-
-
 
         public List<Supplier> All()
         {

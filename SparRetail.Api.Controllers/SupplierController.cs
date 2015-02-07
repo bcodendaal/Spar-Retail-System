@@ -1,4 +1,5 @@
-﻿using SparRetail.Models;
+﻿using SparRetail.Interop;
+using SparRetail.Models;
 using SparRetail.Suppliers;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Web.Http;
 
 namespace SparRetail.Api.Controllers
 {
-    public class SupplierController : ApiController
+    public class SupplierController : ApiController, ISupplierApi
     {
         protected readonly ISupplierService supplierService;
 
