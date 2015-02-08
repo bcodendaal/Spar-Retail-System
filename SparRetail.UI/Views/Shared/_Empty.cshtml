@@ -1,6 +1,4 @@
-﻿@using System
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 Beyond Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3
 Version: 1.0.0
@@ -20,7 +18,7 @@ Purchase: http://wrapbootstrap.com
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
     <!--Basic Styles-->
-    <link href="~/assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    @Styles.Render("~/css/bootstrap")
     <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
 
 
@@ -29,22 +27,25 @@ Purchase: http://wrapbootstrap.com
           rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
-    <link href="~/assets/css/beyond-rtl.min.css" rel="stylesheet" />
+    @Styles.Render("~/css/beyond")
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    @*@Scripts.Render("~/bundles/skin")*@
+    @Scripts.Render("~/bundles/skin")
 </head>
 <!--Head Ends-->
 <!--Body-->
 <body>
     @RenderBody()
     <!--Basic Scripts-->
-    <script src="~/assets/js/jquery-2.0.3.min.js"></script>
-    <script src="~/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="~/assets/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/skins.min.js"></script>
-    <script src="~/assets/js/beyond.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!--Beyond Scripts-->
+    @Scripts.Render("~/bundles/beyond")
+
+    <!--Page Related Scripts-->
+    @RenderSection("PageScripts", required: false)
 </body>
 <!--  /Body -->
 </html>

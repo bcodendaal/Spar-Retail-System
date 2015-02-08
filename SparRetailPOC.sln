@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.UI", "SparRetail.UI\SparRetail.UI.csproj", "{BF6FBCEC-B210-4914-9C95-21B59A7B8078}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.UI.Controllers", "SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj", "{5505CBB3-EA41-4CAB-B84B-8B10537927FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Api", "SparRetail.Api\SparRetail.Api.csproj", "{1617A88D-2BBB-47A5-8F1D-F201DBD70DEE}"
@@ -41,16 +39,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Retailers", "Spa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Core.Tests", "SparRetail.Core.Tests\SparRetail.Core.Tests.csproj", "{76E7410D-07ED-4137-BB37-11DD004120D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spar.Retail.UI", "SparRetail.UI\Spar.Retail.UI.csproj", "{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF6FBCEC-B210-4914-9C95-21B59A7B8078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF6FBCEC-B210-4914-9C95-21B59A7B8078}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF6FBCEC-B210-4914-9C95-21B59A7B8078}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF6FBCEC-B210-4914-9C95-21B59A7B8078}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5505CBB3-EA41-4CAB-B84B-8B10537927FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5505CBB3-EA41-4CAB-B84B-8B10537927FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5505CBB3-EA41-4CAB-B84B-8B10537927FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,12 +99,15 @@ Global
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BF6FBCEC-B210-4914-9C95-21B59A7B8078} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
 		{5505CBB3-EA41-4CAB-B84B-8B10537927FE} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
 		{1617A88D-2BBB-47A5-8F1D-F201DBD70DEE} = {A85D9EDF-9B06-44AC-BD99-6C5B7643A601}
 		{AF8F8C96-8EF6-4D1C-BA32-0BB442D33A01} = {A85D9EDF-9B06-44AC-BD99-6C5B7643A601}
@@ -122,5 +121,6 @@ Global
 		{3CCF1977-5317-49EF-9F7A-67B8C14AB65F} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{E258DBE3-1CEA-49B5-8072-D340DBFB6328} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{76E7410D-07ED-4137-BB37-11DD004120D9} = {9A98E310-5CDF-4C15-A9A8-5A2B6414365A}
+		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
 	EndGlobalSection
 EndGlobal

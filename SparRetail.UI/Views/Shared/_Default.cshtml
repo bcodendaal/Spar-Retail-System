@@ -1,14 +1,15 @@
 ﻿@using System
-
+@using BeyondThemes.Bootstrap
 <!DOCTYPE html>
 <!--
-Beyond Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
 Purchase: http://wrapbootstrap.com
 -->
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--Head-->
+
+<!-- Head -->
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
@@ -20,7 +21,7 @@ Purchase: http://wrapbootstrap.com
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
     <!--Basic Styles-->
-    <link href="~/assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    @Styles.Render("~/css/bootstrap")
     <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
 
 
@@ -29,13 +30,12 @@ Purchase: http://wrapbootstrap.com
           rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
-    <link href="~/assets/css/beyond-rtl.min.css" rel="stylesheet" />
+    @Styles.Render("~/css/beyond")
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    @*@Scripts.Render("~/bundles/skin")*@
+    @Scripts.Render("~/bundles/skin")
 </head>
-
 <!-- /Head -->
 <!-- Body -->
 <body>
@@ -388,7 +388,7 @@ Purchase: http://wrapbootstrap.com
                 </div>
                 <!-- /Page Sidebar Header -->
                 <!-- Sidebar Menu -->
-                @*@Html.MvcSiteMap().Menu()*@
+                @Html.MvcSiteMap().Menu()
                 <!-- /Sidebar Menu -->
             </div>
             <!-- /Page Sidebar -->
@@ -396,12 +396,12 @@ Purchase: http://wrapbootstrap.com
             <div class="page-content">
                 <!-- Page Breadcrumb -->
                 <div class="page-breadcrumbs">
-                    @*@Html.MvcSiteMap().SiteMapPath()*@
+                    @Html.MvcSiteMap().SiteMapPath()
                 </div>
                 <!-- /Page Breadcrumb -->
                 <!-- Page Header -->
                 <div class="page-header position-relative">
-                    @*@Html.MvcSiteMap().SiteMapTitle()*@
+                    @Html.MvcSiteMap().SiteMapTitle()
                     <!--Header Buttons-->
                     <div class="header-buttons">
                         <a class="sidebar-toggler" href="#">
@@ -422,15 +422,24 @@ Purchase: http://wrapbootstrap.com
                     <!-- Your Content Goes Here -->
                     @RenderBody()
                 </div>
+                <!-- /Page Body -->
             </div>
+            <!-- /Page Content -->
         </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
     </div>
+
     <!--Basic Scripts-->
-    <script src="~/assets/js/jquery-2.0.3.min.js"></script>
-    <script src="~/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="~/assets/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/skins.min.js"></script>
-    <script src="~/assets/js/beyond.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!--Beyond Scripts-->
+    @Scripts.Render("~/bundles/beyond")
+
+    <!--Page Related Scripts-->
+    @RenderSection("PageScripts", required: false)
 </body>
 <!--  /Body -->
 </html>
