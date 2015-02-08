@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SparRetail.UI.Controllers
 {
-    public class Class1 : Controller
+    public class Class1 : Controller // STUUUKK SHIIIIT EFFF
     {
     }
 }
