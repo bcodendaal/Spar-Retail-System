@@ -28,7 +28,7 @@ namespace SparRetail.ApiBroker
         protected T Get<T>(string method, Dictionary<string,string> querystringValues)
         {
             var queryString = querystringValues.Select(x => x.Key + "=" + x.Value).Aggregate((x, y) => x + "&" + y);
-            return ExecuteCall<T>(x => x.GetAsync(string.Format("{0}/{1}?{3}", controllerSegment, method, queryString)).Result);
+            return ExecuteCall<T>(x => x.GetAsync(string.Format("{0}/{1}?{2}", controllerSegment, method, queryString)).Result);
         }
 
         protected TOutput Post<TOutput>(string method, object inputModel)

@@ -24,7 +24,9 @@ namespace SparRetail.Suppliers
             return QueryList<Supplier>("usp_SelectAllSuppliers", null, CommonConfigKeys.dbKeyMaster);
         }
 
-
-     
+        public Supplier GetById(int supplierId)
+        {
+            return QueryOne<Supplier>("usp_SelectSupplierById", new { @SupplierId = supplierId }, CommonConfigKeys.dbKeyMaster);
+        }
     }
 }

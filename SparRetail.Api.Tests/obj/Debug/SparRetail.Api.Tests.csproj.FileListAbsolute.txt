@@ -13,3 +13,4 @@ D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Tests\obj\Debug\SparRetail.Api
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Tests\obj\Debug\SparRetail.Api.Tests.pdb
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Tests\bin\Debug\nunit.framework.dll
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Tests\bin\Debug\nunit.framework.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Tests\bin\Debug\SparRetail.Api.Tests.dll.config

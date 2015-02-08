@@ -12,8 +12,10 @@ namespace SparRetail.Api.Controllers
     {
         public static void Configure(ContainerBuilder builder)
         {
+            Core.IoCRegistry.Configure(builder);
             Suppliers.IoCRegistry.Configure(builder);
             Products.IoCRegistry.Configure(builder);
+            Orders.IoCRegistry.Configure(builder);
         }
 
         public static Assembly GetAssembly()

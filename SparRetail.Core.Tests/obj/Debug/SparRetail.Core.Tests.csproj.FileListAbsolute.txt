@@ -1,0 +1,7 @@
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\bin\Debug\SparRetail.Core.Tests.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\bin\Debug\SparRetail.Core.Tests.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\bin\Debug\nunit.framework.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\bin\Debug\nunit.framework.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\obj\Debug\SparRetail.Core.Tests.csprojResolveAssemblyReference.cache
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\obj\Debug\SparRetail.Core.Tests.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core.Tests\obj\Debug\SparRetail.Core.Tests.pdb

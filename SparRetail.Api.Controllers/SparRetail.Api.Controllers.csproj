@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IoCRegistry.cs" />
+    <Compile Include="OrderController.cs" />
     <Compile Include="ProductController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierController.cs" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
       <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
       <Name>SparRetail.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Orders\SparRetail.Orders.csproj">
+      <Project>{3ccf1977-5317-49ef-9f7a-67b8c14ab65f}</Project>
+      <Name>SparRetail.Orders</Name>
     </ProjectReference>
     <ProjectReference Include="..\SparRetail.Products\SparRetail.Products.csproj">
       <Project>{3efa8b6c-03f3-44d3-b008-526d4e2a76e2}</Project>

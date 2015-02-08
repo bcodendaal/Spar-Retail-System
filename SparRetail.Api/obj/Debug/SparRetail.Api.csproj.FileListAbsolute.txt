@@ -51,3 +51,7 @@ D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Interop.dll
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Interop.pdb
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Products.dll
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Products.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Orders.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Retailers.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Orders.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api\bin\SparRetail.Retailers.pdb

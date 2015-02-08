@@ -10,6 +10,7 @@ namespace SparRetail.Suppliers
     public interface ISupplierService
     {
         List<Supplier> All();
+        Supplier GetById(int supplierId);
         
     }
 }

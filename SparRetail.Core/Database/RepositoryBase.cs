@@ -50,22 +50,22 @@ namespace SparRetail.Core.Database
             }
         }
 
-        protected T QueryOne<T>(string storedProcedure, dynamic parameters, string databaseConfigKey)
+        protected T QueryOne<T>(string storedProcedure, object parameters, string databaseConfigKey)
         {
             using (SqlConnection connection = new SqlConnection(GetConfig(databaseConfigKey).ConnectionString))
             {
-                var result = SqlMapper.Query<T>(connection, storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure);
+                var result = connection.Query<T>(storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure).ToList();
                 if (result != null && result.Any())
                     return result.First();
                 return default(T);
             }
         }
 
-        protected void Execute(string storedProcedure, dynamic parameters, string databaseConfigKey)
+        protected void Execute(string storedProcedure, object parameters, string databaseConfigKey)
         {
             using (SqlConnection connection = new SqlConnection(GetConfig(databaseConfigKey).ConnectionString))
             {
-                SqlMapper.Execute(connection, storedProcedure, parameters, null, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure);
+                connection.Execute(storedProcedure, parameters, null, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure);
             }
         }
         
