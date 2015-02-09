@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BeyondThemes.BeyondAdmin.Models
+namespace Spar.Retail.UI.Models
 {
     public class RegisterViewModel
     {

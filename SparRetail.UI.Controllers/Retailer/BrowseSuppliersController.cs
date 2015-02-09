@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SparRetail.UI.Controllers.Retailer
 {
-    public class RetailerController : Controller
+    public class BrowseSuppliersController : Controller
     {
-
-        private ActionResult Index()
+        public ActionResult Index()
         {
-            return View();
+            return View("~/Views/Retailer/BrowseSuppliers/Index.cshtml");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace BeyondThemes.BeyondAdmin
+namespace Spar.Retail.UI
 {
     public class BundleConfig
     {

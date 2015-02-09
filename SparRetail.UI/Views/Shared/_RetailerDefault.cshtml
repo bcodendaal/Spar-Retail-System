@@ -1,6 +1,4 @@
-﻿@using System
-@using BeyondThemes.Bootstrap
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -311,7 +309,7 @@ Purchase: http://wrapbootstrap.com
                                     </li>
                                     <!--Avatar Area-->
                                     <li class="edit">
-                                        <a href="profile.html" class="pull-left">Profile</a>
+                                        @*<a href="profile.html" class="pull-left">Profile</a>*@
                                         <a href="#" class="pull-right">Setting</a>
                                     </li>
                                     <!--Theme Selector Area-->
@@ -333,9 +331,9 @@ Purchase: http://wrapbootstrap.com
                                     </li>
                                     <!--/Theme Selector Area-->
                                     <li class="dropdown-footer">
-                                        <a href="login.html">
-                                            Sign out
-                                        </a>
+                                        @*<a href="login.html">
+                                                Sign out
+                                            </a>*@
                                     </li>
                                 </ul>
                                 <!--/Login Area Dropdown-->
@@ -388,20 +386,50 @@ Purchase: http://wrapbootstrap.com
                 </div>
                 <!-- /Page Sidebar Header -->
                 <!-- Sidebar Menu -->
-                @Html.MvcSiteMap().Menu()
+                <ul class="nav sidebar-menu">
+                    <!--Dashboard-->
+                    <li class="active">
+                        <a href="@(Url.Action("Index", "RetailerDashboard"))">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-truck"></i>
+                            <span class="menu-text"> Suppliers </span>
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="@(Url.Action("Index", "BrowseSuppliers"))">
+                                    <span class="menu-text">Browse My Suppliers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="menu-text">Search New Suppliers</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
                 <!-- /Sidebar Menu -->
             </div>
             <!-- /Page Sidebar -->
             <!-- Page Content -->
             <div class="page-content">
                 <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    @Html.MvcSiteMap().SiteMapPath()
-                </div>
+                @*<div class="page-breadcrumbs">*@
+                <!-- Breadcrumb missing...-->
+                @*</div>*@
                 <!-- /Page Breadcrumb -->
                 <!-- Page Header -->
                 <div class="page-header position-relative">
-                    @Html.MvcSiteMap().SiteMapTitle()
+                    <br />
+                    @ViewBag.Title
                     <!--Header Buttons-->
                     <div class="header-buttons">
                         <a class="sidebar-toggler" href="#">

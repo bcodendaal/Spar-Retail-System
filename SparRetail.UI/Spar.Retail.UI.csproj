@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeyondThemes.BeyondAdmin</RootNamespace>
-    <AssemblyName>BeyondThemes.BeyondAdmin</AssemblyName>
+    <RootNamespace>Spar.Retail.UI</RootNamespace>
+    <AssemblyName>Spar.Retail.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -39,9 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BeyondThemes.Bootstrap">
-      <HintPath>..\Library\BeyondThemes.Bootstrap.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -336,7 +333,9 @@
     <Content Include="assets\js\fullcalendar\fullcalendar.min.js.map" />
     <Content Include="assets\js\tagsinput\bootstrap-tagsinput.min.js.map" />
     <Content Include="assets\js\toastr\toastr.min.js.map" />
-    <Content Include="Mvc.sitemap" />
+    <Content Include="Mvc.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="assets\fonts\WeatherIcons-Regular.otf" />
     <Content Include="assets\js\beyond.min.js.map">
       <DependentUpon>beyond.js</DependentUpon>
@@ -344,20 +343,10 @@
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
-    <Content Include="Views\Shared\_Empty.cshtml" />
-    <Content Include="Views\Shared\_PersianLayout.cshtml" />
-    <Content Include="Views\Shared\_ArabicLayout.cshtml" />
     <Content Include="Views\Shared\_RetailerDefault.cshtml" />
     <Content Include="Views\Shared\_SupplierDefault.cshtml" />
     <Content Include="Views\Retailer\Dashboard.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj">

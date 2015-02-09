@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BeyondThemes.BeyondAdmin
+namespace Spar.Retail.UI
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace BeyondThemes.BeyondAdmin
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Retailer", action = "Dashboard", id = UrlParameter.Optional }
+               defaults: new { controller = "RetailerDashboard", action = "Index", id = UrlParameter.Optional }
            );
         }
     }
