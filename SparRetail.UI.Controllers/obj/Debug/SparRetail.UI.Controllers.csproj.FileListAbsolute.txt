@@ -1,7 +1,0 @@
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\bin\Debug\SparRetail.UI.Controllers.dll
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\bin\Debug\SparRetail.UI.Controllers.pdb
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\bin\Debug\Autofac.dll
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\bin\Debug\Autofac.xml
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\obj\Debug\SparRetail.UI.Controllers.csprojResolveAssemblyReference.cache
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\obj\Debug\SparRetail.UI.Controllers.dll
-C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.UI.Controllers\obj\Debug\SparRetail.UI.Controllers.pdb
