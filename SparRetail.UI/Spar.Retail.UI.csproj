@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -122,13 +122,13 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Supplier\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -300,7 +300,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Home\Blank.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -345,7 +344,6 @@
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Shared\_Default.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
@@ -354,53 +352,18 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
-    <Content Include="Views\Home\Elements.cshtml" />
-    <Content Include="Views\Home\Tabs.cshtml" />
-    <Content Include="Views\Home\Modals.cshtml" />
-    <Content Include="Views\Home\Buttons.cshtml" />
-    <Content Include="Views\Home\FormLayouts.cshtml" />
-    <Content Include="Views\Home\FormInputs.cshtml" />
-    <Content Include="Views\Home\Widgets.cshtml" />
-    <Content Include="Views\Home\Databoxes.cshtml" />
-    <Content Include="Views\Home\Alerts.cshtml" />
     <Content Include="Views\Shared\_Empty.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\FontAwesome.cshtml" />
-    <Content Include="Views\Home\GlyphIcons.cshtml" />
-    <Content Include="Views\Home\Typicons.cshtml" />
-    <Content Include="Views\Home\WeatherIcons.cshtml" />
-    <Content Include="Views\Home\NestableList.cshtml" />
-    <Content Include="Views\Home\TreeView.cshtml" />
-    <Content Include="Views\Home\SimpleTables.cshtml" />
-    <Content Include="Views\Home\DataTables.cshtml" />
-    <Content Include="Views\Home\DataPickers.cshtml" />
-    <Content Include="Views\Home\Wizards.cshtml" />
-    <Content Include="Views\Home\FormValidation.cshtml" />
-    <Content Include="Views\Home\FormEditors.cshtml" />
-    <Content Include="Views\Home\Profile.cshtml" />
-    <Content Include="Views\Home\Calendar.cshtml" />
-    <Content Include="Views\Home\FlotCharts.cshtml" />
-    <Content Include="Views\Home\MorrisCharts.cshtml" />
-    <Content Include="Views\Home\SparklineCharts.cshtml" />
-    <Content Include="Views\Home\EasyPieCharts.cshtml" />
-    <Content Include="Views\Home\ChartJS.cshtml" />
-    <Content Include="Views\Home\Inbox.cshtml" />
-    <Content Include="Views\Home\ViewMessage.cshtml" />
-    <Content Include="Views\Home\Compose.cshtml" />
-    <Content Include="Views\Home\Timeline.cshtml" />
-    <Content Include="Views\Home\PricingTables.cshtml" />
-    <Content Include="Views\Home\Invoice.cshtml" />
-    <Content Include="Views\Account\Lock.cshtml" />
-    <Content Include="Views\Home\Typography.cshtml" />
-    <Content Include="Views\Home\Error404.cshtml" />
-    <Content Include="Views\Home\Error500.cshtml" />
-    <Content Include="Views\Home\Grid.cshtml" />
     <Content Include="Views\Shared\_PersianLayout.cshtml" />
-    <Content Include="Views\Home\Persian.cshtml" />
-    <Content Include="Views\Home\Arabic.cshtml" />
     <Content Include="Views\Shared\_ArabicLayout.cshtml" />
+    <Content Include="Views\Shared\_RetailerDefault.cshtml" />
+    <Content Include="Views\Shared\_SupplierDefault.cshtml" />
+    <Content Include="Views\Retailer\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj">
+      <Project>{5505cbb3-ea41-4cab-b84b-8b10537927fe}</Project>
+      <Name>SparRetail.UI.Controllers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

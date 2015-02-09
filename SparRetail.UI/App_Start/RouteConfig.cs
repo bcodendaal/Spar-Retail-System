@@ -16,7 +16,7 @@ namespace BeyondThemes.BeyondAdmin
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+               defaults: new { controller = "Retailer", action = "Dashboard", id = UrlParameter.Optional }
            );
         }
     }
