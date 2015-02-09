@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Retailers", "Spa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Core.Tests", "SparRetail.Core.Tests\SparRetail.Core.Tests.csproj", "{76E7410D-07ED-4137-BB37-11DD004120D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.DatabaseConfigAdapter", "SparRetail.DatabaseConfigAdapter\SparRetail.DatabaseConfigAdapter.csproj", "{025C1A7B-C210-45D9-844B-A023AACE26AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +128,6 @@ Global
 		{3CCF1977-5317-49EF-9F7A-67B8C14AB65F} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{E258DBE3-1CEA-49B5-8072-D340DBFB6328} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{76E7410D-07ED-4137-BB37-11DD004120D9} = {9A98E310-5CDF-4C15-A9A8-5A2B6414365A}
+		{025C1A7B-C210-45D9-844B-A023AACE26AB} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 	EndGlobalSection
 EndGlobal

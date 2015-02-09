@@ -51,5 +51,28 @@ namespace SparRetail.Api.Controllers
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
             }
         }
+
+        [HttpGet]
+        public List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, int retailerId)
+        {
+            return orderBasketService.AllItemsForOrderBasket(orderBasketId, retailerId);
+        }
+
+        [HttpPost]
+        public ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost)
+        {
+            try
+            {
+                orderBasketService.FinaliseOrder(finaliseOrderPost.OrderBasketId, DateTime.Now, finaliseOrderPost.RetailerId);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = true, Message = "Success" };
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "FinaliseOrder", ex);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
+            }
+            
+        }
     }
 }

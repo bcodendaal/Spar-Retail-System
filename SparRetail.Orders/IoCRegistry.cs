@@ -18,6 +18,7 @@ namespace SparRetail.Orders
 
             Suppliers.IoCRegistry.Configure(builder);
             Retailers.IoCRegistry.Configure(builder);
+            DatabaseConfigAdapter.IoCRegistry.Configure(builder);
         }
     }
 }

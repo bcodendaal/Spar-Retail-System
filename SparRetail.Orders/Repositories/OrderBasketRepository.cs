@@ -42,5 +42,16 @@ namespace SparRetail.Orders.Repositories
                 @TotalPrice = basketItem.TotalPrice
             }, retailerDbKey);
         }
+
+        public List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, string retailerDbKey)
+        {
+            return QueryList<OrderBasketItem>("usp_SelectOrderBasketItemsForOrder", new { @OrderBasketId = orderBasketId }, retailerDbKey);
+        }
+
+
+        public void FinaliseOrder(int orderBasketId, DateTime orderDate, string retailerDbKey)
+        {
+            Execute("usp_FinaliseOrder", new { @OrderBasketId = orderBasketId, @OrderDate = orderDate }, retailerDbKey);
+        }
     }
 }

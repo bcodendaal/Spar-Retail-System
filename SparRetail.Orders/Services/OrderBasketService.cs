@@ -1,4 +1,5 @@
 ﻿using SparRetail.Core.Logging;
+using SparRetail.DatabaseConfigAdapter;
 using SparRetail.Models;
 using SparRetail.Orders.Repositories;
 using SparRetail.Retailers.Services;
@@ -14,23 +15,27 @@ namespace SparRetail.Orders.Services
     public class OrderBasketService : IOrderBasketService
     {
         protected readonly IOrderBasketRepository orderBasketRepository;
-        protected readonly IRetailerService retailerService;
+        protected readonly IDatabaseConfigAdapter databaseConfigAdapter;
         protected readonly ISupplierService supplierService;
+        protected readonly IRetailerService retailerService;
         protected readonly ILogger logger;
-        private const string TagGroup = "OrderBasketService";
+        
 
-        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IRetailerService retailerService, ISupplierService supplierService, ILogger logger)
+        private const string TagGroup = "OrderBasketService";        
+
+        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, ILogger logger)
         {
             this.orderBasketRepository = orderBasketRepository;
-            this.retailerService = retailerService;
+            this.databaseConfigAdapter = databaseConfigAdapter;
             this.supplierService = supplierService;
+            this.retailerService = retailerService;
             this.logger = logger;
         }
 
 
         public List<OrderBasket> AllForRetailerSupplier(int retailerId, int supplierId)
         {
-            var baskets = orderBasketRepository.AllForRetailerSupplier(retailerId, retailerService.GetById(retailerId).DatabaseConfigKey, supplierId);
+            var baskets = orderBasketRepository.AllForRetailerSupplier(retailerId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId), supplierId);
             
             if (baskets != null && baskets.Any())
             {
@@ -46,7 +51,7 @@ namespace SparRetail.Orders.Services
 
         public List<OrderBasket> AllForRetailer(int retailerId)
         {
-            var baskets = orderBasketRepository.AllForRetailer(retailerId, retailerService.GetById(retailerId).DatabaseConfigKey);
+            var baskets = orderBasketRepository.AllForRetailer(retailerId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
             if(baskets != null && baskets.Any())
             {
                 baskets.ForEach(x => 
@@ -62,7 +67,19 @@ namespace SparRetail.Orders.Services
 
         public void AddOrderBasketItem(int retailerId, OrderBasketItem basketItem)
         {
-            orderBasketRepository.AddOrderBasketItem(basketItem, retailerService.GetById(retailerId).DatabaseConfigKey);
+            orderBasketRepository.AddOrderBasketItem(basketItem, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+
+        public List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, int retailerId)
+        {
+            return orderBasketRepository.AllItemsForOrderBasket(orderBasketId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+
+        public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
+        {
+            orderBasketRepository.FinaliseOrder(orderBasketId, orderDate, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
         }
     }
 }

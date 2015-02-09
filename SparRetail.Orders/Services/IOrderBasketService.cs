@@ -12,5 +12,7 @@ namespace SparRetail.Orders.Services
         List<OrderBasket> AllForRetailerSupplier(int retailerId, int supplierId);
         List<OrderBasket> AllForRetailer(int retailerId);
         void AddOrderBasketItem(int retailerId, OrderBasketItem basketItem);
+        List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, int retailerId);
+        void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId);
     }
 }

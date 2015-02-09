@@ -41,3 +41,5 @@ D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparReta
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparRetail.Retailers.dll
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparRetail.Orders.pdb
 D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparRetail.Retailers.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparRetail.DatabaseConfigAdapter.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Api.Controllers\bin\Debug\SparRetail.DatabaseConfigAdapter.pdb

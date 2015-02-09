@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\FinaliseOrderPost.cs" />
     <Compile Include="Api\OrderBasketItemPost.cs" />
     <Compile Include="Api\ResponseModel.cs" />
     <Compile Include="Api\RetailerIdPost.cs" />

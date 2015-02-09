@@ -31,5 +31,17 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Post<ResponseModel>("AddOrderBasketItem", basketItemPost);
         }
+
+
+        public List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, int retailerId)
+        {
+            return Get<List<OrderBasketItem>>("AllItemsForOrderBasket", new Dictionary<string, string> { { "orderbasketId", orderBasketId.ToString() }, { "retailerId", retailerId.ToString() } });
+        }
+
+
+        public ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost)
+        {
+            return Post<ResponseModel>("FinaliseOrder", new FinaliseOrderPost { OrderBasketId = finaliseOrderPost.OrderBasketId, RetailerId = finaliseOrderPost.RetailerId });
+        }
     }
 }
