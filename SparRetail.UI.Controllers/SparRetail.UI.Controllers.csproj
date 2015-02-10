@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoCRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailer\BrowseSuppliersController.cs" />
     <Compile Include="Retailer\RetailerDashboardController.cs" />
@@ -52,6 +53,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Supplier\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SparRetail.ApiBroker\SparRetail.ApiBroker.csproj">
+      <Project>{40f1ed6f-d7dc-43ec-9839-f4d8b81c65c1}</Project>
+      <Name>SparRetail.ApiBroker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Core\SparRetail.Core.csproj">
+      <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
+      <Name>SparRetail.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Interop\SparRetail.Interop.csproj">
+      <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
+      <Name>SparRetail.Interop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
+      <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
+      <Name>SparRetail.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

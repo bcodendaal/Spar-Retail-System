@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -129,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IoC.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -349,6 +356,14 @@
     <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SparRetail.ApiBroker\SparRetail.ApiBroker.csproj">
+      <Project>{40f1ed6f-d7dc-43ec-9839-f4d8b81c65c1}</Project>
+      <Name>SparRetail.ApiBroker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Interop\SparRetail.Interop.csproj">
+      <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
+      <Name>SparRetail.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj">
       <Project>{5505cbb3-ea41-4cab-b84b-8b10537927fe}</Project>
       <Name>SparRetail.UI.Controllers</Name>

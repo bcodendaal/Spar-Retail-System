@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Autofac;
+using Autofac.Integration.Mvc;
+using SparRetail.ApiBroker;
+using SparRetail.ApiBroker.Brokers;
+using SparRetail.Interop;
 
 namespace Spar.Retail.UI
 {
@@ -16,6 +22,20 @@ namespace Spar.Retail.UI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            IoC.BootStrap(builder =>
+            {
+                var apiconfig = new ApiBrokerConfig() { EndPoint = "http://localhost:6837/" };
+                builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
+                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
+                builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
+                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly()).InstancePerRequest();
+            });
+
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));
+
         }
     }
 }

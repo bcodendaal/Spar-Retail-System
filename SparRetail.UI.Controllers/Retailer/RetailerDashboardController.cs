@@ -9,7 +9,6 @@ namespace SparRetail.UI.Controllers.Retailer
 {
     public class RetailerDashboardController : Controller
     {
-
         public ActionResult Index()
         {
             return View("~/Views/Retailer/Dashboard.cshtml");
