@@ -39,7 +39,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Retailers", "Spa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Core.Tests", "SparRetail.Core.Tests\SparRetail.Core.Tests.csproj", "{76E7410D-07ED-4137-BB37-11DD004120D9}"
 EndProject
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.DatabaseConfigAdapter", "SparRetail.DatabaseConfigAdapter\SparRetail.DatabaseConfigAdapter.csproj", "{025C1A7B-C210-45D9-844B-A023AACE26AB}"
+=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spar.Retail.UI", "SparRetail.UI\Spar.Retail.UI.csproj", "{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}"
+>>>>>>> remotes/origin/Dev
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,10 +103,17 @@ Global
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E7410D-07ED-4137-BB37-11DD004120D9}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025C1A7B-C210-45D9-844B-A023AACE26AB}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> remotes/origin/Dev
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +132,10 @@ Global
 		{3CCF1977-5317-49EF-9F7A-67B8C14AB65F} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{E258DBE3-1CEA-49B5-8072-D340DBFB6328} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{76E7410D-07ED-4137-BB37-11DD004120D9} = {9A98E310-5CDF-4C15-A9A8-5A2B6414365A}
+<<<<<<< HEAD
+		{025C1A7B-C210-45D9-844B-A023AACE26AB} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
+=======
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
+>>>>>>> remotes/origin/Dev
 	EndGlobalSection
 EndGlobal

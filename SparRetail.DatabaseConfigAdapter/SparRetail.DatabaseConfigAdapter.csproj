@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CCF1977-5317-49EF-9F7A-67B8C14AB65F}</ProjectGuid>
+    <ProjectGuid>{025C1A7B-C210-45D9-844B-A023AACE26AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SparRetail.Orders</RootNamespace>
-    <AssemblyName>SparRetail.Orders</AssemblyName>
+    <RootNamespace>SparRetail.DatabaseConfigAdapter</RootNamespace>
+    <AssemblyName>SparRetail.DatabaseConfigAdapter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,12 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheKeys.cs" />
+    <Compile Include="DatabaseConfigAdapter.cs" />
+    <Compile Include="IDatabaseConfigAdapter.cs" />
     <Compile Include="IoCRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IOrderBasketRepository.cs" />
-    <Compile Include="Repositories\OrderBasketRepository.cs" />
-    <Compile Include="Services\IOrderBasketService.cs" />
-    <Compile Include="Services\OrderBasketService.cs" />
+    <Compile Include="Repositories\DatabaseConfigAdapterRepository.cs" />
+    <Compile Include="Repositories\IDatabaseConfigAdapterRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,22 +57,6 @@
     <ProjectReference Include="..\SparRetail.Core\SparRetail.Core.csproj">
       <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
       <Name>SparRetail.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SparRetail.DatabaseConfigAdapter\SparRetail.DatabaseConfigAdapter.csproj">
-      <Project>{025c1a7b-c210-45d9-844b-a023aace26ab}</Project>
-      <Name>SparRetail.DatabaseConfigAdapter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
-      <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
-      <Name>SparRetail.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SparRetail.Retailers\SparRetail.Retailers.csproj">
-      <Project>{e258dbe3-1cea-49b5-8072-d340dbfb6328}</Project>
-      <Name>SparRetail.Retailers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SparRetail.Suppliers\SparRetail.Suppliers.csproj">
-      <Project>{45673ce3-9b69-4fa8-ace2-5a401a0b3467}</Project>
-      <Name>SparRetail.Suppliers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
