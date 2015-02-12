@@ -68,5 +68,26 @@ namespace SparRetail.Api.Tests
             Assert.IsTrue(result.IsCommandSuccess);
             Assert.IsTrue(result.IsCallSuccess);
         }
+
+        [TestCase]
+        public void get_items_for_order_basket()
+        {
+            OrderBroker broker = new OrderBroker(new ApiBrokerConfig { EndPoint = ConfigurationManager.AppSettings["apiEndpoint"] });
+            var result = broker.AllItemsForOrderBasket(1, 1);
+
+            Assert.NotNull(result);
+            Assert.True(result.Count > 0);
+        }
+
+        [TestCase]
+        public void finalise_order_successfully()
+        {
+            OrderBroker broker = new OrderBroker(new ApiBrokerConfig { EndPoint = ConfigurationManager.AppSettings["apiEndpoint"] });
+            var result = broker.FinaliseOrder(new FinaliseOrderPost { OrderBasketId = 1, RetailerId = 1 });
+
+            Assert.NotNull(result);
+            Assert.IsTrue(result.IsCallSuccess);
+            Assert.IsTrue(result.IsCommandSuccess);
+        }
     }
 }

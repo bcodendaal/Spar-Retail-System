@@ -377,7 +377,7 @@
       <Name>SparRetail.Interop</Name>
     </ProjectReference>
     <ProjectReference Include="..\SparRetail.UI.Controllers\Spar.Retail.UI.Controllers.csproj">
-      <Project>{5505cbb3-ea41-4cab-b84b-8b10537927fe}</Project>
+      <Project>{5c62520e-b7be-4007-adf0-bb3fb620f95d}</Project>
       <Name>Spar.Retail.UI.Controllers</Name>
     </ProjectReference>
   </ItemGroup>

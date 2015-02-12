@@ -12,6 +12,7 @@ using SparRetail.ApiBroker;
 using SparRetail.ApiBroker.Brokers;
 using SparRetail.Interop;
 
+
 namespace Spar.Retail.UI
 {
     public class MvcApplication : System.Web.HttpApplication
