@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.UI.Controllers", "SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj", "{5505CBB3-EA41-4CAB-B84B-8B10537927FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spar.Retail.UI.Controllers", "SparRetail.UI.Controllers\Spar.Retail.UI.Controllers.csproj", "{5505CBB3-EA41-4CAB-B84B-8B10537927FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Api", "SparRetail.Api\SparRetail.Api.csproj", "{1617A88D-2BBB-47A5-8F1D-F201DBD70DEE}"
 EndProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Core.Tests", "SparRetail.Core.Tests\SparRetail.Core.Tests.csproj", "{76E7410D-07ED-4137-BB37-11DD004120D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spar.Retail.UI", "SparRetail.UI\Spar.Retail.UI.csproj", "{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spar.Retail.UI.Models", "Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj", "{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +128,6 @@ Global
 		{E258DBE3-1CEA-49B5-8072-D340DBFB6328} = {55C4802C-D528-4C81-A7B8-BE827CC3B947}
 		{76E7410D-07ED-4137-BB37-11DD004120D9} = {9A98E310-5CDF-4C15-A9A8-5A2B6414365A}
 		{5F1FB09A-9139-4D4C-8D41-EEFAD3F46DF0} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
+		{D65604C2-2A5B-44F0-98CA-096ECAF1A9A5} = {EA8C59FE-F3B8-4FD5-B635-421F5E89DA8D}
 	EndGlobalSection
 EndGlobal

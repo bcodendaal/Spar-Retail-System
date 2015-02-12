@@ -136,8 +136,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IoC.cs" />
-    <Compile Include="Models\RegisterViewModel.cs" />
-    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -362,8 +360,14 @@
     <Content Include="Views\Shared\_SupplierDefault.cshtml" />
     <Content Include="Views\Retailer\Dashboard.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
+    <Content Include="Views\Retailer\RetailerOrders\Index.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\_CreateOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">
+      <Project>{d65604c2-2a5b-44f0-98ca-096ecaf1a9a5}</Project>
+      <Name>Spar.Retail.UI.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SparRetail.ApiBroker\SparRetail.ApiBroker.csproj">
       <Project>{40f1ed6f-d7dc-43ec-9839-f4d8b81c65c1}</Project>
       <Name>SparRetail.ApiBroker</Name>
@@ -372,9 +376,9 @@
       <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
       <Name>SparRetail.Interop</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SparRetail.UI.Controllers\SparRetail.UI.Controllers.csproj">
+    <ProjectReference Include="..\SparRetail.UI.Controllers\Spar.Retail.UI.Controllers.csproj">
       <Project>{5505cbb3-ea41-4cab-b84b-8b10537927fe}</Project>
-      <Name>SparRetail.UI.Controllers</Name>
+      <Name>Spar.Retail.UI.Controllers</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

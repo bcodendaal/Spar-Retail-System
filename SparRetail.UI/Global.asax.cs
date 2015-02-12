@@ -25,7 +25,7 @@ namespace Spar.Retail.UI
 
             IoC.BootStrap(builder =>
             {
-                var apiconfig = new ApiBrokerConfig() { EndPoint = "http://localhost:6837/" };
+                var apiconfig = new ApiBrokerConfig() { EndPoint = "http://localhost:6837/api/" };
                 builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
                 builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
                 builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
