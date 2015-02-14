@@ -22,6 +22,10 @@ namespace Spar.Retail.UI
                 "~/assets/css/animate.min.css"
                 ));
 
+            bundles.Add(new StyleBundle("~/css/main").Include(
+               "~/Content/Main.css"
+               ));
+
             bundles.Add(new StyleBundle("~/css/beyond-rtl").Include(
                 "~/assets/css/beyond-rtl.min.css",
                 "~/assets/css/demo.min.css",
@@ -43,7 +47,9 @@ namespace Spar.Retail.UI
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/beyond").Include(
-                "~/assets/js/beyond.min.js"));
+                "~/assets/js/beyond.min.js",
+                "~/assets/js/fuelux/spinner/fuelux.spinner.min.js"
+                ));
         }
     }
 }

@@ -1,103 +1,11 @@
 ﻿@using System.Activities.Statements
-@model Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSupplierViewModel
 @{
     ViewBag.Title = "Browse Suppliers";
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
 }
 
-<div class="col-xs-12 col-md-12" id="dvMySuppliers">
-    <div class="widget">
-        <div class="widget-header  with-footer">
-            <span class="widget-caption">Suppliers</span>
-            <div class="widget-buttons">
-                <a href="#" data-toggle="maximize">
-                    <i class="fa fa-expand"></i>
-                </a>
-                <a href="#" data-toggle="collapse">
-                    <i class="fa fa-minus"></i>
-                </a>
-            </div>
-        </div>
-        <div class="widget-body">
-            <div class="table-scrollable">
-                <table class="table table-bordered table-striped table-condensed flip-content table-hover">
-                    <thead class="flip-content bordered-palegreen">
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Code
-                            </th>
-                            <th>
-                                Address
-                            </th>
-                            <th>
-                                City
-                            </th>
-                            <th>
-                                Postal code
-                            </th>
-                            <th>
-                                Telephone
-                            </th>
-                            <th>
-                                Fax
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Vat No
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var supplier in Model.Suppliers)
-                        {
-                            <tr>
-                                <td>
-                                    @supplier.SupplierName
-                                </td>
-                                <td>
-                                    @supplier.SupplierCode
-                                </td>
-                                <td>
-                                    @supplier.AddressLine1<br />
-                                    @supplier.AddressLine2<br />
-                                    @supplier.AddressLine3
-                                </td>
-                                <td>
-                                    @supplier.City
-                                </td>
-                                <td>
-                                    @supplier.PostalCode
-                                </td>
-                                <td>
-                                    @supplier.Telephone
-                                </td>
-                                <td>
-                                    @supplier.Fax
-                                </td>
-                                <td>
-                                    @supplier.Email
-                                </td>
-                                <td>
-                                    @supplier.VATNumber
-                                </td>
-                                <td>
-                                    <a href="#" data-buttontype="btnCreateOrder" id="btnCreateOrder_@supplier.SupplierId" data-supplierid="@supplier.SupplierId" class="btn btn-default btn-xs blue"><i class="glyphicon glyphicon-shopping-cart"></i> Create Order</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
+@Html.Action("AllSuppliersOrder", "RetailerCommon")
+<div style="clear:both">&nbsp;</div>
 <div id="results">
 
 </div>
@@ -109,17 +17,36 @@
         $('[data-buttontype="btnCreateOrder"]').click(
             function () {
                 debugger;
-                CreateOrder($(this).data('supplierid'));
+                LoadOrderBaskets($(this).data('supplierid'));
             }
         );
     });
 
 
+    function LoadOrderBaskets(supplierid) {
+        $.ajax({
+            url: '/BrowseSuppliers/LoadOrderBasketOptions',
+            type: 'POST',
+            data: JSON.stringify({
+                supplierId: supplierid
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $('#results').html(data);
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+
+    }
+
 
     function CreateOrder(supplierid) {
+
         debugger;
         $.ajax({
-            url: '/BrowseSuppliers/CreateOrder',
+            url: '/RetailerCommon/AllProductsOrder',
             type: 'POST',
             data: JSON.stringify({
                 supplierId: supplierid

@@ -32,7 +32,7 @@ namespace Spar.Retail.UI
                 builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
                 builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
                 builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
-                builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly()).InstancePerRequest();
+                builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
             });
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using SparRetail.Models;
 
-namespace Spar.Retail.UI.Models.ViewModels.Retailer
+namespace Spar.Retail.UI.Models.ViewModels.Retailer.Common
 {
-    public class BrowseSupplierViewModel
+    public class AllSupplierViewModel
     {
         public List<Supplier> Suppliers { get; set; }
     }

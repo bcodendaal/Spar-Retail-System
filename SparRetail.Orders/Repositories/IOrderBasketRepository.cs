@@ -13,6 +13,7 @@ namespace SparRetail.Orders.Repositories
         List<OrderBasket> AllForRetailer(int retailerId, string retailerDbKey);
         void AddOrderBasketItem(OrderBasketItem basketItem, string retailerDbKey);
         List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, string retailerDbKey);
+        OrderBasket CreateNew(int supplierId, int retailerId, int userId, string retailerDbKey);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, string retailerDbKey);
     }
 }

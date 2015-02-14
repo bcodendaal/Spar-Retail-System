@@ -31,10 +31,14 @@ Purchase: http://wrapbootstrap.com
     @Styles.Render("~/css/beyond")
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
 
+    <!-- Custom stylesheed -->
+    @Styles.Render("~/css/main")
+    
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    @Scripts.Render("~/bundles/skin")
-
     @Scripts.Render("~/bundles/jquery")
+    <!--Page Related Scripts-->
+    @RenderSection("PageScripts", required: false)
+
 </head>
 <!-- /Head -->
 <!-- Body -->
@@ -468,14 +472,13 @@ Purchase: http://wrapbootstrap.com
     </div>
 
     <!--Basic Scripts-->
-   
+    @Scripts.Render("~/bundles/skin")
+
     @Scripts.Render("~/bundles/bootstrap")
 
     <!--Beyond Scripts-->
     @Scripts.Render("~/bundles/beyond")
 
-    <!--Page Related Scripts-->
-    @RenderSection("PageScripts", required: false)
 </body>
 <!--  /Body -->
 </html>

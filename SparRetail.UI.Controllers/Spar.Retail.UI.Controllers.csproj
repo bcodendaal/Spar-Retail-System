@@ -50,6 +50,7 @@
     <Compile Include="IoCRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailer\BrowseSuppliersController.cs" />
+    <Compile Include="Retailer\RetailerCommonController.cs" />
     <Compile Include="Retailer\RetailerOrdersController.cs" />
     <Compile Include="Retailer\RetailerDashboardController.cs" />
   </ItemGroup>

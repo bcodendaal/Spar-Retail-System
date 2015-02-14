@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace SparRetail.Orders.Repositories
 {
-    public class OrderBasketRepository : RepositoryBase,  IOrderBasketRepository
+    public class OrderBasketRepository : RepositoryBase, IOrderBasketRepository
     {
-        public OrderBasketRepository(IDatabaseConfigCollection config) : base(config)
+        public OrderBasketRepository(IDatabaseConfigCollection config)
+            : base(config)
         {
-            
+
         }
 
         public List<OrderBasket> AllForRetailerSupplier(int retailerId, string retailerDBKey, int supplierId)
@@ -29,7 +30,7 @@ namespace SparRetail.Orders.Repositories
 
         public void AddOrderBasketItem(OrderBasketItem basketItem, string retailerDbKey)
         {
-            Execute("usp_InsertOrderBasketItem", new 
+            Execute("usp_InsertOrderBasketItem", new
             {
                 @OrderBasketId = basketItem.OrderBasketId,
                 @ProductId = basketItem.ProductId,
@@ -52,6 +53,12 @@ namespace SparRetail.Orders.Repositories
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, string retailerDbKey)
         {
             Execute("usp_FinaliseOrder", new { @OrderBasketId = orderBasketId, @OrderDate = orderDate }, retailerDbKey);
+        }
+
+
+        public OrderBasket CreateNew(int supplierId, int retailerId,int userId, string retailerDbKey)
+        {
+            return QueryOne<OrderBasket>("usp_CreateRetailerOrderBasket", new { @supplierId = supplierId, @retailerId = retailerId, @userId = userId }, retailerDbKey);
         }
     }
 }

@@ -18,12 +18,12 @@ namespace SparRetail.ApiBroker.Brokers
 
         public List<OrderBasket> AllOrderBasketForRetailerSupplier(int retailerId, int supplierId)
         {
-            return Get<List<OrderBasket>>("AllOrderBasketForRetailerSupplier", new Dictionary<string, string> { { "retailerId", retailerId.ToString()},  { "supplierId", supplierId.ToString() } });
+            return Get<List<OrderBasket>>("AllOrderBasketForRetailerSupplier", new Dictionary<string, string> { { "retailerId", retailerId.ToString() }, { "supplierId", supplierId.ToString() } });
         }
 
         public List<OrderBasket> AllOrderBasketForRetailer(int retailerId)
         {
-            return Get<List<OrderBasket>>("AllOrderBasketForRetailer", new Dictionary<string, string> { { "retailerId", retailerId.ToString() }});
+            return Get<List<OrderBasket>>("AllOrderBasketForRetailer", new Dictionary<string, string> { { "retailerId", retailerId.ToString() } });
         }
 
 
@@ -42,6 +42,12 @@ namespace SparRetail.ApiBroker.Brokers
         public ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost)
         {
             return Post<ResponseModel>("FinaliseOrder", new FinaliseOrderPost { OrderBasketId = finaliseOrderPost.OrderBasketId, RetailerId = finaliseOrderPost.RetailerId });
+        }
+
+
+        public OrderBasketResponse CreateNew(int supplierId, int retailerId, int userId)
+        {
+            return Get<OrderBasketResponse>("CreateNew", new Dictionary<string, string> { { "supplierId", supplierId.ToString() }, { "retailerId", retailerId.ToString() }, { "userId", userId.ToString() } });
         }
     }
 }

@@ -23,5 +23,6 @@ namespace SparRetail.UI.Controllers.Retailer
             return View(@"~\Views\Retailer\RetailerOrders\Index.cshtml");
         }
 
+
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Api\FinaliseOrderPost.cs" />
     <Compile Include="Api\OrderBasketItemPost.cs" />
+    <Compile Include="Api\OrderBasketResponse.cs" />
     <Compile Include="Api\ResponseModel.cs" />
     <Compile Include="Api\RetailerIdPost.cs" />
     <Compile Include="Enums\OrderBasketStatus.cs" />

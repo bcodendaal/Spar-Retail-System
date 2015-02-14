@@ -291,8 +291,7 @@
     <Content Include="assets\sound\alert.mp3" />
     <Content Include="assets\swf\copy_csv_xls.swf" />
     <Content Include="assets\swf\copy_csv_xls_pdf.swf" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Main.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -361,7 +360,11 @@
     <Content Include="Views\Retailer\Dashboard.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
     <Content Include="Views\Retailer\RetailerOrders\Index.cshtml" />
-    <Content Include="Views\Retailer\BrowseSuppliers\_CreateOrder.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\_AllSupplierProductsOrder.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\_AllSuppliersOrder.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\_OrderBasketOption.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\_AddProductsToBasket.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\OrderBasket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">
