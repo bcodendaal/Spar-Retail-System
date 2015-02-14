@@ -95,5 +95,35 @@ namespace SparRetail.Api.Controllers
                 return new OrderBasketResponse { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString(), OrderBasket = new OrderBasket() };
             }
         }
+
+        [HttpPost]
+        public ResponseModel UpdateOrderBasketItem(OrderBasketItemPost basketItem)
+        {
+            try
+            {
+                orderBasketService.UpdateOrderBasketItem(basketItem.OrderBasketItem, basketItem.RetailerId);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = true, Message = "Success" };
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "AddOrderBasketItem", ex);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
+            }
+        }
+
+        [HttpPost]
+        public ResponseModel DeleteOrderBasketItem(OrderBasketItemPost basketItem)
+        {
+            try
+            {
+                orderBasketService.DeleteOrderBasketItem(basketItem.OrderBasketItem, basketItem.RetailerId);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = true, Message = "Success" };
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "AddOrderBasketItem", ex);
+                return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
+            }
+        }
     }
 }

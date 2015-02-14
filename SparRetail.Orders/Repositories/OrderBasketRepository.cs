@@ -56,9 +56,30 @@ namespace SparRetail.Orders.Repositories
         }
 
 
-        public OrderBasket CreateNew(int supplierId, int retailerId,int userId, string retailerDbKey)
+        public OrderBasket CreateNew(int supplierId, int retailerId, int userId, string retailerDbKey)
         {
             return QueryOne<OrderBasket>("usp_CreateRetailerOrderBasket", new { @supplierId = supplierId, @retailerId = retailerId, @userId = userId }, retailerDbKey);
+        }
+
+
+        public void UpdateOrderBasketItem(OrderBasketItem basketItem, string retailerDbKey)
+        {
+            Execute("usp_UpdateOrderItem", new
+            {
+                @OrderBasketId = basketItem.OrderBasketId,
+                @OrderBasketItemId = basketItem.RetailerOrderBasketItemId,
+                @NumberOfUnits = basketItem.NumberOfUnits,
+                @TotalPrice = basketItem.TotalPrice
+            }, retailerDbKey);
+        }
+
+        public void DeleteOrderBasketItem(OrderBasketItem basketItem, string retailerDbKey)
+        {
+            Execute("usp_DelteOrderBasketItem", new
+            {
+                @OrderBasketId = basketItem.OrderBasketId,
+                @OrderBasketItemId = basketItem.RetailerOrderBasketItemId
+            }, retailerDbKey);
         }
     }
 }

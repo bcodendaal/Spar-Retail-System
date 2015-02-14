@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Spar.Retail.UI.Models.ViewModels.Retailer.Common;
+using SparRetail.Models;
+using SparRetail.Models.Api;
 
 namespace SparRetail.UI.Controllers.Retailer
 {
@@ -57,6 +59,67 @@ namespace SparRetail.UI.Controllers.Retailer
             };
 
             return PartialView(@"~\Views\Retailer\RetailerCommon\OrderBasket.cshtml", viewmodel);
+        }
+
+        public ActionResult AddItemToBasket(int basketId, int basketItemId, int supplierId, int quantity)
+        {
+            var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
+            var product =
+                _productApi.GetAllForSupplier(supplier).FirstOrDefault(x => x.ProductId == basketItemId);
+
+            _orderApi.AddOrderBasketItem(new OrderBasketItemPost()
+            {
+                RetailerId = 1,
+                OrderBasketItem = new OrderBasketItem()
+                {
+                    OrderBasketId = basketId,
+                    BarCode = product.Barcode,
+                    ProductId = product.ProductId,
+                    NumberOfUnits = quantity,
+                    PricePerUnit = product.Price,
+                    ProductCode = product.ProductCode,
+                    ProductName = product.ProductName,
+                    TotalPrice = quantity * product.Price,
+                    UnitOfMeasure = product.UnitOfMeasureName
+                }
+            });
+            return OrderBasket(basketId);
+        }
+
+        public ActionResult UpdateBasketItemQuantity(int basketId, int basketitemid, int supplierId, int quantity)
+        {
+            if (quantity != 0)
+            {
+                var price = _orderApi.AllItemsForOrderBasket(basketId, 1)
+                    .FirstOrDefault(x => x.RetailerOrderBasketItemId == basketitemid)
+                    .PricePerUnit;
+
+                _orderApi.UpdateOrderBasketItem(new OrderBasketItemPost()
+                {
+                    RetailerId = 1,
+                    OrderBasketItem = new OrderBasketItem()
+                    {
+                        RetailerOrderBasketItemId = basketitemid,
+                        OrderBasketId = basketId,
+                        NumberOfUnits = quantity,
+                        TotalPrice = quantity * price
+                    }
+                });
+            }
+            // If quantity = 0, item should be deleted from basket
+            else
+            {
+                _orderApi.DeleteOrderBasketItem(new OrderBasketItemPost()
+                {
+                    RetailerId = 1,
+                    OrderBasketItem = new OrderBasketItem()
+                    {
+                        RetailerOrderBasketItemId = basketitemid,
+                        OrderBasketId = basketId
+                    }
+                });
+            }
+            return OrderBasket(basketId);
         }
     }
 }

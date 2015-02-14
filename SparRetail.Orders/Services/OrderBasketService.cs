@@ -86,5 +86,18 @@ namespace SparRetail.Orders.Services
         {
             return orderBasketRepository.CreateNew(supplierId, retailerId, userId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
         }
+
+
+        public void UpdateOrderBasketItem(OrderBasketItem basketItem, int retailerId)
+        {
+            orderBasketRepository.UpdateOrderBasketItem(basketItem,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+        public void DeleteOrderBasketItem(OrderBasketItem basketItem, int retailerId)
+        {
+            orderBasketRepository.DeleteOrderBasketItem(basketItem,
+               databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
     }
 }

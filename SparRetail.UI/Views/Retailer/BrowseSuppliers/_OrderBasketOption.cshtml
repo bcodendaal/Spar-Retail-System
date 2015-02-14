@@ -80,7 +80,7 @@
 
         $('*[data-btntype="selectbasket"]').click(
            function () {
-               CreateNewBasket($(this).data('supplierid'), $(this).data('orderbasketid'));
+               SelectBasket($(this).data('supplierid'), $(this).data('orderbasketid'));
            }
        );
 
@@ -108,11 +108,11 @@
     function SelectBasket(supplierId, basketId) {
         debugger;
         $.ajax({
-            url: '/RetialerCommon/OrderBasket',
+            url: '/BrowseSuppliers/SelectBasket',
             type: 'POST',
             data: JSON.stringify({
-                supplierId: supplierId,
-                basketId: basketId
+                basketId: basketId,
+                supplierId: supplierId
             }),
             contentType: 'application/json; charset=utf-8',
             success: function (data) {

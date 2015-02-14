@@ -49,5 +49,16 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Get<OrderBasketResponse>("CreateNew", new Dictionary<string, string> { { "supplierId", supplierId.ToString() }, { "retailerId", retailerId.ToString() }, { "userId", userId.ToString() } });
         }
+
+
+        public ResponseModel UpdateOrderBasketItem(OrderBasketItemPost basketItem)
+        {
+            return Post<ResponseModel>("UpdateOrderBasketItem", basketItem);
+        }
+
+        public ResponseModel DeleteOrderBasketItem(OrderBasketItemPost basketItem)
+        {
+            return Post<ResponseModel>("DeleteOrderBasketItem", basketItem);
+        }
     }
 }

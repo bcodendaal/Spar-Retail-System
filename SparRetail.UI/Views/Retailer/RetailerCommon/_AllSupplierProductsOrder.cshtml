@@ -173,7 +173,7 @@
                                 </td>
                                 <td>
                                     <div class="spinner">
-                                        <input type="text" class="spinner-input form-control orderqty-spinner" value="1" maxlength="3">
+                                        <input type="text" id="@product.ProductId" class="spinner-input form-control orderqty-spinner" value="1" maxlength="3">
                                         <div class="spinner-buttons spinner-sm-button 	btn-group btn-group-vertical">
                                             <button type="button" class="btn spinner-up blue">
                                                 <i class="fa fa-chevron-up"></i>
@@ -183,7 +183,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-default btn-xs blue"><i class="glyphicon glyphicon-shopping-cart"></i> Add To Order</a>
+                                    <a data-btntype="addtoorder" href="#" data-itemid="@product.ProductId" class="btn btn-default btn-xs blue"><i class="glyphicon glyphicon-shopping-cart"></i> Add To Order</a>
                                 </td>
                             </tr>
                         }
@@ -193,4 +193,6 @@
         </div>
     </div>
 </div>
+
+
 

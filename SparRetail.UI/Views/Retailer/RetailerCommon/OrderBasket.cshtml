@@ -33,14 +33,15 @@
                                 ProductCode
                             </th>
                             <th>
+                                Added
+                            </th>
+                            <th>
                                 Barcode
                             </th>
                             <th>
                                 NumberOfUnits
                             </th>
-                            <th>
-                                Added
-                            </th>
+
                             <th>
                                 PricePerUnit
                             </th>
@@ -68,11 +69,15 @@
                                         @product.ProductCode
                                     </td>
                                     <td>
-                                        @product.NumberOfUnits
-                                    </td>
-                                    <td>
                                         @product.CreatedOn
                                     </td>
+                                    <td>
+                                        @product.BarCode
+                                    </td>
+                                    <td>
+                                        @product.NumberOfUnits
+                                    </td>
+
                                     <td>
                                         @product.PricePerUnit
                                     </td>
@@ -81,7 +86,7 @@
                                     </td>
                                     <td>
                                         <div class="spinner">
-                                            <input type="text" class="spinner-input form-control orderqty-spinner" value="@product.NumberOfUnits" maxlength="3">
+                                            <input type="text" id="@product.RetailerOrderBasketItemId" class="spinner-input form-control orderqty-spinner" value="@product.NumberOfUnits" maxlength="3">
                                             <div class="spinner-buttons spinner-sm-button 	btn-group btn-group-vertical">
                                                 <button type="button" class="btn spinner-up blue">
                                                     <i class="fa fa-chevron-up"></i>
@@ -91,7 +96,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <a href="#" class="btn btn-default btn-xs blue"><i class="glyphicon glyphicon-shopping-cart"></i>Update</a>
+                                        <a href="#" data-btntype="updatebasket" data-itemid="@product.RetailerOrderBasketItemId" class="btn btn-default btn-xs blue" data-><i class="glyphicon glyphicon-shopping-cart"></i>Update</a>
                                     </td>
                                 </tr>
                             }
@@ -110,3 +115,19 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+    $(document).ready(function() {
+        $('*[data-btntype="updatebasket"]').click(function() {
+            LoadOrderBaskets(
+                @Model.OrderBasket.SupplierId,
+                @Model.OrderBasket.OrderBasketId,
+                $(this).data('itemid'),
+                $('#' + $(this).data('itemid') + '').val()
+            );
+        });
+    });
+
+</script>

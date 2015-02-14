@@ -67,5 +67,17 @@ namespace SparRetail.UI.Controllers.Retailer
             };
             return PartialView("~/Views/Retailer/BrowseSuppliers/_AddProductsToBasket.cshtml", viewmodel);
         }
+
+        public ActionResult SelectBasket(int basketId, int supplierId)
+        {
+
+            var viewmodel = new AddProductsToBasketViewModel()
+            {
+                BasketId = basketId,
+                SupplierId = supplierId,
+                RetailerId = 1
+            };
+            return PartialView("~/Views/Retailer/BrowseSuppliers/_AddProductsToBasket.cshtml", viewmodel);
+        }
     }
 }

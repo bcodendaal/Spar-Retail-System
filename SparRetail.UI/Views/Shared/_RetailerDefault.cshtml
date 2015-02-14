@@ -420,11 +420,25 @@ Purchase: http://wrapbootstrap.com
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
-                        <a href="@(Url.Action("Index", "Index"))">
-                        <i class="menu-icon glyphicon glyphicon-home"></i>
-                        <span class="menu-text"> Order </span>
+                    <li class="">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-shopping-cart"></i>
+                            <span class="menu-text"> Orders </span>
+                            <i class="menu-expand"></i>
                         </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="#">
+                                    <span class="menu-text">Open Orders Baskets</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="menu-text">Order History</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 
