@@ -1,0 +1,14 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSuppliers.AddProductsToBasketViewModel
+
+@Html.Action("AllProductsOrder", "RetailerCommon", new { supplierId = Model.SupplierId })
+
+<div id="dvBasketProducts">
+    @Html.Action("OrderBasket", "RetailerCommon", new { basketId = Model.BasketId })
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#dvMySuppliers').slideUp();
+    });
+
+</script>

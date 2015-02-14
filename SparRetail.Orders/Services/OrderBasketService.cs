@@ -19,9 +19,9 @@ namespace SparRetail.Orders.Services
         protected readonly ISupplierService supplierService;
         protected readonly IRetailerService retailerService;
         protected readonly ILogger logger;
-        
 
-        private const string TagGroup = "OrderBasketService";        
+
+        private const string TagGroup = "OrderBasketService";
 
         public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, ILogger logger)
         {
@@ -36,7 +36,7 @@ namespace SparRetail.Orders.Services
         public List<OrderBasket> AllForRetailerSupplier(int retailerId, int supplierId)
         {
             var baskets = orderBasketRepository.AllForRetailerSupplier(retailerId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId), supplierId);
-            
+
             if (baskets != null && baskets.Any())
             {
                 baskets.ForEach(x =>
@@ -52,12 +52,12 @@ namespace SparRetail.Orders.Services
         public List<OrderBasket> AllForRetailer(int retailerId)
         {
             var baskets = orderBasketRepository.AllForRetailer(retailerId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
-            if(baskets != null && baskets.Any())
+            if (baskets != null && baskets.Any())
             {
-                baskets.ForEach(x => 
+                baskets.ForEach(x =>
                 {
                     x.Retailer = retailerService.GetById(x.RetailerId);
-                    x.Supplier = supplierService.GetById(x.SupplierId);                    
+                    x.Supplier = supplierService.GetById(x.SupplierId);
                 });
             }
 
@@ -80,6 +80,11 @@ namespace SparRetail.Orders.Services
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
         {
             orderBasketRepository.FinaliseOrder(orderBasketId, orderDate, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+        public OrderBasket CreateNew(int supplierId, int retailerId, int userId)
+        {
+            return orderBasketRepository.CreateNew(supplierId, retailerId, userId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
         }
     }
 }

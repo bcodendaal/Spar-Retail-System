@@ -12,7 +12,7 @@ using System.Web.Http;
 
 namespace SparRetail.Api.Controllers
 {
-    public class OrderController : ApiController,  IOrderApi
+    public class OrderController : ApiController, IOrderApi
     {
         protected readonly IOrderBasketService orderBasketService;
         protected readonly ILogger logger;
@@ -72,7 +72,28 @@ namespace SparRetail.Api.Controllers
                 logger.Error(TagGroup, "FinaliseOrder", ex);
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
             }
-            
+
+        }
+
+        [HttpGet]
+        public OrderBasketResponse CreateNew(int supplierId, int retailerId, int userId)
+        {
+            try
+            {
+                return new OrderBasketResponse()
+                {
+                    OrderBasket = orderBasketService.CreateNew(supplierId, retailerId, 1),
+                    IsCallSuccess = true,
+                    IsCommandSuccess = true,
+                    Message = "Created new Order Basket"
+                };
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "CreateNew", ex);
+                return new OrderBasketResponse { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString(), OrderBasket = new OrderBasket() };
+            }
         }
     }
 }
