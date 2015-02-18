@@ -38,6 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Encryption">
+      <HintPath>..\packages\Encryption\Encryption.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -100,6 +109,10 @@
     <ProjectReference Include="..\SparRetail.Api.Controllers\SparRetail.Api.Controllers.csproj">
       <Project>{af8f8c96-8ef6-4d1c-ba32-0bb442d33a01}</Project>
       <Name>SparRetail.Api.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Core\SparRetail.Core.csproj">
+      <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
+      <Name>SparRetail.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

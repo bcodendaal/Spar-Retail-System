@@ -1,0 +1,34 @@
+﻿body {
+}
+
+/*      Orders      */
+.orderqty-spinner {
+    width: 40px;
+    padding: 0px 0px 0px 24px !important;
+    height: 22px;
+}
+
+.spinner-sm-button > button {
+    position: relative !important;
+    width: 20px !important;
+    padding-top: 0px !important;
+    padding-right: 9px !important;
+    padding-left: 9px !important;
+    font-size: 10px !important;
+    padding: 4px 0 !important;
+    height: 11px !important;
+}
+
+/******************** Shared  ***********************/
+
+.navbar-brand .typcn:before {
+    font-size: 45px;
+    margin: 10px 0px 0px 0px;
+}
+
+.navbar-brand > span {
+    position: absolute;
+    margin: 15px 0px 0px -2px;
+    font-size: 16px;
+    font-weight: 600;
+}

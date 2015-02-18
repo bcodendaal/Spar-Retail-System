@@ -1,0 +1,62 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSuppliers.AddProductsToBasketViewModel
+
+@Html.Action("AllProductsOrder", "RetailerCommon", new { supplierId = Model.SupplierId })
+
+<div id="dvBasketProducts">
+    @Html.Action("OrderBasket", "RetailerCommon", new { basketId = Model.BasketId })
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#dvMySuppliers').slideUp();
+        
+        
+        $('*[data-btntype="addtoorder"]').click(function() {
+            AddToOrder(
+                $(this).data('itemid'),
+                $('#'+$(this).data('itemid')+'').val()
+            );
+        });
+    });
+   
+    function AddToOrder(itemId, quantity) {
+        $.ajax({
+            url: '/RetailerCommon/AddItemToBasket',
+            type: 'POST',
+            data: JSON.stringify({
+                basketId: @Model.BasketId,
+                supplierid: @Model.SupplierId,
+                basketitemid: itemId,
+                quantity: quantity
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function(data) {
+                $('#dvBasketProducts').html(data);
+            },
+            error: function() {
+                alert("error");
+            }
+        });
+    }
+    
+    
+    function LoadOrderBaskets(supplierid, basketId, itemId, quantity) {
+        $.ajax({
+            url: '/RetailerCommon/UpdateBasketItemQuantity',
+            type: 'POST',
+            data: JSON.stringify({
+                basketId: basketId,
+                supplierid: supplierid,
+                basketitemid: itemId,
+                quantity: quantity
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $('#dvBasketProducts').html(data);
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    }
+</script>

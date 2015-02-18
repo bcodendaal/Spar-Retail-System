@@ -1,4 +1,6 @@
-﻿using SparRetail.Models;
+﻿using SparRetail.Interop;
+using SparRetail.Models;
+using SparRetail.Suppliers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +11,25 @@ using System.Web.Http;
 
 namespace SparRetail.Api.Controllers
 {
-    public class SupplierController : ApiController
+    public class SupplierController : ApiController, ISupplierApi
     {
+        protected readonly ISupplierService supplierService;
+
+        public SupplierController(ISupplierService supplierService)
+        {
+            this.supplierService = supplierService;
+        }
+
+        [HttpGet]
         public string Test()
         {
             return "Test works";
         }
 
         [HttpGet]
-        public Supplier All()
+        public List<Supplier> All()
         {
-            return new Supplier();
+            return supplierService.All();
         }
     }
 }

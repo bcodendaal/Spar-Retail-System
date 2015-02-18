@@ -1,0 +1,127 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSuppliers.OrderBasketOptionsViewModel
+
+<div class="widget">
+
+    <div class="widget-header bg-palegreen">
+        <i class="widget-icon fa fa-barcode"></i>
+        <span class="widget-caption">Current Open Orders</span>
+        <div class="widget-buttons">
+            <a href="#" data-toggle="config">
+                <i class="fa fa-cog"></i>
+            </a>
+            <a href="#" data-toggle="maximize">
+                <i class="fa fa-expand"></i>
+            </a>
+            <a href="#" data-toggle="collapse">
+                <i class="fa fa-minus"></i>
+            </a>
+        </div><!--Widget Buttons-->
+    </div>
+    <div class="widget-body">
+        <div class="table-scrollable">
+            <table class="table table-bordered table-striped table-condensed flip-content table-hover">
+                <thead class="flip-content bordered-palegreen">
+                    <tr>
+                        <th>
+                            Supplier
+                        </th>
+                        <th>
+                            UserId
+                        </th>
+                        <th>
+                            Created On
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.OrderBaskets.Any())
+                    {
+                        foreach (var basket in Model.OrderBaskets)
+                        {
+                            <tr>
+                                <td>
+                                    @basket.Supplier.SupplierName | @basket.Supplier.SupplierCode
+                                </td>
+                                <td>
+                                    @basket.UserId
+                                </td>
+                                <td>
+                                    @basket.CreatedOn
+                                </td>
+                                <td>
+                                    <a style="float:right" data-btntype="selectbasket" data-supplierid="@Model.SupplierId" data-orderbasketid="@basket.OrderBasketId" href="#" class="btn btn-default btn-xs blue"><i class=""></i> Select </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+                                No current Orders
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="#" id="btnCreateNewBasket" data-supplierid="@Model.SupplierId" data-retailerid="@Model.RetailerId" class="btn btn-default btn-xs blue" style="float:right"><i class=""></i> Create New</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#btnCreateNewBasket').click(
+            function () {
+                CreateNewBasket($(this).data('supplierid'));
+            }
+        );
+
+        $('*[data-btntype="selectbasket"]').click(
+           function () {
+               SelectBasket($(this).data('supplierid'), $(this).data('orderbasketid'));
+           }
+       );
+
+    })
+
+    function CreateNewBasket(supplierId) {
+        debugger;
+        $.ajax({
+            url: '/BrowseSuppliers/CreateNewBasket',
+            type: 'POST',
+            data: JSON.stringify({
+                supplierId: supplierId
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $('#results').html(data);
+                $('#dvMySuppliers').slideUp();
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    }
+
+    function SelectBasket(supplierId, basketId) {
+        debugger;
+        $.ajax({
+            url: '/BrowseSuppliers/SelectBasket',
+            type: 'POST',
+            data: JSON.stringify({
+                basketId: basketId,
+                supplierId: supplierId
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $('#results').html(data);
+                $('#dvMySuppliers').slideUp();
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    }
+</script>

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -51,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoCRegistry.cs" />
+    <Compile Include="OrderController.cs" />
+    <Compile Include="ProductController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierController.cs" />
   </ItemGroup>
@@ -58,12 +64,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\SparRetail.Core\SparRetail.Core.csproj">
+      <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
+      <Name>SparRetail.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Interop\SparRetail.Interop.csproj">
+      <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
+      <Name>SparRetail.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
       <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
       <Name>SparRetail.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Orders\SparRetail.Orders.csproj">
+      <Project>{3ccf1977-5317-49ef-9f7a-67b8c14ab65f}</Project>
+      <Name>SparRetail.Orders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Products\SparRetail.Products.csproj">
+      <Project>{3efa8b6c-03f3-44d3-b008-526d4e2a76e2}</Project>
+      <Name>SparRetail.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Suppliers\SparRetail.Suppliers.csproj">
+      <Project>{45673ce3-9b69-4fa8-ace2-5a401a0b3467}</Project>
+      <Name>SparRetail.Suppliers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
