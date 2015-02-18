@@ -365,6 +365,8 @@
     <Content Include="Views\Retailer\BrowseSuppliers\_OrderBasketOption.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\_AddProductsToBasket.cshtml" />
     <Content Include="Views\Retailer\RetailerCommon\OrderBasket.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\_OrderBaskets.cshtml" />
+    <Content Include="Views\Retailer\RetailerOpenOrder\OpenBaskets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">
