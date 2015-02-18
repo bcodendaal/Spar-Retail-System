@@ -61,6 +61,26 @@ namespace SparRetail.UI.Controllers.Retailer
             return PartialView(@"~\Views\Retailer\RetailerCommon\OrderBasket.cshtml", viewmodel);
         }
 
+        public ActionResult AllOpenOrderBaskets()
+        {
+            var orderBaskets = _orderApi.AllOrderBasketForRetailer(1);
+            var viewmodel = new OrderBasketsViewModel()
+            {
+                OrderBaskets = new List<OrderBasketViewModel>()
+            };
+
+            foreach (var orderbasket in orderBaskets)
+            {
+                viewmodel.OrderBaskets.Add(new OrderBasketViewModel()
+                {
+                    OrderBasket = orderbasket,
+                    Products = _orderApi.AllItemsForOrderBasket(orderbasket.OrderBasketId, 1)
+                });
+            }
+
+            return PartialView(@"~\Views\Retailer\RetailerCommon\_OrderBaskets.cshtml", viewmodel);
+        }
+
         public ActionResult AddItemToBasket(int basketId, int basketItemId, int supplierId, int quantity)
         {
             var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);

@@ -18,3 +18,17 @@
     padding: 4px 0 !important;
     height: 11px !important;
 }
+
+/******************** Shared  ***********************/
+
+.navbar-brand .typcn:before {
+    font-size: 45px;
+    margin: 10px 0px 0px 0px;
+}
+
+.navbar-brand > span {
+    position: absolute;
+    margin: 15px 0px 0px -2px;
+    font-size: 16px;
+    font-weight: 600;
+}

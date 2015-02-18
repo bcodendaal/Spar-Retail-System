@@ -43,6 +43,7 @@
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\AddProductsToBasketViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderBasketOptionsViewModel.cs" />
     <Compile Include="ViewModels\Retailer\Common\AllSupplierViewModel.cs" />
+    <Compile Include="ViewModels\Retailer\Common\OrderBasketsViewModel.cs" />
     <Compile Include="ViewModels\Retailer\Common\OrderBasketViewModel.cs" />
     <Compile Include="ViewModels\Retailer\Common\SupplierProductViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderFromSupplierViewModel.cs" />

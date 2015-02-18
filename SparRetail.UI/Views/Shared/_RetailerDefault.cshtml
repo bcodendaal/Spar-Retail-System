@@ -55,9 +55,10 @@ Purchase: http://wrapbootstrap.com
                 <!-- Navbar Barnd -->
                 <div class="navbar-header pull-left">
                     <a href="#" class="navbar-brand">
-                        <small>
+                        <i class="typcn typcn-cross"></i>&nbsp;<span>Spar Retail Demo</span>
+                        @*<small>
                             <img src="/assets/img/logo.png" alt="" />
-                        </small>
+                        </small>*@
                     </a>
                 </div>
                 <!-- /Navbar Barnd -->
@@ -429,7 +430,7 @@ Purchase: http://wrapbootstrap.com
 
                         <ul class="submenu">
                             <li>
-                                <a href="#">
+                                <a href="@(Url.Action("OpenBaskets", "OpenOrderBaskets"))">
                                     <span class="menu-text">Open Orders Baskets</span>
                                 </a>
                             </li>
