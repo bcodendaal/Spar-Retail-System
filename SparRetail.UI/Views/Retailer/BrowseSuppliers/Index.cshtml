@@ -25,7 +25,7 @@
 
     function LoadOrderBaskets(supplierid) {
         $.ajax({
-            url: '/BrowseSuppliers/LoadOrderBasketOptions',
+            url:'BrowseSuppliers/LoadOrderBasketOptions',
             type: 'POST',
             data: JSON.stringify({
                 supplierId: supplierid
@@ -46,7 +46,7 @@
 
         debugger;
         $.ajax({
-            url: '/RetailerCommon/AllProductsOrder',
+            url: 'RetailerCommon/AllProductsOrder',
             type: 'POST',
             data: JSON.stringify({
                 supplierId: supplierid

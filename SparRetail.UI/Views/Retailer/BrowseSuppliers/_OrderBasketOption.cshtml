@@ -89,7 +89,7 @@
     function CreateNewBasket(supplierId) {
         debugger;
         $.ajax({
-            url: '/BrowseSuppliers/CreateNewBasket',
+            url: 'BrowseSuppliers/CreateNewBasket',
             type: 'POST',
             data: JSON.stringify({
                 supplierId: supplierId
@@ -108,7 +108,7 @@
     function SelectBasket(supplierId, basketId) {
         debugger;
         $.ajax({
-            url: '/BrowseSuppliers/SelectBasket',
+            url: 'BrowseSuppliers/SelectBasket',
             type: 'POST',
             data: JSON.stringify({
                 basketId: basketId,

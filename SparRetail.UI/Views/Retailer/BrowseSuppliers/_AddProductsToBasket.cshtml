@@ -21,7 +21,7 @@
    
     function AddToOrder(itemId, quantity) {
         $.ajax({
-            url: '/RetailerCommon/AddItemToBasket',
+            url: 'RetailerCommon/AddItemToBasket',
             type: 'POST',
             data: JSON.stringify({
                 basketId: @Model.BasketId,
@@ -42,7 +42,7 @@
     
     function LoadOrderBaskets(supplierid, basketId, itemId, quantity) {
         $.ajax({
-            url: '/RetailerCommon/UpdateBasketItemQuantity',
+            url: 'RetailerCommon/UpdateBasketItemQuantity',
             type: 'POST',
             data: JSON.stringify({
                 basketId: basketId,
