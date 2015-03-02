@@ -58,6 +58,10 @@
       <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
       <Name>SparRetail.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
+      <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
+      <Name>SparRetail.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,7 @@ namespace SparRetail.Api.Controllers
             Suppliers.IoCRegistry.Configure(builder);
             Products.IoCRegistry.Configure(builder);
             Orders.IoCRegistry.Configure(builder);
+            Retailers.IoCRegistry.Configure(builder);
         }
 
         public static Assembly GetAssembly()

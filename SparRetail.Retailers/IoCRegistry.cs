@@ -15,6 +15,8 @@ namespace SparRetail.Retailers
         {
             builder.RegisterType<RetailerRepository>().As<IRetailerRepository>().SingleInstance();
             builder.RegisterType<RetailerService>().As<IRetailerService>().SingleInstance();
+            DatabaseConfigAdapter.IoCRegistry.Configure(builder);
+
         }
     }
 }
