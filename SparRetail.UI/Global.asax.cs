@@ -26,7 +26,12 @@ namespace Spar.Retail.UI
 
             IoC.BootStrap(builder =>
             {
-                SparRetail.UI.Controllers.IoCRegistry.Configure(builder);
+                var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
+                builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
+                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
+                builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
+                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
                 builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
                 //builder.RegisterControllers(typeof(MvcApplication).Assembly);
                 
