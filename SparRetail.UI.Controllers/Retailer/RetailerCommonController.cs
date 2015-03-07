@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Spar.Retail.UI.Models.ViewModels.Retailer.Common;
 using SparRetail.Models;
 using SparRetail.Models.Api;
+using Spar.Retail.UI.Models.Common;
 
 namespace SparRetail.UI.Controllers.Retailer
 {
@@ -37,6 +38,8 @@ namespace SparRetail.UI.Controllers.Retailer
             return PartialView("~/Views/Retailer/RetailerCommon/_AllSuppliersOrder.cshtml", viewmodel);
         }
 
+        
+
         public ActionResult AllProductsOrder(int supplierId)
         {
 
@@ -48,6 +51,29 @@ namespace SparRetail.UI.Controllers.Retailer
             };
 
             return PartialView(@"~\Views\Retailer\RetailerCommon\_AllSupplierProductsOrder.cshtml", viewmodel);
+        }
+
+        public ActionResult AllProductsOrderDataTable(DataTableAjaxFilter param, int supplierId)
+        {
+            var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
+            var allProducts = _productApi.GetAllForSupplier(supplier);
+            IEnumerable<Product> filteredProducts = allProducts;
+
+            var displayedCompanies = filteredProducts
+                                .Skip(param.iDisplayLength)
+                                .Take(param.iDisplayLength);
+
+            var result = from c in displayedCompanies
+                         select new[] { Convert.ToString(c.ProductCode), c.ProductName,
+                          c.ProductDescription};
+            return Json(new
+            {
+                sEcho = param.sEcho,
+                iTotalRecords = allProducts.Count(),
+                iTotalDisplayRecords = filteredProducts.Count(),
+                aaData = result
+            },
+                                JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult OrderBasket(int basketId)
