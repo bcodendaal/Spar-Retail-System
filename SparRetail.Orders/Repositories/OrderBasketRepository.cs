@@ -81,5 +81,11 @@ namespace SparRetail.Orders.Repositories
                 @OrderBasketItemId = basketItem.RetailerOrderBasketItemId
             }, retailerDbKey);
         }
+
+
+        public List<Order> AllOrderForSupplier(int supplierId, string supplierDbKey)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

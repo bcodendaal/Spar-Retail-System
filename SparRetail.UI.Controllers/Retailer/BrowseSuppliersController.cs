@@ -11,21 +11,27 @@ using Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSuppliers;
 using Spar.Retail.UI.Models.ViewModels.Retailer.Common;
 using SparRetail.Models;
 using SparRetail.Models.Api;
+using SparRetail.UI.Controllers.Providers;
+using SparRetail.UI.Controllers.Filters;
+using SparRetail.Models.Enums;
 
 
 namespace SparRetail.UI.Controllers.Retailer
 {
+    [TenantTypeFilter(TenantType.Retailer, Order = 10)]
     public class BrowseSuppliersController : Controller
     {
         private ISupplierApi _supplierApi;
         private IProductApi _productApi;
         private IOrderApi _orderApi;
+        private IProfileProvider _profileProvider;
 
-        public BrowseSuppliersController(ISupplierApi supplierApi, IProductApi productApi, IOrderApi orderApi)
+        public BrowseSuppliersController(ISupplierApi supplierApi, IProductApi productApi, IOrderApi orderApi, IProfileProvider profileProvider)
         {
             _supplierApi = supplierApi;
             _productApi = productApi;
             _orderApi = orderApi;
+            _profileProvider = profileProvider;
         }
 
         public ActionResult Index()
@@ -37,14 +43,14 @@ namespace SparRetail.UI.Controllers.Retailer
         {
 
             //check if any orders exists
-            var orderbaskets = _orderApi.AllOrderBasketForRetailerSupplier(1, supplierId);
+            var orderbaskets = _orderApi.AllOrderBasketForRetailerSupplier(_profileProvider.GetEntityId(), supplierId);
             if (orderbaskets.Any())
             {
                 //if any orders exists user must choose one or choose to create a new order
                 var viewmodel = new OrderBasketOptionsViewModel()
                 {
                     OrderBaskets = orderbaskets,
-                    RetailerId = 1,
+                    RetailerId = _profileProvider.GetEntityId(),
                     SupplierId = supplierId
                 };
                 return PartialView("~/Views/Retailer/BrowseSuppliers/_OrderBasketOption.cshtml", viewmodel);
@@ -58,12 +64,12 @@ namespace SparRetail.UI.Controllers.Retailer
 
         public ActionResult CreateNewBasket(int supplierId)
         {
-            var response = _orderApi.CreateNew(supplierId, 1, 1);
+            var response = _orderApi.CreateNew(supplierId, _profileProvider.GetEntityId(), 1);
             var viewmodel = new AddProductsToBasketViewModel()
             {
                 BasketId = response.OrderBasket.OrderBasketId,
                 SupplierId = supplierId,
-                RetailerId = 1
+                RetailerId = _profileProvider.GetEntityId()
             };
             return PartialView("~/Views/Retailer/BrowseSuppliers/_AddProductsToBasket.cshtml", viewmodel);
         }
@@ -75,7 +81,7 @@ namespace SparRetail.UI.Controllers.Retailer
             {
                 BasketId = basketId,
                 SupplierId = supplierId,
-                RetailerId = 1
+                RetailerId = _profileProvider.GetEntityId()
             };
             return PartialView("~/Views/Retailer/BrowseSuppliers/_AddProductsToBasket.cshtml", viewmodel);
         }

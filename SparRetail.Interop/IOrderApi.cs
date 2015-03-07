@@ -18,6 +18,7 @@ namespace SparRetail.Interop
         List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketItem, int retailerId);
         ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost);
         OrderBasketResponse CreateNew(int supplierId, int retailerId, int userId);
+        List<Order> AllOrderForSupplier(int supplierId);
 
     }
 }

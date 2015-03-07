@@ -28,5 +28,11 @@ namespace SparRetail.Suppliers
         {
             return QueryOne<Supplier>("usp_SelectSupplierById", new { @SupplierId = supplierId }, CommonConfigKeys.dbKeyMaster);
         }
+
+
+        public Supplier Create(Supplier supplier)
+        {
+            return QueryOne<Supplier>("usp_InsertSupplier", new { @SupplierName = supplier.SupplierName, @DatabaseConfigKey = supplier.DatabaseConfigKey }, CommonConfigKeys.dbKeyMaster);
+        }
     }
 }

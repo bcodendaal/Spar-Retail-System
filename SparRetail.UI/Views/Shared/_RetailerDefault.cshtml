@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -300,13 +301,13 @@ Purchase: http://wrapbootstrap.com
                                         <img src="/assets/img/avatars/adam-jansen.jpg">
                                     </div>
                                     <section>
-                                        <h2><span class="profile"><span>David Stevenson</span></span></h2>
+                                        <h2><span class="profile"><span>@User.Identity.Name</span></span></h2>
                                     </section>
                                 </a>
                                 <!--Login Area Dropdown-->
                                 <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                    <li class="username"><a>David Stevenson</a></li>
-                                    <li class="email"><a>David.Stevenson@live.com</a></li>
+                                    <li class="username"><a>@User.Identity.Name</a></li>
+                                    <li class="email"><a>@User.Identity.Name</a></li>
                                     <!--Avatar Area-->
                                     <li>
                                         <div class="avatar-area">
@@ -318,6 +319,14 @@ Purchase: http://wrapbootstrap.com
                                     <li class="edit">
                                         @*<a href="profile.html" class="pull-left">Profile</a>*@
                                         <a href="#" class="pull-right">Setting</a>
+                                        @if (Request.IsAuthenticated)
+                                        {
+                                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                            {
+                                                @Html.AntiForgeryToken()                                            
+                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                            }
+                                        }
                                     </li>
                                     <!--Theme Selector Area-->
                                     <li class="theme-area">
@@ -494,6 +503,7 @@ Purchase: http://wrapbootstrap.com
     <!--Beyond Scripts-->
     @Scripts.Render("~/bundles/beyond")
 
+    @RenderSection("Scripts", required: false)
 </body>
 <!--  /Body -->
 </html>

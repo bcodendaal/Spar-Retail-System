@@ -26,13 +26,11 @@ namespace Spar.Retail.UI
 
             IoC.BootStrap(builder =>
             {
-                var apiconfig = new ApiBrokerConfig() { EndPoint = "http://localhost:6837/api/" };
-                builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
-                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
-                builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
-                builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
-                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                SparRetail.UI.Controllers.IoCRegistry.Configure(builder);
                 builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
+                //builder.RegisterControllers(typeof(MvcApplication).Assembly);
+                
+               // builder.RegisterFilterProvider();
             });
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));

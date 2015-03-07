@@ -1,0 +1,19 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.Common.NewRetailerViewModel
+@{
+    ViewBag.Title = "Retailer";
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+
+<h2>Retailer</h2>
+
+@using (var form = Html.BeginForm("Retailer", "New"))
+{    
+    <div>Your Retailer Name</div>
+    <div class="loginbox-textbox">
+        @Html.TextBoxFor(t => t.RetailerName)
+    </div>
+    
+    <div class="loginbox-submit">
+        <input type="submit" value="Continue" />
+    </div>    
+}

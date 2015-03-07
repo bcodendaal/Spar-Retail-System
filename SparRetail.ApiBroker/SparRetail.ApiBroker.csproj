@@ -48,6 +48,7 @@
     <Compile Include="ApiBrokerConfig.cs" />
     <Compile Include="Brokers\OrderBroker.cs" />
     <Compile Include="Brokers\ProductBroker.cs" />
+    <Compile Include="Brokers\RetailerBroker.cs" />
     <Compile Include="Brokers\SupplierBroker.cs" />
     <Compile Include="IApiBrokerConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

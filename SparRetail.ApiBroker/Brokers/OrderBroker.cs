@@ -60,5 +60,11 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Post<ResponseModel>("DeleteOrderBasketItem", basketItem);
         }
+
+
+        public List<Order> AllOrderForSupplier(int supplierId)
+        {
+            return Get<List<Order>>("AllOrderForSupplier", new Dictionary<string, string> { { "supplierId", supplierId.ToString() } });
+        }
     }
 }
