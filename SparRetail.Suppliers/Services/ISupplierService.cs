@@ -11,6 +11,7 @@ namespace SparRetail.Suppliers
     {
         List<Supplier> All();
         Supplier GetById(int supplierId);
+        CommandResponse<Supplier> Create(Supplier supplier);
         
     }
 }

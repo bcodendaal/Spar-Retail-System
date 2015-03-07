@@ -15,13 +15,15 @@ namespace SparRetail.Api.Controllers
     public class OrderController : ApiController, IOrderApi
     {
         protected readonly IOrderBasketService orderBasketService;
+        protected readonly IOrderService orderService;
         protected readonly ILogger logger;
 
         private const string TagGroup = "OrderController";
 
-        public OrderController(IOrderBasketService orderBasketService, ILogger logger)
+        public OrderController(IOrderBasketService orderBasketService, IOrderService orderService, ILogger logger)
         {
             this.orderBasketService = orderBasketService;
+            this.orderService = orderService;
             this.logger = logger;
         }
 
@@ -123,6 +125,20 @@ namespace SparRetail.Api.Controllers
             {
                 logger.Error(TagGroup, "AddOrderBasketItem", ex);
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
+            }
+        }
+
+
+        public List<Order> AllOrderForSupplier(int supplierId)
+        {
+            try
+            {
+                return orderService.AllOrderForSupplier(supplierId);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "AllOrderForSupplier", ex);
+                return new List<Order>();
             }
         }
     }

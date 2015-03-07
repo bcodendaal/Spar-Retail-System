@@ -1,5 +1,6 @@
 ﻿using SparRetail.Interop;
 using SparRetail.Models;
+using SparRetail.Models.Api;
 using SparRetail.Suppliers;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,21 @@ namespace SparRetail.Api.Controllers
         public List<Supplier> All()
         {
             return supplierService.All();
+        }
+
+
+        public CreateSupplierResponse Create(Supplier supplier)
+        {
+            try
+            {
+                var result = supplierService.Create(supplier);
+                return new CreateSupplierResponse { IsCommandSuccess = result.IsSuccess, Message = result.Message, IsCallSuccess = true, SupplierId = result.Model.SupplierId};
+            }
+            catch (Exception ex)
+            {
+                return new CreateSupplierResponse { IsCallSuccess = true, Message = ex.ToString(), IsCommandSuccess = false };
+            }
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SparRetail.Core.Cache;
 using SparRetail.DatabaseConfigAdapter.Repositories;
+using SparRetail.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,11 @@ namespace SparRetail.DatabaseConfigAdapter
         public string GetSupplierDatabaseConfigKey(int supplierId)
         {
             return cacheBroker.TryGet<string>(string.Format(CacheKeys.SupplierConfigKey, supplierId.ToString()), () => databaseConfigAdapterRepository.GetSupplierDatabaseConfigKey(supplierId), Volatility.Low);
+        }
+
+        public string GetLatestDatabaseConfig(DatabaseType type)
+        {
+            return databaseConfigAdapterRepository.GetLatestDatabaseConfig(type);
         }
     }
 }

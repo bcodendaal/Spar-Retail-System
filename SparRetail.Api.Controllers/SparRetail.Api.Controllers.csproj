@@ -43,6 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
@@ -54,10 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\EnforceHttpsHandler.cs" />
     <Compile Include="IoCRegistry.cs" />
     <Compile Include="OrderController.cs" />
     <Compile Include="ProductController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registery.cs" />
+    <Compile Include="RetailerController.cs" />
     <Compile Include="SupplierController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +87,10 @@
     <ProjectReference Include="..\SparRetail.Products\SparRetail.Products.csproj">
       <Project>{3efa8b6c-03f3-44d3-b008-526d4e2a76e2}</Project>
       <Name>SparRetail.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Retailers\SparRetail.Retailers.csproj">
+      <Project>{e258dbe3-1cea-49b5-8072-d340dbfb6328}</Project>
+      <Name>SparRetail.Retailers</Name>
     </ProjectReference>
     <ProjectReference Include="..\SparRetail.Suppliers\SparRetail.Suppliers.csproj">
       <Project>{45673ce3-9b69-4fa8-ace2-5a401a0b3467}</Project>

@@ -1,5 +1,6 @@
 ﻿using SparRetail.Interop;
 using SparRetail.Models;
+using SparRetail.Models.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,12 @@ namespace SparRetail.ApiBroker.Brokers
         public List<Supplier> All()
         {
             return Get<List<Supplier>>("All");
+        }
+
+
+        public CreateSupplierResponse Create(Supplier supplier)
+        {
+            return Post<CreateSupplierResponse>("Create", supplier);
         }
     }
 }

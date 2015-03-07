@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IOrderApi.cs" />
     <Compile Include="IProductApi.cs" />
+    <Compile Include="IRetailerApi.cs" />
     <Compile Include="ISupplierApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

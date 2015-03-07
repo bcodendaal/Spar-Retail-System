@@ -10,5 +10,6 @@ namespace SparRetail.Retailers.Repositories
     public interface IRetailerRepository
     {
         Retailer GetById(int retailerId);
+        Retailer Create(Retailer retailer);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SparRetail.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace SparRetail.DatabaseConfigAdapter.Repositories
     {
         string GetRetailerDatabaseConfigKey(int retailerId);
         string GetSupplierDatabaseConfigKey(int supplierId);
+        string GetLatestDatabaseConfig(DatabaseType type);
     }
 }
