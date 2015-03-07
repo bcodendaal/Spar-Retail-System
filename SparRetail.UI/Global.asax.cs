@@ -33,6 +33,9 @@ namespace Spar.Retail.UI
                 builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
                 builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
                 builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
+                //builder.RegisterControllers(typeof(MvcApplication).Assembly);
+                
+               // builder.RegisterFilterProvider();
             });
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));

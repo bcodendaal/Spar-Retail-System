@@ -6,6 +6,7 @@ using SparRetail.Models.Api;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,35 @@ namespace SparRetail.Api.Tests
             Assert.NotNull(result);
             Assert.IsTrue(result.IsCallSuccess);
             Assert.IsTrue(result.IsCommandSuccess);
+        }
+
+        [TestCase]
+        public void add_retailer_successfully()
+        {
+            RetailerBroker broker = new RetailerBroker(new ApiBrokerConfig { EndPoint = ConfigurationManager.AppSettings["apiEndpoint"] });
+            var result = broker.Create(new Retailer 
+            {
+                RetailerCode = "SBC",
+                VatNumber = "0981234156",
+                StoreCode = "SBC1",
+                RetailerName = "Stellenbosch Brewing Company",
+                Email = "info@sbc.co.za",
+                AddressLine1 = "123 Merriman Road",
+                AddressLine2 = "Stellenbosch",
+                AddressLine3 = "",
+                City = "Cape Town",
+                Fax = "021 908 1231",
+                PostalCode = "9088",
+                Province = "Western Cape",
+                Telephone = "021 987 1231"                
+            });
+
+            Debug.WriteLine(result.Message);
+            Assert.NotNull(result);
+            Assert.IsTrue(result.IsCallSuccess);
+            Assert.IsTrue(result.IsCommandSuccess);
+
+
         }
     }
 }

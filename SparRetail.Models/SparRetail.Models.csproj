@@ -39,12 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\CreateRetailerResponse.cs" />
+    <Compile Include="Api\CreateSupplierResponse.cs" />
     <Compile Include="Api\FinaliseOrderPost.cs" />
     <Compile Include="Api\OrderBasketItemPost.cs" />
     <Compile Include="Api\OrderBasketResponse.cs" />
     <Compile Include="Api\ResponseModel.cs" />
     <Compile Include="Api\RetailerIdPost.cs" />
+    <Compile Include="CommandResponse.cs" />
+    <Compile Include="Enums\DatabaseType.cs" />
     <Compile Include="Enums\OrderBasketStatus.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\TenantType.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="OrderBasket.cs" />
     <Compile Include="OrderBasketItem.cs" />
     <Compile Include="Product.cs" />

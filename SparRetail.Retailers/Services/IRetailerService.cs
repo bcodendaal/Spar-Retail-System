@@ -10,5 +10,6 @@ namespace SparRetail.Retailers.Services
     public interface IRetailerService
     {
         Retailer GetById(int retailerId);
+        CommandResponse<Retailer> Create(Retailer retailer);
     }
 }

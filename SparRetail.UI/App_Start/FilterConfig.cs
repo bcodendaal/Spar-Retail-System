@@ -8,6 +8,7 @@ namespace Spar.Retail.UI
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            SparRetail.UI.Controllers.MVCRegistration.RegisterFilters(filters);
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.SupplierCommon.OrderHistoryViewModel
+<h2>OrderHistory</h2>
+@if (Model.Orders != null)
+{
+    foreach (var order in Model.Orders)
+    {
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+
+                <div class="widget-header bg-blueberry">
+                    <i class="widget-icon fa fa-shopping-cart"></i>
+                    <span class="widget-caption">Order: ID: @order.OrderId| Status: @order.OrderStatus | @order.CreatedOn</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="config">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div><!--Widget Buttons-->
+                </div>
+             
+            </div>
+        </div>
+    }
+}

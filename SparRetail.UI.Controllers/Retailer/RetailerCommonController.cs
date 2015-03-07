@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using Spar.Retail.UI.Models.ViewModels.Retailer.Common;
 using SparRetail.Models;
 using SparRetail.Models.Api;
-using Spar.Retail.UI.Models.Common;
+using SparRetail.UI.Controllers.Providers;
 
 namespace SparRetail.UI.Controllers.Retailer
 {
@@ -19,12 +19,13 @@ namespace SparRetail.UI.Controllers.Retailer
         private ISupplierApi _supplierApi;
         private IProductApi _productApi;
         private IOrderApi _orderApi;
-
-        public RetailerCommonController(ISupplierApi supplierApi, IProductApi productApi, IOrderApi orderApi)
+        private IProfileProvider _profileProvider;
+        public RetailerCommonController(ISupplierApi supplierApi, IProductApi productApi, IOrderApi orderApi, IProfileProvider profileProvider)
         {
             _supplierApi = supplierApi;
             _productApi = productApi;
             _orderApi = orderApi;
+            _profileProvider = profileProvider;
         }
 
         public ActionResult AllSuppliersOrder(string retailerId)
@@ -37,8 +38,6 @@ namespace SparRetail.UI.Controllers.Retailer
             };
             return PartialView("~/Views/Retailer/RetailerCommon/_AllSuppliersOrder.cshtml", viewmodel);
         }
-
-        
 
         public ActionResult AllProductsOrder(int supplierId)
         {
@@ -53,35 +52,12 @@ namespace SparRetail.UI.Controllers.Retailer
             return PartialView(@"~\Views\Retailer\RetailerCommon\_AllSupplierProductsOrder.cshtml", viewmodel);
         }
 
-        public ActionResult AllProductsOrderDataTable(DataTableAjaxFilter param, int supplierId)
-        {
-            var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
-            var allProducts = _productApi.GetAllForSupplier(supplier);
-            IEnumerable<Product> filteredProducts = allProducts;
-
-            var displayedCompanies = filteredProducts
-                                .Skip(param.iDisplayLength)
-                                .Take(param.iDisplayLength);
-
-            var result = from c in displayedCompanies
-                         select new[] { Convert.ToString(c.ProductCode), c.ProductName,
-                          c.ProductDescription};
-            return Json(new
-            {
-                sEcho = param.sEcho,
-                iTotalRecords = allProducts.Count(),
-                iTotalDisplayRecords = filteredProducts.Count(),
-                aaData = result
-            },
-                                JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult OrderBasket(int basketId)
         {
             var viewmodel = new OrderBasketViewModel()
             {
-                Products = _orderApi.AllItemsForOrderBasket(basketId, 1),
-                OrderBasket = _orderApi.AllOrderBasketForRetailer(1).FirstOrDefault(x => x.OrderBasketId == basketId)
+                Products = _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()),
+                OrderBasket = _orderApi.AllOrderBasketForRetailer(_profileProvider.GetEntityId()).FirstOrDefault(x => x.OrderBasketId == basketId)
             };
 
             return PartialView(@"~\Views\Retailer\RetailerCommon\OrderBasket.cshtml", viewmodel);
@@ -89,7 +65,7 @@ namespace SparRetail.UI.Controllers.Retailer
 
         public ActionResult AllOpenOrderBaskets()
         {
-            var orderBaskets = _orderApi.AllOrderBasketForRetailer(1);
+            var orderBaskets = _orderApi.AllOrderBasketForRetailer(_profileProvider.GetEntityId());
             var viewmodel = new OrderBasketsViewModel()
             {
                 OrderBaskets = new List<OrderBasketViewModel>()
@@ -100,7 +76,7 @@ namespace SparRetail.UI.Controllers.Retailer
                 viewmodel.OrderBaskets.Add(new OrderBasketViewModel()
                 {
                     OrderBasket = orderbasket,
-                    Products = _orderApi.AllItemsForOrderBasket(orderbasket.OrderBasketId, 1)
+                    Products = _orderApi.AllItemsForOrderBasket(orderbasket.OrderBasketId, _profileProvider.GetEntityId())
                 });
             }
 
@@ -115,7 +91,7 @@ namespace SparRetail.UI.Controllers.Retailer
 
             _orderApi.AddOrderBasketItem(new OrderBasketItemPost()
             {
-                RetailerId = 1,
+                RetailerId = _profileProvider.GetEntityId(),
                 OrderBasketItem = new OrderBasketItem()
                 {
                     OrderBasketId = basketId,
@@ -136,13 +112,13 @@ namespace SparRetail.UI.Controllers.Retailer
         {
             if (quantity != 0)
             {
-                var price = _orderApi.AllItemsForOrderBasket(basketId, 1)
+                var price = _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId())
                     .FirstOrDefault(x => x.RetailerOrderBasketItemId == basketitemid)
                     .PricePerUnit;
 
                 _orderApi.UpdateOrderBasketItem(new OrderBasketItemPost()
                 {
-                    RetailerId = 1,
+                    RetailerId = _profileProvider.GetEntityId(),
                     OrderBasketItem = new OrderBasketItem()
                     {
                         RetailerOrderBasketItemId = basketitemid,
@@ -157,7 +133,7 @@ namespace SparRetail.UI.Controllers.Retailer
             {
                 _orderApi.DeleteOrderBasketItem(new OrderBasketItemPost()
                 {
-                    RetailerId = 1,
+                    RetailerId = _profileProvider.GetEntityId(),
                     OrderBasketItem = new OrderBasketItem()
                     {
                         RetailerOrderBasketItemId = basketitemid,

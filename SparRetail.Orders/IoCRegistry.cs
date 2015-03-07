@@ -16,6 +16,9 @@ namespace SparRetail.Orders
             builder.RegisterType<OrderBasketRepository>().As<IOrderBasketRepository>().SingleInstance();
             builder.RegisterType<OrderBasketService>().As<IOrderBasketService>().SingleInstance();
 
+            builder.RegisterType<OrderService>().As<IOrderService>().SingleInstance();
+            builder.RegisterType<OrderRepository>().As<IOrderRepository>().SingleInstance();
+
             Suppliers.IoCRegistry.Configure(builder);
             Retailers.IoCRegistry.Configure(builder);
             DatabaseConfigAdapter.IoCRegistry.Configure(builder);
