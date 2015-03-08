@@ -1,6 +1,8 @@
-﻿using SparRetail.Core.Logging;
+﻿using NServiceBus;
+using SparRetail.Core.Logging;
 using SparRetail.DatabaseConfigAdapter;
 using SparRetail.Models;
+using SparRetail.Models.Commands;
 using SparRetail.Orders.Repositories;
 using SparRetail.Retailers.Services;
 using SparRetail.Suppliers;
@@ -79,7 +81,18 @@ namespace SparRetail.Orders.Services
 
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
         {
-            orderBasketRepository.FinaliseOrder(orderBasketId, orderDate, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+            BusConfiguration config = new BusConfiguration();
+            config.EndpointName("orderbasket.finalize");            
+            config.UseSerialization<JsonSerializer>();
+            config.UseTransport<RabbitMQTransport>();
+            config.UsePersistence<InMemoryPersistence>();
+
+
+            ISendOnlyBus bus = Bus.CreateSendOnly(config);
+
+            bus.Send<FinalizeOrderCommand>("orderbasket.finalize", (x) => { x.OrderBasketId = orderBasketId; x.RetailerId = retailerId; });
+
+            //orderBasketRepository.FinaliseOrder(orderBasketId, orderDate, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
         }
 
         public OrderBasket CreateNew(int supplierId, int retailerId, int userId)
