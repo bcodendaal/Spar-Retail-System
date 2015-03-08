@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace SparRetail.Api.Controllers
 {
-    public static class Registery
+    public static class Registry
     {
         public static void ConfigureHandlers(HttpConfiguration config)
         {

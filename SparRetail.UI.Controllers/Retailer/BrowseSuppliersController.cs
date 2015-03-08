@@ -85,5 +85,20 @@ namespace SparRetail.UI.Controllers.Retailer
             };
             return PartialView("~/Views/Retailer/BrowseSuppliers/_AddProductsToBasket.cshtml", viewmodel);
         }
+
+        public ActionResult DataTableTest()
+        {
+            var result = _productApi.GetSupplierProductsPaged(new Page
+            {
+                AdditionalParams = new Dictionary<string, string>{{"SupplierId","2"}},
+                OrderBy = string.Empty,
+                OrderDirection = 1,
+                PageNumber = 1,
+                PageSize = 10,
+                SearchText = string.Empty
+
+            });
+            return View("~/Views/Retailer/BrowseSuppliers/DataTableTest.cshtml");
+        }
     }
 }

@@ -6,3 +6,13 @@ D:\Projects\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.xml
 D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.csprojResolveAssemblyReference.cache
 D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.dll
 D:\Projects\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\SparRetail.Core.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\SparRetail.Core.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\Autofac.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\Autofac.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\bin\Debug\Dapper.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Core\obj\Debug\SparRetail.Core.csprojResolveAssemblyReference.cache

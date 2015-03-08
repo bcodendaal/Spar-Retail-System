@@ -419,6 +419,7 @@
     <Content Include="Views\Supplier\Dashboard.cshtml" />
     <Content Include="Views\Supplier\SupplierOrders\Index.cshtml" />
     <Content Include="Views\Supplier\SupplierCommon\OrderHistory.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\DataTableTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">

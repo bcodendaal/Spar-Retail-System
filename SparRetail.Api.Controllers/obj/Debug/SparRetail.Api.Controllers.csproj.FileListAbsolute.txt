@@ -11,3 +11,35 @@ D:\Projects\Spar-Retail-System\SparRetail.Api.Controllers\obj\Debug\SparRetail.A
 D:\Projects\Spar-Retail-System\SparRetail.Api.Controllers\obj\Debug\SparRetail.Api.Controllers.pdb
 D:\Projects\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Models.dll
 D:\Projects\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Models.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Api.Controllers.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Api.Controllers.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Autofac.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Core.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Interop.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Models.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Orders.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Products.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Retailers.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Suppliers.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\System.Net.Http.Formatting.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\System.Web.Http.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Dapper.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.DatabaseConfigAdapter.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Core.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Interop.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Models.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Orders.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Products.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Retailers.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.Suppliers.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Autofac.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\System.Net.Http.Formatting.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\System.Web.Http.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Dapper.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\Dapper.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\bin\Debug\SparRetail.DatabaseConfigAdapter.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\obj\Debug\SparRetail.Api.Controllers.csprojResolveAssemblyReference.cache
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\obj\Debug\SparRetail.Api.Controllers.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Api.Controllers\obj\Debug\SparRetail.Api.Controllers.pdb

@@ -19,5 +19,9 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Post<List<Product>>("GetAllForSupplier", supplier);
         }
+        public Page<Product> GetSupplierProductsPaged(Page page)
+        {
+            return Post<Page<Product>>("GetSupplierProductsPaged", page);
+        }
     }
 }

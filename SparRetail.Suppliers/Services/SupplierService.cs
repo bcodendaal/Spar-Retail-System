@@ -25,16 +25,13 @@ namespace SparRetail.Suppliers
             return supplierRepository.All();
         }
 
-
         public Supplier GetById(int supplierId)
         {
             return supplierRepository.GetById(supplierId);
         }
 
-
         public CommandResponse<Supplier> Create(Supplier supplier)
         {
-
             try
             {
                 // Todo: validation of supplier
