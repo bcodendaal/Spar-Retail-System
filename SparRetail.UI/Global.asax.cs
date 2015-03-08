@@ -11,6 +11,8 @@ using Autofac.Integration.Mvc;
 using SparRetail.ApiBroker;
 using SparRetail.ApiBroker.Brokers;
 using SparRetail.Interop;
+using SparRetail.UI.Controllers.Providers;
+using SparRetail.UI.Controllers;
 
 
 namespace Spar.Retail.UI
@@ -26,16 +28,17 @@ namespace Spar.Retail.UI
 
             IoC.BootStrap(builder =>
             {
-                var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
-                builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
-                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
-                builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
-                builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
-                builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                //var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
+                //builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
+                //builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                //builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
+                //builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
+                //builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
+                IoCRegistry.Configure(builder);
                 builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
                 //builder.RegisterControllers(typeof(MvcApplication).Assembly);
-                
-               // builder.RegisterFilterProvider();
+
+                // builder.RegisterFilterProvider();
             });
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));

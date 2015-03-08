@@ -19,11 +19,11 @@ namespace SparRetail.UI.Controllers.Account
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private readonly IProfileProvider profileProvider;
+        private readonly IProfileProvider _profileProvider;
 
         public AccountController(IProfileProvider profileProvider)
         {
-            this.profileProvider = profileProvider;
+            this._profileProvider = profileProvider;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -455,7 +455,7 @@ namespace SparRetail.UI.Controllers.Account
             }
 
             // TODO: if user is retailer go to retailer dashboard. If supplier, go to supplier dashboard
-            var tenantType = profileProvider.GetTenantType(username);
+            var tenantType = _profileProvider.GetTenantType(username);
             if(tenantType == TenantType.Supplier)
                 return RedirectToAction("Index", "SupplierDashboard");
             
