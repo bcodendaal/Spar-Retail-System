@@ -28,7 +28,7 @@ namespace Spar.Retail.UI
 
             IoC.BootStrap(builder =>
             {
-                //var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
+                var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
                 //builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
                 //builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
                 //builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();

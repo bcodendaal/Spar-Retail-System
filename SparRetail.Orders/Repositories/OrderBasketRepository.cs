@@ -87,5 +87,11 @@ namespace SparRetail.Orders.Repositories
         {
             throw new NotImplementedException();
         }
+
+
+        public OrderBasket Get(int basketId, string retailerDbKey)
+        {
+            return QueryOne<OrderBasket>("usp_SelectOrderBasket", new { @BasketId = basketId }, retailerDbKey);
+        }
     }
 }

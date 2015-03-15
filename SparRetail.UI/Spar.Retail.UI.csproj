@@ -170,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-SparRetail-20150222060857.mdf" />
+    <Content Include="App_Data\aspnet-SparRetail-20150222060857_log.ldf">
+      <DependentUpon>aspnet-SparRetail-20150222060857.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\css\4095-rtl.min.css" />
     <Content Include="assets\css\4095.min.css" />
     <Content Include="assets\css\animate.min.css" />

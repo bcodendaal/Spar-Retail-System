@@ -1,4 +1,6 @@
-﻿using NServiceBus;
+﻿using MassTransit;
+using MassTransit.Log4NetIntegration.Logging;
+using SparRetail.Core.Config;
 using SparRetail.Core.Logging;
 using SparRetail.DatabaseConfigAdapter;
 using SparRetail.Models;
@@ -21,17 +23,25 @@ namespace SparRetail.Orders.Services
         protected readonly ISupplierService supplierService;
         protected readonly IRetailerService retailerService;
         protected readonly ILogger logger;
-
+        protected readonly IConfigCollection configCollection;
+        protected readonly IServiceBus bus;
 
         private const string TagGroup = "OrderBasketService";
 
-        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, ILogger logger)
+        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, IConfigCollection configCollection, ILogger logger)
         {
             this.orderBasketRepository = orderBasketRepository;
             this.databaseConfigAdapter = databaseConfigAdapter;
             this.supplierService = supplierService;
             this.retailerService = retailerService;
+            this.configCollection = configCollection;
             this.logger = logger;
+
+              bus = ServiceBusFactory.New(sbc => { 
+                Log4NetLogger.Use();
+                sbc.UseRabbitMq();
+                sbc.ReceiveFrom(string.Format("rabbitmq://{0}/{1}", configCollection.Get(SharedConfigKeys.RabbitHost), "orderbasket.finalize.producer"));                
+            });
         }
 
 
@@ -81,18 +91,7 @@ namespace SparRetail.Orders.Services
 
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
         {
-            BusConfiguration config = new BusConfiguration();
-            config.EndpointName("orderbasket.finalize");            
-            config.UseSerialization<JsonSerializer>();
-            config.UseTransport<RabbitMQTransport>();
-            config.UsePersistence<InMemoryPersistence>();
-
-
-            ISendOnlyBus bus = Bus.CreateSendOnly(config);
-
-            bus.Send<FinalizeOrderCommand>("orderbasket.finalize", (x) => { x.OrderBasketId = orderBasketId; x.RetailerId = retailerId; });
-
-            //orderBasketRepository.FinaliseOrder(orderBasketId, orderDate, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+            bus.Publish<FinalizeOrderCommand>(new FinalizeOrderCommand(){ OrderBasketId = orderBasketId, RetailerId = retailerId });            
         }
 
         public OrderBasket CreateNew(int supplierId, int retailerId, int userId)
@@ -111,6 +110,12 @@ namespace SparRetail.Orders.Services
         {
             orderBasketRepository.DeleteOrderBasketItem(basketItem,
                databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+
+        public OrderBasket Get(int basketId, int retailerId)
+        {
+            return orderBasketRepository.Get(basketId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
         }
     }
 }

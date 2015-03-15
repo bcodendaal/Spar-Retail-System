@@ -84,7 +84,7 @@ namespace SparRetail.Api.Tests
         public void finalise_order_successfully()
         {
             OrderBroker broker = new OrderBroker(new ApiBrokerConfig { EndPoint = ConfigurationManager.AppSettings["apiEndpoint"] });
-            var result = broker.FinaliseOrder(new FinaliseOrderPost { OrderBasketId = 1, RetailerId = 1 });
+            var result = broker.FinaliseOrder(new FinaliseOrderPost { OrderBasketId = 34, RetailerId = 1 });
 
             Assert.NotNull(result);
             Assert.IsTrue(result.IsCallSuccess);
