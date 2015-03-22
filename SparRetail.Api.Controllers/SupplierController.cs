@@ -33,7 +33,7 @@ namespace SparRetail.Api.Controllers
             return supplierService.All();
         }
 
-
+        [HttpPost]
         public CreateSupplierResponse Create(Supplier supplier)
         {
             try

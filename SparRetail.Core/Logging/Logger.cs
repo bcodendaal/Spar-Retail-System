@@ -9,7 +9,7 @@ namespace SparRetail.Core.Logging
 {
     public class Logger : ILogger
     {
-
+        
         public void Info(string tagGroup, string tagName, string message)
         {
             Trace.WriteLine(string.Format("TagGroup: {0}\nTagName:{1}\nMessage{2}", tagGroup, tagName, message));

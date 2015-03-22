@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
+using Newtonsoft.Json;
 
 namespace SparRetail.Components.OrderProcessor
 {
@@ -23,7 +25,7 @@ namespace SparRetail.Components.OrderProcessor
         protected readonly IOrderProcessorWorkerRepository processorWorkerRepository;
         protected readonly IDatabaseConfigAdapter databaseConfigAdapter;
         protected readonly IMailer mailer;
-        protected readonly ILogger logger;
+        protected readonly ILog logger;
 
         private const string TagGroup = "OrderProcessWorker";
 
@@ -34,8 +36,8 @@ namespace SparRetail.Components.OrderProcessor
             ISupplierService supplierService,
             IOrderProcessorWorkerRepository processorWorkerRepository, 
             IDatabaseConfigAdapter databaseConfigAdapter,
-            IMailer mailer,
-            ILogger logger)
+            IMailer mailer
+            )
         {
             this.orderService = orderService;
             this.basketService = basketService;
@@ -44,7 +46,7 @@ namespace SparRetail.Components.OrderProcessor
             this.processorWorkerRepository = processorWorkerRepository;
             this.databaseConfigAdapter = databaseConfigAdapter;
             this.mailer = mailer;
-            this.logger = logger;
+            this.logger = LogManager.GetLogger(GetType());
         }
 
         public ResponseModel FinalizeOrder(FinalizeOrderCommand command)
@@ -62,6 +64,8 @@ namespace SparRetail.Components.OrderProcessor
              *              
              * Send email to supplier
              */
+            logger.Info(string.Format("Received message."));
+            logger.Info(string.Format(JsonConvert.SerializeObject(command)));
             try
             {
                 // Get the basket and its items
@@ -77,12 +81,13 @@ namespace SparRetail.Components.OrderProcessor
                 // Send email
                 mailer.SendMail("You have succesfully placed an order!");
 
+                logger.Info("Operation successful");
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = true, Message = "Success" };
 
             }
             catch (Exception ex)
             {                
-                logger.Error(TagGroup, "FinalizeOrder", ex);
+                logger.Error(ex);
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
             }
 
