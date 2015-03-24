@@ -37,11 +37,26 @@ namespace SparRetail.UI.Controllers.New
         [HttpPost]
         public ActionResult Retailer(NewRetailerViewModel retailer)
         {
+            if (retailer == null)
+                throw new NullReferenceException("Retailer cannot be null");
+            if (retailerApi == null)
+                throw new NullReferenceException("RetailerApi cannot be null");
+
+            
             var result = retailerApi.Create(new Models.Retailer() { RetailerName = retailer.RetailerName });
+            if (result == null)
+                throw new NullReferenceException("Result cannnot be null");
             if (result.IsCallSuccess && result.IsCommandSuccess)
             {
                 // TODO: associate user with retailer.
+                if(User == null)
+                    throw new NullReferenceException("User cannot be null");
+                if(User.Identity == null)
+                    throw new NullReferenceException("UserIdendity cannot be null");
+
                 var profile = ProfileBase.Create(User.Identity.Name, true);
+                if (profile == null)
+                    throw new NullReferenceException("Profile cannot be null");
                 var str = profile.GetPropertyValue("ProfileType");
                 profile.SetPropertyValue("ProfileType", "Retailer");
                 profile.SetPropertyValue("EntityId", result.RetailerId);

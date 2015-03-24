@@ -30,6 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.38\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +54,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoCRegistry.cs" />
+    <Compile Include="IOrderProcessorWorker.cs" />
+    <Compile Include="IOrderProcessorWorkerRepository.cs" />
+    <Compile Include="OrderProcessorWorker.cs" />
+    <Compile Include="OrderProcessWorkerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SparRetail.Core\SparRetail.Core.csproj">
+      <Project>{e9a4dd6f-40d4-4261-8465-668bd47731e2}</Project>
+      <Name>SparRetail.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.DatabaseConfigAdapter\SparRetail.DatabaseConfigAdapter.csproj">
+      <Project>{025c1a7b-c210-45d9-844b-a023aace26ab}</Project>
+      <Name>SparRetail.DatabaseConfigAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
+      <Project>{0816e6fb-1c15-488f-9190-98f1d6977bf7}</Project>
+      <Name>SparRetail.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Orders\SparRetail.Orders.csproj">
+      <Project>{3ccf1977-5317-49ef-9f7a-67b8c14ab65f}</Project>
+      <Name>SparRetail.Orders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Retailers\SparRetail.Retailers.csproj">
+      <Project>{e258dbe3-1cea-49b5-8072-d340dbfb6328}</Project>
+      <Name>SparRetail.Retailers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Suppliers\SparRetail.Suppliers.csproj">
+      <Project>{45673ce3-9b69-4fa8-ace2-5a401a0b3467}</Project>
+      <Name>SparRetail.Suppliers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

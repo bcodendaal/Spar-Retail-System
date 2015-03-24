@@ -17,5 +17,6 @@ namespace SparRetail.Orders.Services
         List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, int retailerId);
         OrderBasket CreateNew(int supplierId, int retailerId, int userId);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId);
+        OrderBasket Get(int basketId, int retailerId);
     }
 }

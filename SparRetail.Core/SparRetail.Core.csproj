@@ -36,7 +36,11 @@
     <Reference Include="Dapper">
       <HintPath>..\packages\Dapper.1.38\lib\net45\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
@@ -51,12 +55,20 @@
     <Compile Include="Cache\ICacheBroker.cs" />
     <Compile Include="Cache\ICacheRepository.cs" />
     <Compile Include="Cache\Volatility.cs" />
+    <Compile Include="Config\ConfigCollection.cs" />
+    <Compile Include="Config\ConfigItem.cs" />
+    <Compile Include="Config\ConfigRepository.cs" />
     <Compile Include="Config\DatabaseConfigCollection.cs" />
     <Compile Include="Config\DatabaseConfigItem.cs" />
+    <Compile Include="Config\IConfigCollection.cs" />
+    <Compile Include="Config\IConfigRepository.cs" />
     <Compile Include="Config\IDatabaseConfigCollection.cs" />
     <Compile Include="Config\IDatabaseConfigItem.cs" />
+    <Compile Include="Config\SharedConfigKeys.cs" />
     <Compile Include="Constants\CommonConfigKeys.cs" />
     <Compile Include="Database\RepositoryBase.cs" />
+    <Compile Include="Email\IMailer.cs" />
+    <Compile Include="Email\Mailer.cs" />
     <Compile Include="IoC.cs" />
     <Compile Include="IoCRegistry.cs" />
     <Compile Include="Logging\ILogger.cs" />

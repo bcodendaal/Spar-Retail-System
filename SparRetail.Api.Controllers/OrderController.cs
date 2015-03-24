@@ -128,7 +128,7 @@ namespace SparRetail.Api.Controllers
             }
         }
 
-
+        [HttpGet]
         public List<Order> AllOrderForSupplier(int supplierId)
         {
             try

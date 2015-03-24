@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 
 namespace SparRetail.ApiBroker
 {
@@ -13,11 +15,14 @@ namespace SparRetail.ApiBroker
     {
         protected readonly IApiBrokerConfig config;
         protected readonly string controllerSegment;
+        protected readonly ILog logger;
 
         public ApiBrokerBase(IApiBrokerConfig config, string controllerSegment)
         {
             this.config = config;
             this.controllerSegment = controllerSegment;
+            
+            logger = LogManager.GetLogger(this.GetType());
         }
 
         protected T Get<T>(string method)
@@ -33,7 +38,13 @@ namespace SparRetail.ApiBroker
 
         protected TOutput Post<TOutput>(string method, object inputModel)
         {
-            return ExecuteCall<TOutput>(x => x.PostAsync(string.Format("{0}/{1}", controllerSegment, method), new StringContent(JsonConvert.SerializeObject(inputModel), Encoding.UTF8, "application/json")).Result);
+            return ExecuteCall<TOutput>(x =>
+            {
+
+                return x.PostAsync(string.Format("{0}/{1}", controllerSegment, method),
+                    new StringContent(JsonConvert.SerializeObject(inputModel),
+                        Encoding.UTF8, "application/json")).Result;
+            });
         }
 
         protected T ExecuteCall<T>(Func<HttpClient, HttpResponseMessage> callMethod)
@@ -42,25 +53,31 @@ namespace SparRetail.ApiBroker
             {
                 using (var client = new HttpClient())
                 {
+                    logger.Debug("Endpoint: " + config.EndPoint);
                     client.BaseAddress = new Uri(config.EndPoint);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
                     HttpResponseMessage response =  callMethod.Invoke(client);
+                    
                     if (response.IsSuccessStatusCode)
                     {
-                        return JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);
+                        logger.Debug(string.Format("Call to {0} succesful", config.EndPoint));
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        logger.Debug("Result received:");
+                        logger.Debug(result);
+                        return JsonConvert.DeserializeObject<T>(result);
                     }
                     else
                     {
-                        Trace.TraceError(response.Content.ReadAsStringAsync().Result);
+                        logger.Error(response.Content.ReadAsStringAsync().Result);
                         return default(T);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Trace.TraceError(ex.ToString());
+                logger.Error(ex);
                 return default(T);
             }
         }

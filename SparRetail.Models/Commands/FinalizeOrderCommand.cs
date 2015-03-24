@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SparRetail.Models.Commands
 {
-    class FinalizeOrderCommand
+    public class FinalizeOrderCommand
     {
+        public int OrderBasketId { get; set; }
+        public int RetailerId { get; set; }
     }
 }

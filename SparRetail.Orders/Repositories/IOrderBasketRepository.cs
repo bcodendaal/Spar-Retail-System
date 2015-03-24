@@ -17,5 +17,6 @@ namespace SparRetail.Orders.Repositories
         List<OrderBasketItem> AllItemsForOrderBasket(int orderBasketId, string retailerDbKey);
         OrderBasket CreateNew(int supplierId, int retailerId, int userId, string retailerDbKey);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, string retailerDbKey);
+        OrderBasket Get(int basketId, string retailerDbKey);
     }
 }

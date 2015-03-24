@@ -19,6 +19,8 @@ namespace SparRetail.Api.Controllers
         {
             this.retailerService = retailerService;
         }
+
+        [HttpPost]
         public CreateRetailerResponse Create(Retailer retailer)
         {
             try

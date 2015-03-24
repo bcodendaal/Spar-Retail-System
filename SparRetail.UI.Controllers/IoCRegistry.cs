@@ -5,6 +5,7 @@ using SparRetail.Interop;
 using SparRetail.UI.Controllers.Providers;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -21,8 +22,8 @@ namespace SparRetail.UI.Controllers
         public static void Configure(ContainerBuilder builder)
         {
             SparRetail.Core.IoCRegistry.Configure(builder);
-            
-            var apiconfig = new ApiBrokerConfig() { EndPoint = "http://localhost:6837/api/" };
+
+            var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
             builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();
             builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
             builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
