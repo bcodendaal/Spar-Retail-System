@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "NewOrder";
+    Layout = "~/Views/Shared/_RetailerDefault.cshtml";
+}
+<div class="col-xs-12 col-md-12">
+    <div class="widget">
+        <div class="widget-header  with-footer">
+            <span class="widget-caption">Suppliers</span>
+            <div class="widget-buttons">
+                <a href="#" data-toggle="maximize">
+                    <i class="fa fa-expand"></i>
+                </a>
+                <a href="#" data-toggle="collapse">
+                    <i class="fa fa-minus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="table-scrollable">
+                <table id="tblSuppliers" class="table table-bordered table-striped table-condensed flip-content table-hover">
+                    <thead class="flip-content bordered-palegreen">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Code
+                            </th>
+                            <th>
+                                City
+                            </th>
+                            <th>
+                                Postal code
+                            </th>
+                            <th>
+                                Telephone
+                            </th>
+                            <th>
+                                Fax
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Vat No
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageScripts{
+    <script>
+        $(document).ready(function () {
+            $('#tblSuppliers').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "type": "POST",
+                    "url": "@Url.Action("SuppliersDataTableAjax", "NewOrder")"
+                },
+                "columns": [
+                    { "data": "SupplierName" },
+                    { "data": "SupplierCode" },
+                    { "data": "City" },
+                    { "data": "PostalCode" },
+                    { "data": "Telephone" },
+                    { "data": "Fax" },
+                    { "data": "Email" },
+                    { "data": "VATNumber" },
+                    {
+                        "targets": -1,
+                        "data": "SupplierId",
+                        "render": function (data, type, full, meta) {
+                            return '<a href="/NewOrder/CreateNewOrder/?SupplierId='+ data + '">Order</a>';
+                        }
+                    }
+                ]
+            });
+
+        });
+    </script>
+}

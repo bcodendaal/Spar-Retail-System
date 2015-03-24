@@ -33,7 +33,7 @@ namespace SparRetail.Api.Controllers
         }
 
         [HttpPost]
-        public Page<Product> GetSupplierProductsPaged(Page page)
+        public Page<Product> GetSupplierProductsPaged(ProductPagedParams page)
         {
             try
             {

@@ -322,7 +322,7 @@ Purchase: http://wrapbootstrap.com
                                         {
                                             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                             {
-                                                @Html.AntiForgeryToken()                                            
+                                                @Html.AntiForgeryToken()
                                                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                                             }
                                         }
@@ -409,7 +409,7 @@ Purchase: http://wrapbootstrap.com
                             <span class="menu-text"> Dashboard </span>
                         </a>
                     </li>
-                    <li>
+                    @*<li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-truck"></i>
                             <span class="menu-text"> Suppliers </span>
@@ -419,7 +419,7 @@ Purchase: http://wrapbootstrap.com
                         <ul class="submenu">
                             <li>
                                 <a href="@(Url.Action("Index", "BrowseSuppliers"))">
-                                    <span class="menu-text">My Suppliers</span>
+                                    <span class="menu-text">Browse My Suppliers</span>
                                 </a>
                             </li>
                             <li>
@@ -433,7 +433,7 @@ Purchase: http://wrapbootstrap.com
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
                     <li class="">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon glyphicon glyphicon-shopping-cart"></i>
@@ -443,8 +443,13 @@ Purchase: http://wrapbootstrap.com
 
                         <ul class="submenu">
                             <li>
+                                <a href="@(Url.Action("SelectSupplier", "NewOrder"))">
+                                    <span class="menu-text">New Order</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="@(Url.Action("OpenBaskets", "OpenOrderBaskets"))">
-                                    <span class="menu-text">Open Orders Baskets</span>
+                                    <span class="menu-text">Pending Orders</span>
                                 </a>
                             </li>
                             <li>
@@ -465,7 +470,7 @@ Purchase: http://wrapbootstrap.com
                 @*<div class="page-breadcrumbs">*@
                 <!-- Breadcrumb missing...-->
                 @*</div>*@
-                ><!-- /Page Breadcrumb -->
+                <!-- /Page Breadcrumb -->
                 <!-- Page Header -->
                 <div class="page-header position-relative">
                     <br />
@@ -519,8 +524,11 @@ Purchase: http://wrapbootstrap.com
     <script src="~/assets/js/charts/flot/jquery.flot.pie.js"></script>
     <script src="~/assets/js/charts/flot/jquery.flot.tooltip.js"></script>
     <script src="~/assets/js/charts/flot/jquery.flot.orderBars.js"></script>
-
-    @RenderSection("Scripts", required: false)
+    <script src="~/assets/js/datatable/jquery.dataTables.js"></script>
+    <script src="~/assets/js/datatable/dataTables.bootstrap.js"></script>
+    <script src="~/assets/js/datatable/datatables-init.js"></script>
+    <script src="~/assets/js/datatable/ZeroClipboard.js"></script>
+    @RenderSection("PageScripts", required: false)
 </body>
 <!--  /Body -->
 </html>

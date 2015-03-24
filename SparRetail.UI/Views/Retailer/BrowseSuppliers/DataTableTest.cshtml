@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "DataTableTest";
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
 }
@@ -112,3 +111,37 @@
         </div>
     </div>
 </div>
+
+@section PageScripts{
+    <script>
+        $(document).ready(function() {
+
+            $('#tblProduct').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "type": "POST",
+                    "url": "@Url.Action("DataTableAjaxResult", "BrowseSuppliers")",
+                    "data": function(d) {
+                        d.additionalParams = {
+                            "SupplierId": 1,
+                            "Test" : "xtra values"
+                        };
+                    }
+                },
+                "columns": [
+                    { "data": "ProductCode" },
+                    { "data": "ProductName" },
+                    { "data": "ProductDescription" },
+                    { "data": "VAT" },
+                    { "data": "Barcode" },
+                    { "data": "CategoryId" },
+                    { "data": "UnitOfMeasureName" },
+                    { "data": "Price" },
+                    { "data": "PackSize" }
+                ]
+            });
+
+        });
+    </script>
+}

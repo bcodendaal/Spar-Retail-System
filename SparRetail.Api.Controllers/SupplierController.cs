@@ -39,13 +39,25 @@ namespace SparRetail.Api.Controllers
             try
             {
                 var result = supplierService.Create(supplier);
-                return new CreateSupplierResponse { IsCommandSuccess = result.IsSuccess, Message = result.Message, IsCallSuccess = true, SupplierId = result.Model.SupplierId};
+                return new CreateSupplierResponse { IsCommandSuccess = result.IsSuccess, Message = result.Message, IsCallSuccess = true, SupplierId = result.Model.SupplierId };
             }
             catch (Exception ex)
             {
                 return new CreateSupplierResponse { IsCallSuccess = true, Message = ex.ToString(), IsCommandSuccess = false };
             }
-            
+
+        }
+        [HttpPost]
+        public Page<Supplier> GetAllSuppliersForRetailerPaged(SupplierPagedParams pageParam)
+        {
+            try
+            {
+                return supplierService.GetAllSuppliersForRetailerPaged(pageParam);
+            }
+            catch (Exception)
+            {
+                return new Page<Supplier>();
+            }
         }
     }
 }

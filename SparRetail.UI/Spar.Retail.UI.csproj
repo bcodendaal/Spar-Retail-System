@@ -157,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Retailer\Orders\OrderHistory\" />
+    <Folder Include="Views\Retailer\Orders\PendingOrders\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -394,7 +396,7 @@
     <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
     <Content Include="Views\Retailer\RetailerOrders\Index.cshtml" />
     <Content Include="Views\Retailer\RetailerCommon\_AllSupplierProductsOrder.cshtml" />
-    <Content Include="Views\Retailer\RetailerCommon\_AllSuppliersOrder.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\_MySuppliersOrder.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\_OrderBasketOption.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\_AddProductsToBasket.cshtml" />
     <Content Include="Views\Retailer\RetailerCommon\OrderBasket.cshtml" />
@@ -420,6 +422,8 @@
     <Content Include="Views\Supplier\SupplierOrders\Index.cshtml" />
     <Content Include="Views\Supplier\SupplierCommon\OrderHistory.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\DataTableTest.cshtml" />
+    <Content Include="Views\Retailer\Orders\NewOrder\SelectSupplier.cshtml" />
+    <Content Include="Views\Retailer\Orders\ProductsOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">

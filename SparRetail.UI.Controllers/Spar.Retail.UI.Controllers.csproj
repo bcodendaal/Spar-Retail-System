@@ -122,6 +122,7 @@
     <Compile Include="Providers\ProfileProvider.cs" />
     <Compile Include="Retailer\BrowseSuppliersController.cs" />
     <Compile Include="Retailer\OpenOrderBasketsController.cs" />
+    <Compile Include="Retailer\Orders\NewOrderController.cs" />
     <Compile Include="Retailer\RetailerCommonController.cs" />
     <Compile Include="Retailer\RetailerOrdersController.cs" />
     <Compile Include="Retailer\RetailerDashboardController.cs" />

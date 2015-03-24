@@ -46,5 +46,9 @@ namespace SparRetail.Suppliers
                 return new CommandResponse<Supplier> { IsSuccess = false, Model = null, Message = ex.ToString() };
             }
         }
+        public Page<Supplier> GetAllSuppliersForRetailerPaged(SupplierPagedParams pageParam)
+        {
+            return supplierRepository.GetAllSuppliersForRetailerPaged(pageParam);
+        }
     }
 }

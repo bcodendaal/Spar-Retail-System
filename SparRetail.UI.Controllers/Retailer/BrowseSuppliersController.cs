@@ -1,12 +1,15 @@
 ﻿using Spar.Retail.UI.Models.ViewModels.Retailer;
 using SparRetail.Interop;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using Spar.Retail.UI.Models.ViewModels;
 using Spar.Retail.UI.Models.ViewModels.Retailer.BrowseSuppliers;
 using Spar.Retail.UI.Models.ViewModels.Retailer.Common;
 using SparRetail.Models;
@@ -88,17 +91,41 @@ namespace SparRetail.UI.Controllers.Retailer
 
         public ActionResult DataTableTest()
         {
-            var result = _productApi.GetSupplierProductsPaged(new Page
+            //var result = _productApi.GetSupplierProductsPaged(new Page
+            //{
+            //    AdditionalParams = new Dictionary<string, string>{{"SupplierId","2"}},
+            //    OrderBy = string.Empty,
+            //    OrderDirection = 1,
+            //    PageNumber = 1,
+            //    PageSize = 10,
+            //    SearchText = string.Empty
+
+            //});
+            return View("~/Views/Retailer/BrowseSuppliers/DataTableTest.cshtml");
+        }
+
+        public JsonResult DataTableAjaxResult(DataTableParam param)
+        {
+            var result = _productApi.GetSupplierProductsPaged(new ProductPagedParams
             {
-                AdditionalParams = new Dictionary<string, string>{{"SupplierId","2"}},
-                OrderBy = string.Empty,
-                OrderDirection = 1,
-                PageNumber = 1,
-                PageSize = 10,
-                SearchText = string.Empty
+                SupplierId = Convert.ToInt32(param.additionalParams["SupplierId"]),
+                OrderBy = param.OrderBy,
+                OrderDirection = param.OrderDirection,
+                PageNumber = param.PageNumber,
+                PageSize = param.length,
+                SearchText = param.SearchText
 
             });
-            return View("~/Views/Retailer/BrowseSuppliers/DataTableTest.cshtml");
+
+            return Json(new DataTableJsonReturnModel<Product>()
+            {
+                data = result.Results,
+                draw = Convert.ToInt32(param.draw),
+                error = string.Empty,
+                recordsFiltered = result.Results.Count,
+                recordsTotal = result.TotalRows
+            },
+                            JsonRequestBehavior.AllowGet);
         }
     }
 }

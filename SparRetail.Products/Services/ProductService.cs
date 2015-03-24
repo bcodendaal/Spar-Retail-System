@@ -26,9 +26,9 @@ namespace SparRetail.Products.Services
             return productRepository.GetAllForSupplier(supplier);
         }
 
-        public Page<Product> GetSupplierProductsPaged(Page page)
+        public Page<Product> GetSupplierProductsPaged(ProductPagedParams page)
         {
-            return productRepository.GetSupplierProductsPaged(databaseConfigAdapter.GetSupplierDatabaseConfigKey(Convert.ToInt32(page.AdditionalParams["SupplierId"])),page);
+            return productRepository.GetSupplierProductsPaged(databaseConfigAdapter.GetSupplierDatabaseConfigKey(page.SupplierId), page);
         }
     }
 }

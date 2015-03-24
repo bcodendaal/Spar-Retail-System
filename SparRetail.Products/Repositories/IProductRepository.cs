@@ -10,7 +10,7 @@ namespace SparRetail.Products.Repositories
     public interface IProductRepository
     {
         List<Product> GetAllForSupplier(Supplier supplier);
-        Page<Product> GetSupplierProductsPaged(string databaseConfigKey, Page pageParam);
+        Page<Product> GetSupplierProductsPaged(string databaseConfigKey, ProductPagedParams pageParam);
     }
 
 }

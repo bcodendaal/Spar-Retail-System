@@ -28,15 +28,13 @@ namespace SparRetail.UI.Controllers.Retailer
             _profileProvider = profileProvider;
         }
 
-        public ActionResult AllSuppliersOrder(string retailerId)
+        public ActionResult MySuppliersOrder(string retailerId)
         {
-
-            // Get All Suppliers for Retailer - neet to be more specific
             var viewmodel = new AllSupplierViewModel()
             {
                 Suppliers = _supplierApi.All()
             };
-            return PartialView("~/Views/Retailer/RetailerCommon/_AllSuppliersOrder.cshtml", viewmodel);
+            return PartialView("~/Views/Retailer/RetailerCommon/_MySuppliersOrder.cshtml", viewmodel);
         }
 
         public ActionResult AllProductsOrder(int supplierId)

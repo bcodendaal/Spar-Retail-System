@@ -21,12 +21,12 @@ namespace SparRetail.Products.Repositories
             return QueryList<Product>("usp_SelectProductsForSupplier", new { SupplierId = supplier.SupplierId }, supplier.DatabaseConfigKey);
         }
 
-        public Page<Product> GetSupplierProductsPaged(string databaseConfigKey, Page pageParam)
+        public Page<Product> GetSupplierProductsPaged(string databaseConfigKey, ProductPagedParams pageParam)
         {
             return QueryMultiple("usp_SelectSupplierProductsPaged",
                 new
                 {
-                    @SupplierId = pageParam.AdditionalParams["SupplierId"],
+                    @SupplierId = pageParam.SupplierId,
                     @SearchText = pageParam.SearchText,
                     @OrderBy = pageParam.OrderBy,
                     @OrderDirection = pageParam.OrderDirection,

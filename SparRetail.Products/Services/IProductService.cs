@@ -10,6 +10,6 @@ namespace SparRetail.Products.Services
     public interface IProductService
     {
         List<Product> GetAllForSupplier(Supplier supplier);
-        Page<Product> GetSupplierProductsPaged(Page page);
+        Page<Product> GetSupplierProductsPaged(ProductPagedParams page);
     }
 }
