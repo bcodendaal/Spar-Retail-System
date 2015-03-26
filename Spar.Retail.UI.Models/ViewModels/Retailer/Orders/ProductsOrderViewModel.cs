@@ -9,8 +9,7 @@ namespace Spar.Retail.UI.Models.ViewModels.Retailer.Orders
 {
     public class ProductsOrderViewModel
     {
-        public Order Order { get; set; }
+        public OrderBasket Order { get; set; }
         public Supplier Supplier { get; set; }
-        public List<Product> Products { get; set; }
     }
 }

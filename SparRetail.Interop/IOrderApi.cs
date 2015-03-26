@@ -12,6 +12,7 @@ namespace SparRetail.Interop
     {
         List<OrderBasket> AllOrderBasketForRetailerSupplier(int retailerId, int supplierId);
         List<OrderBasket> AllOrderBasketForRetailer(int retailerId);
+        Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams);
         ResponseModel AddOrderBasketItem(OrderBasketItemPost basketItemPost);
         ResponseModel UpdateOrderBasketItem(OrderBasketItemPost basketItem);
         ResponseModel DeleteOrderBasketItem(OrderBasketItemPost basketItem);
@@ -19,6 +20,8 @@ namespace SparRetail.Interop
         ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost);
         OrderBasketResponse CreateNew(int supplierId, int retailerId, int userId);
         List<Order> AllOrderForSupplier(int supplierId);
+        OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId);
+        Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams);
 
     }
 }

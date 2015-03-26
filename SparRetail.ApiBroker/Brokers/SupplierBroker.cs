@@ -31,5 +31,11 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Post<Page<Supplier>>("GetAllSuppliersForRetailerPaged", pageParam);
         }
+
+
+        public Supplier GetSupplierById(int supplierId)
+        {
+            return Get<Supplier>("GetSupplierById", new Dictionary<string, string> { { "supplierId", supplierId.ToString() } });
+        }
     }
 }

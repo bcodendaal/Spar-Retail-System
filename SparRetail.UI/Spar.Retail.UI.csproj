@@ -427,6 +427,11 @@
     <Content Include="Views\Supplier\SupplierOrders\Index.cshtml" />
     <Content Include="Views\Supplier\SupplierCommon\OrderHistory.cshtml" />
     <None Include="Properties\PublishProfiles\SparRetail.UI.pubxml" />
+    <Content Include="Views\Retailer\Orders\NewOrder\SelectSupplier.cshtml" />
+    <Content Include="Views\Retailer\Orders\AddProducts.cshtml" />
+    <Content Include="Views\Retailer\BrowseSuppliers\DataTableTest.cshtml" />
+    <Content Include="Views\Retailer\Orders\OpenOrders\OpenOrders.cshtml" />
+    <Content Include="Views\Retailer\Orders\OrderHistory\OrderHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">

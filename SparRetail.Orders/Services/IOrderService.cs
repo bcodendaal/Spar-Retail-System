@@ -10,5 +10,6 @@ namespace SparRetail.Orders.Services
     public interface IOrderService
     {
         List<Order> AllOrderForSupplier(int supplierId);
+        Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams);
     }
 }

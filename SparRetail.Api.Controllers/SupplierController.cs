@@ -59,5 +59,17 @@ namespace SparRetail.Api.Controllers
                 return new Page<Supplier>();
             }
         }
+
+        public Supplier GetSupplierById(int supplierId)
+        {
+            try
+            {
+                return supplierService.GetById(supplierId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

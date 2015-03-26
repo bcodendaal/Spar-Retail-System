@@ -93,5 +93,27 @@ namespace SparRetail.Orders.Repositories
         {
             return QueryOne<OrderBasket>("usp_SelectOrderBasket", new { @BasketId = basketId }, retailerDbKey);
         }
+
+        public Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams, string retailerDbKey)
+        {
+            return QueryMultiple("usp_SelectOpenOrdersPaged",
+                 new
+                 {
+                     @RetailerId = pageParams.RetailerId,
+                     @SearchText = pageParams.SearchText,
+                     @OrderBy = pageParams.OrderBy,
+                     @OrderDirection = pageParams.OrderDirection,
+                     @PageNumber = pageParams.PageNumber,
+                     @PageSize = pageParams.PageSize
+                 },
+                 new Func<List<OpenOrderPageResult>, Page, Page<OpenOrderPageResult>>(
+                     (list, page) => new Page<OpenOrderPageResult>(page, list)),
+                 retailerDbKey);
+        }
+
+        public OpenOrderTotals GetOpenOrderTotals(int orderId, string retailerDbKey)
+        {
+            return QueryOne<OpenOrderTotals>("usp_SelectOpenOrderTotals", new { @OrderId = orderId }, retailerDbKey);
+        }
     }
 }

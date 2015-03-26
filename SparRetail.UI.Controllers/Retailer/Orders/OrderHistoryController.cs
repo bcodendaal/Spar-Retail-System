@@ -1,28 +1,27 @@
-﻿using System;
+﻿using SparRetail.Interop;
+using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using Spar.Retail.UI.Models.ViewModels;
-using Spar.Retail.UI.Models.ViewModels.Retailer.Orders;
-using SparRetail.Interop;
 using SparRetail.Models;
-using SparRetail.Models.Api;
 using SparRetail.UI.Controllers.Providers;
 
 namespace SparRetail.UI.Controllers.Retailer.Orders
 {
-    public class NewOrderController : Controller
+    public class OrderHistoryController : Controller
     {
         private ISupplierApi _supplierApi;
         private IProductApi _productApi;
         private IOrderApi _orderApi;
         private IProfileProvider _profileProvider;
 
-        public NewOrderController(ISupplierApi supplierApi, IProductApi productApi, IOrderApi orderApi,
+        public OrderHistoryController(
+            ISupplierApi supplierApi,
+            IProductApi productApi,
+            IOrderApi orderApi,
             IProfileProvider profileProvider)
         {
             _supplierApi = supplierApi;
@@ -31,14 +30,14 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
             _profileProvider = profileProvider;
         }
 
-        public ActionResult SelectSupplier()
+        public ActionResult OrderHistory()
         {
-            return View(@"~\Views\Retailer\Orders\NewOrder\SelectSupplier.cshtml");
+            return View(@"~\Views\Retailer\Orders\OrderHistory\OrderHistory.cshtml");
         }
 
-        public ActionResult SuppliersDataTableAjax(DataTableParam param)
+        public JsonResult OrderHistoryDataTableAjax(DataTableParam param)
         {
-            var result = _supplierApi.GetAllSuppliersForRetailerPaged(new SupplierPagedParams()
+            var result = _orderApi.GetAllFinalizedOrdersForRetailer(new OrderPageParams()
             {
                 RetailerId = _profileProvider.GetEntityId(),
                 OrderBy = param.OrderBy,
@@ -49,7 +48,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
 
             });
 
-            return Json(new DataTableJsonReturnModel<Models.Supplier>()
+            return Json(new DataTableJsonReturnModel<OrderPagedResult>()
             {
                 data = result.Results,
                 draw = Convert.ToInt32(param.draw),
@@ -57,17 +56,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                 recordsFiltered = result.Results.Count,
                 recordsTotal = result.TotalRows
             },
-            JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult CreateNewOrder(int supplierId)
-        {
-
-            return RedirectToAction("AddProducts", "OpenOrder",
-                new
-                {
-                    orderId = _orderApi.CreateNew(supplierId, _profileProvider.GetEntityId(), 1).OrderBasket.OrderBasketId
-                });
+                            JsonRequestBehavior.AllowGet);
         }
     }
 }

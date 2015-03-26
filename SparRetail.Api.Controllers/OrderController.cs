@@ -5,6 +5,7 @@ using SparRetail.Models.Api;
 using SparRetail.Orders.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -139,6 +140,45 @@ namespace SparRetail.Api.Controllers
             {
                 logger.Error(TagGroup, "AllOrderForSupplier", ex);
                 return new List<Order>();
+            }
+        }
+        public Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams)
+        {
+            try
+            {
+                return orderBasketService.AllOpenOrdersForRetailerPaged(pageParams);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "AllOpenOrdersForRetailerPaged", ex);
+                throw;
+            }
+        }
+
+        public OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId)
+        {
+            try
+            {
+                return orderBasketService.GetOpenOrderTotals(orderId, retailerId);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "GetOpenOrderTotals", ex);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        public Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams)
+        {
+            try
+            {
+                return orderService.GetAllFinalizedOrdersForRetailer(pageParams);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "GetOpenOrderTotals", ex);
+                throw;
             }
         }
     }

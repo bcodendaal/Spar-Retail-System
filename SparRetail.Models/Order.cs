@@ -16,6 +16,6 @@ namespace SparRetail.Models
         public Supplier Supplier { get; set; }
         public int UserId { get; set; }
         public OrderStatus OrderStatus { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }
