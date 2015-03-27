@@ -69,5 +69,20 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                     orderId = _orderApi.CreateNew(supplierId, _profileProvider.GetEntityId(), 1).OrderBasket.OrderBasketId
                 });
         }
+
+        /// <summary>
+        /// Checks to see if the retailer already created Open Orders for this supplier
+        /// If No Open Orders are found, the Retailer Is redirected to the "AddProducts" screen
+        /// </summary>
+        public ActionResult CheckOpenOrdersForSupplier(int SupplierId)
+        {
+            var openOrders = _orderApi.AllOrderBasketForRetailerSupplier(_profileProvider.GetEntityId(),SupplierId);
+            if (openOrders.Any())
+            {
+                return Json(new {Success = true, OrderCount = openOrders.Count()}, JsonRequestBehavior.AllowGet);
+            }
+            //If No Open Orders for Supplier the User Is redirected
+            return Json(new { Success = true, OrderCount = 0}, JsonRequestBehavior.AllowGet);
+        }
     }
 }

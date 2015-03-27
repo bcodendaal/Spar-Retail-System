@@ -138,11 +138,14 @@
                     orderId: '@Model.Order.OrderBasketId'
                 },
                 success: function(data) {
-                    if (data.Success)
-                    {
-                        alert("Success");
+                    if (data.Success) {
+                        if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
+                            window.location.replace("/OrderHistory/OrderHistory");
+                        } else {
+                            window.location.replace("/RetailerDashboard");
+                        }
                     } else {
-                        alert("Fuckup");
+                        alert("Unexpected error occured");
                     }
                 },
                 error: function(e) {
@@ -171,24 +174,30 @@
 
             var productId = button.data('productid');
             var quantity = $('#quantity_' + productId).val();
-            if (quantity == 0) {
-                alert("Enter Quantity");
-            } else {
+            if (ValidateElement($('#quantity_' + productId))) {
                 $.ajax({
                     url: '@Url.Action("AddItemToBasket", "OpenOrder")',
                     data: {
                         basketId: @Model.Order.OrderBasketId,
-                        basketItemId: productId,
+                        productId: productId,
                         supplierId: @Model.Supplier.SupplierId,
                         quantity: quantity
                     },
                     success: function(data) {
-                        GetOrderQuantityPrice(); //ToDo:Refactor here
-                        if (confirm('Succesully Finalized Order.  Redirect To Order History')) {
-                            window.location.href();
+                        // If a product is already in the Open Order, the user should have te option to update the item with the new quantity
+                        if (data.Success) {
+                            if (data.DuplicateProduct) {
+                                if (confirm("A duplicate product already exists for this order with quantity " + data.ProductQuantity + ".  Update with new Quantity?")) {
+                                    UpdateProductQuantity(productId, quantity);
+                                }
+                            } else {
+                                GetOrderQuantityPrice(); //ToDo:Refactor here
+                            }
                         } else {
-                            window.location.href();
+                            alert("Unexpected Server Error");
                         }
+
+
                     },
                     error: function(data) {
                         alert('Error Adding Item to order');
@@ -198,6 +207,32 @@
                 });
             }
 
+        }
+
+
+        function UpdateProductQuantity(productId, quantity) {
+            $.ajax({
+                url: '@Url.Action("UpdateProductQuantity", "OpenOrder")',
+                data: {
+                    basketId: @Model.Order.OrderBasketId,
+                    productId: productId,
+                    supplierId: @Model.Supplier.SupplierId,
+                    quantity: quantity
+                },
+                success: function(data) {
+                    if (data.Success) {
+                        alert("Succesfully Updated Quanitity");
+                        GetOrderQuantityPrice(); //ToDo:Refactor here
+                    } else {
+                        alert("Unexpected Server Error");
+                    }
+                },
+                error: function(data) {
+                    alert('Error Adding Item to order');
+                    console.log(data);
+                }
+
+            });
         }
 
         function SetUpTabNavigation() {
@@ -262,7 +297,7 @@
                         "targets": -1,
                         "data": "ProductId",
                         "render": function(data, type, full, meta) {
-                            return '<input data-function="quantity" id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
+                            return '<input data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
                         }
                     }
                 ]

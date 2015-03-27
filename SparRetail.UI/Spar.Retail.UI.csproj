@@ -333,6 +333,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomValidation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -430,8 +431,9 @@
     <Content Include="Views\Retailer\Orders\NewOrder\SelectSupplier.cshtml" />
     <Content Include="Views\Retailer\Orders\AddProducts.cshtml" />
     <Content Include="Views\Retailer\BrowseSuppliers\DataTableTest.cshtml" />
-    <Content Include="Views\Retailer\Orders\OpenOrders\OpenOrders.cshtml" />
+    <Content Include="Views\Retailer\Orders\OpenOrders\AllOpenOrders.cshtml" />
     <Content Include="Views\Retailer\Orders\OrderHistory\OrderHistory.cshtml" />
+    <Content Include="Views\Retailer\RetailerCommon\_MySuppliersOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">

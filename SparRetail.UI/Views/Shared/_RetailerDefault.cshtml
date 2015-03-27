@@ -448,7 +448,7 @@ Purchase: http://wrapbootstrap.com
                                 </a>
                             </li>
                             <li>
-                                <a href="@(Url.Action("OpenOrders", "OpenOrder"))">
+                                <a href="@(Url.Action("AllOpenOrders", "OpenOrder"))">
                                     <span class="menu-text">Open Orders</span>
                                 </a>
                             </li>
@@ -510,24 +510,12 @@ Purchase: http://wrapbootstrap.com
     <script src="~/assets/js/beyond.min.js"></script>
     <script src="~/assets/js/fuelux/spinner/fuelux.spinner.min.js"></script>
     <script src="~/assets/js/slimscroll/jquery.slimscroll.min.js"></script>
-    <!--Sparklined Scripts-->
-    <script src="~/assets/js/charts/sparkline/jquery.sparkline.js"></script>
-    <script src="~/assets/js/charts/sparkline/sparkline-init.js"></script>
 
-    <!--Easy Pied Scripts-->
-    <script src="~/assets/js/charts/easypiechart/jquery.easypiechart.js"></script>
-    <script src="~/assets/js/charts/easypiechart/easypiechart-init.js"></script>
-
-    <!--Flot Charipts-->
-    <script src="~/assets/js/charts/flot/jquery.flot.js"></script>
-    <script src="~/assets/js/charts/flot/jquery.flot.resize.js"></script>
-    <script src="~/assets/js/charts/flot/jquery.flot.pie.js"></script>
-    <script src="~/assets/js/charts/flot/jquery.flot.tooltip.js"></script>
-    <script src="~/assets/js/charts/flot/jquery.flot.orderBars.js"></script>
     <script src="~/assets/js/datatable/jquery.dataTables.js"></script>
     <script src="~/assets/js/datatable/dataTables.bootstrap.js"></script>
     <script src="~/assets/js/datatable/datatables-init.js"></script>
     <script src="~/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="~/Scripts/CustomValidation.js"></script>
     @RenderSection("PageScripts", required: false)
 </body>
 <!--  /Body -->

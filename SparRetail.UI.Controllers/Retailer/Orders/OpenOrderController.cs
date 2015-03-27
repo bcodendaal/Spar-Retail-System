@@ -30,10 +30,10 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
             _profileProvider = profileProvider;
         }
 
-        public ActionResult OpenOrders()
+        public ActionResult AllOpenOrders()
         {
 
-            return View(@"~\Views\Retailer\Orders\OpenOrders\OpenOrders.cshtml");
+            return View(@"~\Views\Retailer\Orders\OpenOrders\AllOpenOrders.cshtml");
         }
 
         public JsonResult OpenOrdersDataTableAjax(DataTableParam param)
@@ -111,18 +111,68 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                     JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult AddItemToBasket(int basketId, int basketItemId, int supplierId, int quantity)
+        /// <summary>
+        /// Adds a product to an Open Order
+        /// If an item already exists for that order the user has to decide to update the product quantity or keep the old quantity
+        /// </summary>
+        /// <param name="basketId"></param>
+        /// <param name="productId"></param>
+        /// <param name="supplierId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public JsonResult AddItemToBasket(int basketId, int productId, int supplierId, int quantity)
+        {
+
+            var basketProducts = _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId());
+
+            //check if item already exists
+            if (basketProducts.Any(x => x.ProductId == productId))
+            {
+                return Json(new { Success = true, DuplicateProduct = true, ProductQuantity = basketProducts.First(x => x.ProductId == productId).NumberOfUnits }, JsonRequestBehavior.AllowGet);
+            }
+            else // if item does not exits, add it to Open Order
+            {
+                var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
+
+                var product = _productApi.GetAllForSupplier(supplier).FirstOrDefault(x => x.ProductId == productId);
+
+
+                _orderApi.AddOrderBasketItem(new OrderBasketItemPost()
+                {
+                    RetailerId = _profileProvider.GetEntityId(),
+                    OrderBasketItem = new OrderBasketItem()
+                    {
+                        OrderBasketId = basketId,
+                        BarCode = product.Barcode,
+                        ProductId = product.ProductId,
+                        NumberOfUnits = quantity,
+                        PricePerUnit = product.Price,
+                        ProductCode = product.ProductCode,
+                        ProductName = product.ProductName,
+                        TotalPrice = quantity * product.Price,
+                        UnitOfMeasure = product.UnitOfMeasureName
+                    }
+                });
+
+                return Json(new { Success = true, DuplicateProduct = false, ProductQuantity = 0 }, JsonRequestBehavior.AllowGet);
+                //ToDo: Refactor So that Totals are returned
+            }
+        }
+
+
+        public JsonResult UpdateProductQuantity(int basketId, int productId, int supplierId, int quantity)
         {
             var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
             var product =
-                _productApi.GetAllForSupplier(supplier).FirstOrDefault(x => x.ProductId == basketItemId);
+                _productApi.GetAllForSupplier(supplier).FirstOrDefault(x => x.ProductId == productId);
 
-            _orderApi.AddOrderBasketItem(new OrderBasketItemPost()
+            _orderApi.UpdateOrderBasketItem(new OrderBasketItemPost()
             {
                 RetailerId = _profileProvider.GetEntityId(),
                 OrderBasketItem = new OrderBasketItem()
                 {
                     OrderBasketId = basketId,
+                    RetailerOrderBasketItemId =  _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x=> x.ProductId == productId).RetailerOrderBasketItemId,
                     BarCode = product.Barcode,
                     ProductId = product.ProductId,
                     NumberOfUnits = quantity,
@@ -133,8 +183,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                     UnitOfMeasure = product.UnitOfMeasureName
                 }
             });
-            return Json(new { TotalPrice = 0, TotalProducts = 0 },
-                    JsonRequestBehavior.AllowGet);
+            return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
             //ToDo: Refactor So that Totals are returned
         }
 

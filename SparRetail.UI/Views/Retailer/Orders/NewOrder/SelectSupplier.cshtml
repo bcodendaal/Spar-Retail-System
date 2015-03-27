@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "NewOrder";
+    ViewBag.Title = "New Order";
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
 }
 <div class="col-xs-12 col-md-12">
@@ -77,12 +77,43 @@
                         "targets": -1,
                         "data": "SupplierId",
                         "render": function (data, type, full, meta) {
-                            return '<a href="/NewOrder/CreateNewOrder/?supplierId='+ data + '">Order</a>';
+                            return '<a onclick="CheckOpenOrdersForSupplier(' + data + ')">Order</a>';
                         }
                     }
                 ]
             });
 
         });
+
+        ///Does a check to see if the Retailer already created orders from this supplier
+        function CheckOpenOrdersForSupplier(supplierId) {
+            $.ajax({
+                url: '@Url.Action("CheckOpenOrdersForSupplier", "NewOrder")',
+                data: {
+                    SupplierId: supplierId
+                },
+                success: function (data) {
+                    if (data.Success) {
+                        if (data.OrderCount > 0) {
+                            if (confirm(data.OrderCount + " Order/s are currently in an 'Open' state for this Supplier.  Continue to Create New Order?  Cancel redirects to 'Open Orders'")) {
+                                window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
+                            } else {
+                                window.location.replace("/OpenOrder/OpenOrders");
+                            }
+                        }
+                        else
+                            window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
+
+                    } else {
+                        alert('An Unexpected Error Occured: ' + data.message);
+                    }
+                },
+                error: function (e) {
+                    alert('An Unexpected Error Occured: ' + e.message);
+                    console.log(e);
+                }
+            });
+        };
     </script>
 }
+
