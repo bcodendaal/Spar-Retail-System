@@ -19,6 +19,8 @@ namespace SparRetail.Orders.Repositories
         OrderBasket CreateNew(int supplierId, int retailerId, int userId, string retailerDbKey);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, string retailerDbKey);
         OrderBasket Get(int basketId, string retailerDbKey);
-        OpenOrderTotals GetOpenOrderTotals(int orderId, string retailerDbKey );
+        OpenOrderDetails GetOpenOrderTotals(int orderId, string retailerDbKey );
+
+        Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams, string retailerDbKey);
     }
 }

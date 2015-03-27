@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataTableAjaxFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\AccountViewModels.cs" />
     <Compile Include="ViewModels\Account\IdentityModels.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="ViewModels\Retailer\Common\SupplierProductViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderFromSupplierViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderViewModel.cs" />
+    <Compile Include="ViewModels\Retailer\Orders\OpenOrderDetailViewModel.cs" />
     <Compile Include="ViewModels\Retailer\Orders\ProductsOrderViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\NewSupplierViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\OrderHistoryViewModel.cs" />

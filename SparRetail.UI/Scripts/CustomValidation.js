@@ -10,8 +10,8 @@ function ValidateElement(obj) {
     var value = obj.val();
     var validationType = obj.data("validationtype");
 
-    if (validationType == "number")
-        if (value == null || value == '' || value == 'undefined' || isNaN(value) || value == 0) {
+    if (validationType === "number")
+        if (value === null || value === '' || value === 'undefined' || isNaN(value)) {
             IsError(obj);
             return false;
         }

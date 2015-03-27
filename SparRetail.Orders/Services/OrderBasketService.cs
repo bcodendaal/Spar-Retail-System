@@ -128,11 +128,19 @@ namespace SparRetail.Orders.Services
                 );
         }
 
-        public OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId)
+        public OpenOrderDetails GetOpenOrderTotals(int orderId, int retailerId)
         {
             return orderBasketRepository.GetOpenOrderTotals(
                 orderId,
                 databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId)
+                );
+        }
+
+
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams)
+        {
+            return orderBasketRepository.GetOpenOrderItemsPaged(pageParams,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(pageParams.RetailerId)
                 );
         }
     }

@@ -98,7 +98,7 @@
                             if (confirm(data.OrderCount + " Order/s are currently in an 'Open' state for this Supplier.  Continue to Create New Order?  Cancel redirects to 'Open Orders'")) {
                                 window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
                             } else {
-                                window.location.replace("/OpenOrder/OpenOrders");
+                                window.location.replace("/OpenOrder/All");
                             }
                         }
                         else

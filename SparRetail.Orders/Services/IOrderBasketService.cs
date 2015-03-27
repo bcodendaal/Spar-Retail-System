@@ -19,6 +19,7 @@ namespace SparRetail.Orders.Services
         OrderBasket CreateNew(int supplierId, int retailerId, int userId);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId);
         OrderBasket Get(int basketId, int retailerId);
-        OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId);
+        OpenOrderDetails GetOpenOrderTotals(int orderId, int retailerId);
+        Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams);
     }
 }

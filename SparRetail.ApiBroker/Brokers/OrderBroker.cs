@@ -73,15 +73,21 @@ namespace SparRetail.ApiBroker.Brokers
             return Post<Page<OpenOrderPageResult>>("AllOpenOrdersForRetailerPaged", pageParams);
         }
 
-        public OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId)
+        public OpenOrderDetails GetOpenOrderDetail(int orderId, int retailerId)
         {
-            return Get<OpenOrderTotals>("GetOpenOrderTotals", new Dictionary<string, string> { { "orderId", orderId.ToString() }, { "retailerId", retailerId.ToString() } });
+            return Get<OpenOrderDetails>("GetOpenOrderDetail", new Dictionary<string, string> { { "orderId", orderId.ToString() }, { "retailerId", retailerId.ToString() } });
         }
 
 
         public Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams)
         {
             return Post<Page<OrderPagedResult>>("GetAllFinalizedOrdersForRetailer", pageParams);
+        }
+
+
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams)
+        {
+            return Post<Page<OrderBasketItem>>("GetOpenOrderItemsPaged", pageParams);
         }
     }
 }

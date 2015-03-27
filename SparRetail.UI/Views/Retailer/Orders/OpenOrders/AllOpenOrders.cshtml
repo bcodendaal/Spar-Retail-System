@@ -64,7 +64,8 @@
                         "targets": -1,
                         "data": "OrderBasketId",
                         "render": function (data, type, full, meta) {
-                            return '<a href="/OpenOrder/AddProducts/?orderId=' + data + '">Add Products</a>';
+                            return '<a href="/OpenOrder/AddProducts/?orderId=' + data + '">Add Products</a> | ' +
+                                '<a href="/OpenOrder/OrderDetail?OpenOrderId=' + data + '">View Order Details</a>';
                         }
                     }
                 ]

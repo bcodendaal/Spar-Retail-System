@@ -7,9 +7,9 @@ using SparRetail.Models;
 
 namespace Spar.Retail.UI.Models.ViewModels.Retailer.Orders
 {
-    public class ProductsOrderViewModel
+    public class OpenOrderDetailViewModel
     {
-        public OpenOrderDetails Order { get; set; }
+        public OpenOrderDetails OrderDetails { get; set; }
         public Supplier Supplier { get; set; }
     }
 }

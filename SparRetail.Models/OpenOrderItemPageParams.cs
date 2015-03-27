@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SparRetail.Models
 {
-    public class OpenOrderTotals : OrderBasket
+    public class OpenOrderItemPageParams: Page
     {
-        public int TotalPrice { get; set; }
-        public int TotalProducts { get; set; }
+        public int OpenOrderId { get; set; }
+        public int RetailerId { get; set; }
     }
 }

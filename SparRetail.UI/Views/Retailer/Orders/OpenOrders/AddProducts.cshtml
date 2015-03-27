@@ -1,4 +1,5 @@
-﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.Orders.ProductsOrderViewModel
+﻿@using Spar.Retail.UI.Models.ViewModels.Retailer.Orders
+@model Spar.Retail.UI.Models.ViewModels.Retailer.Orders.ProductsOrderViewModel
 @{
     ViewBag.Title = "Order Products";
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
@@ -7,73 +8,13 @@
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="well">
-            <div class="row">
-                <div class="col-xs-5">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h6>Supplier: @Model.Supplier.SupplierName</h6>
-                        </div>
-                        <div class="panel-body">
-                            <ul>
-                                <li>
-                                    @Model.Supplier.SupplierCode
-                                </li>
-                                <li>@Model.Supplier.VATNumber</li>
-                                <li>@Model.Supplier.Telephone</li>
-                                <li>@Model.Supplier.Fax</li>
-                                <li>
-                                    @Model.Supplier.AddressLine1<br />
-                                    @Model.Supplier.AddressLine2<br />
-                                    @Model.Supplier.AddressLine3
-                                </li>
-                                <li>
-                                    @Model.Supplier.PostalCode
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-7">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h6>Order: @Model.Order.OrderBasketId</h6>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <ul>
-                                        <li>
-                                            Status: @Model.Order.OrderBasketStatus
-                                        </li>
-                                        <li>
-                                            UserId : @Model.Order.UserId
-                                        </li>
-                                        <li>
-                                            Created on: @Model.Order.CreatedOn
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-3">
+            @Html.Partial("~/Views/Retailer/Orders/_OpenOrderDetailsHeader.cshtml", new OpenOrderDetailViewModel()
+            {
+                Supplier = Model.Supplier,
+                OrderDetails = Model.Order
+            })
 
-                                    Products : <label id="orderProductTotal"></label>
-                                </div>
-                                <div class="col-xs-3">
-                                    Total Price : <label id="orderPriceTotal"></label>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button>View Products</button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button id="btnFinalize">Finalize Order</button>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="row">
                 <table class="table table-striped table-bordered table-hover table-condensed" id="tblProduct">
@@ -112,6 +53,8 @@
                     <tbody></tbody>
                 </table>
             </div>
+            <a href="/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId">View All Products Added</a>
+            <button id="btnFinalize">Finalize Order</button>
         </div>
     </div>
 </div>
@@ -152,7 +95,7 @@
                     console.log(e);
                 }
             });
-        }
+        };
 
         function GetOrderQuantityPrice() {
             $.ajax({
@@ -168,7 +111,7 @@
                     console.log(e);
                 }
             });
-        }
+        };
 
         function AddProductToOrder(button) {
 
@@ -207,7 +150,7 @@
                 });
             }
 
-        }
+        };
 
 
         function UpdateProductQuantity(productId, quantity) {
@@ -233,7 +176,7 @@
                 }
 
             });
-        }
+        };
 
         function SetUpTabNavigation() {
 
@@ -263,7 +206,7 @@
                 };
             });
 
-        }
+        };
 
         function InitializeProductTable() {
             $('#tblProduct').dataTable({
@@ -297,13 +240,13 @@
                         "targets": -1,
                         "data": "ProductId",
                         "render": function(data, type, full, meta) {
-                            return '<input data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
+                            return '<input data-validationtype="number" data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
                         }
                     }
                 ]
             });
 
-        }
+        };
     </script>
 }
 

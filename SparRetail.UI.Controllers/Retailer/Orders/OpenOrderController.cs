@@ -30,7 +30,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
             _profileProvider = profileProvider;
         }
 
-        public ActionResult AllOpenOrders()
+        public ActionResult All()
         {
 
             return View(@"~\Views\Retailer\Orders\OpenOrders\AllOpenOrders.cshtml");
@@ -62,16 +62,14 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
 
         public ActionResult AddProducts(int orderId)
         {
-            var order =
-                _orderApi.AllOrderBasketForRetailer(_profileProvider.GetEntityId())
-                    .First(x => x.OrderBasketId == orderId);
+            var order = _orderApi.GetOpenOrderDetail(orderId, _profileProvider.GetEntityId());
             var model = new ProductsOrderViewModel()
             {
                 Order = order,
                 Supplier = _supplierApi.GetSupplierById(order.SupplierId)
             };
 
-            return View("~/Views/Retailer/Orders/AddProducts.cshtml", model);
+            return View("~/Views/Retailer/Orders/OpenOrders/AddProducts.cshtml", model);
         }
 
         public JsonResult ProductsDataTableAjax(DataTableParam param)
@@ -100,7 +98,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
 
         public JsonResult GetOpenOrderTotals(int orderId)
         {
-            var orderDetails = _orderApi.GetOpenOrderTotals(orderId, _profileProvider.GetEntityId());
+            var orderDetails = _orderApi.GetOpenOrderDetail(orderId, _profileProvider.GetEntityId());
             if (orderDetails != null)
             {
 
@@ -162,29 +160,55 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
 
         public JsonResult UpdateProductQuantity(int basketId, int productId, int supplierId, int quantity)
         {
+
+
             var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
             var product =
-                _productApi.GetAllForSupplier(supplier).FirstOrDefault(x => x.ProductId == productId);
-
-            _orderApi.UpdateOrderBasketItem(new OrderBasketItemPost()
+                _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x => x.RetailerOrderBasketItemId == productId);
+            if (quantity == 0)
             {
-                RetailerId = _profileProvider.GetEntityId(),
-                OrderBasketItem = new OrderBasketItem()
+                _orderApi.DeleteOrderBasketItem(new OrderBasketItemPost()
                 {
-                    OrderBasketId = basketId,
-                    RetailerOrderBasketItemId =  _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x=> x.ProductId == productId).RetailerOrderBasketItemId,
-                    BarCode = product.Barcode,
-                    ProductId = product.ProductId,
-                    NumberOfUnits = quantity,
-                    PricePerUnit = product.Price,
-                    ProductCode = product.ProductCode,
-                    ProductName = product.ProductName,
-                    TotalPrice = quantity * product.Price,
-                    UnitOfMeasure = product.UnitOfMeasureName
-                }
-            });
+                    OrderBasketItem = product,
+                    RetailerId = _profileProvider.GetEntityId()
+                });
+            }
+            else
+            {
+                _orderApi.UpdateOrderBasketItem(new OrderBasketItemPost()
+                {
+                    RetailerId = _profileProvider.GetEntityId(),
+                    OrderBasketItem = new OrderBasketItem()
+                    {
+                        OrderBasketId = basketId,
+                        RetailerOrderBasketItemId = product.RetailerOrderBasketItemId,
+                        BarCode = product.BarCode,
+                        ProductId = product.ProductId,
+                        NumberOfUnits = quantity,
+                        PricePerUnit = product.PricePerUnit,
+                        ProductCode = product.ProductCode,
+                        ProductName = product.ProductName,
+                        TotalPrice = quantity * product.PricePerUnit,
+                        UnitOfMeasure = product.UnitOfMeasure
+                    }
+                });
+            }
             return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
             //ToDo: Refactor So that Totals are returned
+        }
+
+
+        public ActionResult OrderDetail(int OpenOrderId)
+        {
+            var order =
+                _orderApi.GetOpenOrderDetail(OpenOrderId, _profileProvider.GetEntityId());
+
+            var viewmodel = new OpenOrderDetailViewModel()
+            {
+                OrderDetails = order,
+                Supplier = _supplierApi.GetSupplierById(order.SupplierId)
+            };
+            return View(@"~\Views\Retailer\Orders\OpenOrders\OrderDetails.cshtml", viewmodel);
         }
 
         public JsonResult FinalizeOrder(int orderId)
@@ -207,6 +231,31 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
             {
                 return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public JsonResult OpenOrderItemDataTableAjax(DataTableParam param)
+        {
+            var result = _orderApi.GetOpenOrderItemsPaged(new OpenOrderItemPageParams()
+            {
+                RetailerId = _profileProvider.GetEntityId(),
+                OpenOrderId = Convert.ToInt32(param.additionalParams["OpenOrderId"]),
+                OrderBy = param.OrderBy,
+                OrderDirection = param.OrderDirection,
+                PageNumber = param.PageNumber,
+                PageSize = param.length,
+                SearchText = param.SearchText
+
+            });
+
+            return Json(new DataTableJsonReturnModel<OrderBasketItem>()
+            {
+                data = result.Results,
+                draw = Convert.ToInt32(param.draw),
+                error = string.Empty,
+                recordsFiltered = result.Results.Count,
+                recordsTotal = result.TotalRows
+            },
+                            JsonRequestBehavior.AllowGet);
         }
     }
 }

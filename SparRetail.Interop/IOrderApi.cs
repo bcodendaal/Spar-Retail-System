@@ -20,8 +20,10 @@ namespace SparRetail.Interop
         ResponseModel FinaliseOrder(FinaliseOrderPost finaliseOrderPost);
         OrderBasketResponse CreateNew(int supplierId, int retailerId, int userId);
         List<Order> AllOrderForSupplier(int supplierId);
-        OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId);
+        OpenOrderDetails GetOpenOrderDetail(int orderId, int retailerId);
         Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams);
+        
+        Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams);
 
     }
 }

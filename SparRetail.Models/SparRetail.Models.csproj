@@ -55,9 +55,10 @@
     <Compile Include="Enums\OrderBasketStatus.cs" />
     <Compile Include="Enums\OrderStatus.cs" />
     <Compile Include="Enums\TenantType.cs" />
+    <Compile Include="OpenOrderItemPageParams.cs" />
     <Compile Include="OpenOrderPageParams.cs" />
+    <Compile Include="OpenOrderDetails.cs" />
     <Compile Include="OpenOrderPageResult.cs" />
-    <Compile Include="OpenOrderTotals.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderBasket.cs" />
     <Compile Include="OrderBasketItem.cs" />

@@ -155,7 +155,7 @@ namespace SparRetail.Api.Controllers
             }
         }
 
-        public OpenOrderTotals GetOpenOrderTotals(int orderId, int retailerId)
+        public OpenOrderDetails GetOpenOrderDetail(int orderId, int retailerId)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace SparRetail.Api.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(TagGroup, "GetOpenOrderTotals", ex);
+                logger.Error(TagGroup, "GetOpenOrderDetail", ex);
                 throw;
             }
         }
@@ -177,7 +177,21 @@ namespace SparRetail.Api.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(TagGroup, "GetOpenOrderTotals", ex);
+                logger.Error(TagGroup, "GetOpenOrderDetail", ex);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams)
+        {
+            try
+            {
+                return orderBasketService.GetOpenOrderItemsPaged(pageParams);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(TagGroup, "GetOpenOrderItemsPaged", ex);
                 throw;
             }
         }
