@@ -132,6 +132,7 @@
     <Compile Include="Supplier\SupplierCommonController.cs" />
     <Compile Include="Supplier\SupplierDashBoardController.cs" />
     <Compile Include="Supplier\SupplierOrdersController.cs" />
+    <Compile Include="Supplier\SupplierProductController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

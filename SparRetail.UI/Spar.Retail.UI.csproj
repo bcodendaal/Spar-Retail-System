@@ -427,6 +427,9 @@
     <Content Include="Views\Supplier\SupplierOrders\Index.cshtml" />
     <Content Include="Views\Supplier\SupplierCommon\OrderHistory.cshtml" />
     <None Include="Properties\PublishProfiles\SparRetail.UI.pubxml" />
+    <Content Include="Views\Supplier\SupplierProduct\Index.cshtml" />
+    <Content Include="Views\Supplier\SupplierProduct\AddProduct.cshtml" />
+    <Content Include="Views\Supplier\SupplierProduct\AllProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">

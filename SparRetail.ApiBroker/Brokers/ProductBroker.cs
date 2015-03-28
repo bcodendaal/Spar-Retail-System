@@ -19,5 +19,10 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Post<List<Product>>("GetAllForSupplier", supplier);
         }
+
+        public List<Product> AddProducts(List<Product> products)
+        {
+            return Post<List<Product>>("AddProducts", products);
+        }
     }
 }

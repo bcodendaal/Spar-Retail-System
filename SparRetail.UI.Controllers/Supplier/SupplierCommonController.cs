@@ -29,5 +29,6 @@ namespace SparRetail.UI.Controllers.Supplier
             return View(@"~\Views\Supplier\SupplierCommon\OrderHistory.cshtml", new OrderHistoryViewModel() { Orders = orders });
 
         }
+       
     }
 }

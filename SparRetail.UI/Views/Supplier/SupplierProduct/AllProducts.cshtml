@@ -1,0 +1,90 @@
+﻿@model Spar.Retail.UI.Models.ViewModels.Supplier.Product.AllProductViewModel
+
+<div class="col-xs-12 col-md-12">
+    <div class="widget">
+
+        <div class="widget-header bg-blueberry">
+            <i class="widget-icon fa fa-shopping-cart"></i>
+            <span class="widget-caption">All Products</span>
+            <div class="widget-buttons">
+                <a href="#" data-toggle="config">
+                    <i class="fa fa-cog"></i>
+                </a>
+                <a href="#" data-toggle="maximize">
+                    <i class="fa fa-expand"></i>
+                </a>
+                <a href="#" data-toggle="collapse">
+                    <i class="fa fa-minus"></i>
+                </a>
+            </div><!--Widget Buttons-->
+        </div>
+        <div class="widget-body">
+            <div class="table-scrollable">
+                <table class="table table-bordered table-striped table-condensed flip-content table-hover">
+                    <thead class="flip-content bordered-blueberry">
+                        <tr>
+                            <th>
+                                ProductCode
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                ProductCode
+                            </th>
+                            <th>
+                                Added
+                            </th>
+                            <th>
+                                Barcode
+                            </th>
+
+                            <th>
+                                PricePerUnit
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Products.Any())
+                        {
+                            foreach (var product in @Model.Products)
+                            {
+                                <tr>
+                                    <td>
+                                        @product.ProductCode
+                                    </td>
+                                    <td>
+                                        @product.ProductName
+                                    </td>
+                                    <td>
+                                        @product.ProductCode
+                                    </td>
+                                    <td>
+                                        @product.CreatedOn
+                                    </td>
+                                    <td>
+                                        @product.Barcode
+                                    </td>
+
+                                    <td>
+                                        @product.Price
+                                    </td>
+                                   
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    No Products
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

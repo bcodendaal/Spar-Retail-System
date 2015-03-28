@@ -1,0 +1,9 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_SupplierDefault.cshtml";
+}
+
+@Html.Action("AddProduct", "SupplierProduct")
+@Html.Action("AllProducts", "SupplierProduct")

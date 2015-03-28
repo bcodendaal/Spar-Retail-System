@@ -10,5 +10,6 @@ namespace SparRetail.Interop
     public interface IProductApi
     {
         List<Product> GetAllForSupplier(Supplier supplier);
+        List<Product> AddProducts(List<Product> products); 
     }
 }

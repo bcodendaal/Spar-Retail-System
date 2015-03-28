@@ -119,5 +119,40 @@ namespace SparRetail.Api.Tests
 
 
         }
+
+        [TestCase]
+        public void insert_products()
+        {
+            ProductBroker broker = new ProductBroker(new ApiBrokerConfig { EndPoint = ConfigurationManager.AppSettings["apiEndpoint"] });
+            var result = broker.AddProducts(new List<Product>() 
+            {
+                new Product() 
+                {
+                    SupplierId = 3,
+                    Barcode = "1231234",
+                    CategoryId = 1,
+                    PackSize = 1,
+                    ProductCode = "CCC",
+                    Price = 10,
+                    ProductDescription = "Cookies with bits of chocolate in them",
+                    ProductName = "Chocolate Chip Cookies"
+                },
+                new Product() 
+                {
+                    SupplierId = 3,
+                    Barcode = "43124231",
+                    CategoryId = 1,
+                    PackSize = 1,
+                    ProductCode = "GSC",
+                    Price = 10,
+                    ProductDescription = "Cookies with ginger flavouring. Golden brown",
+                    ProductName = "Ginger Snap Cookies"
+                }
+            });
+
+            Assert.NotNull(result);
+            Assert.AreEqual(2, result.Count());
+        }
+            
     }
 }

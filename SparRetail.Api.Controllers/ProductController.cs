@@ -1,28 +1,30 @@
-﻿using SparRetail.Interop;
+﻿using System.Collections.Generic;
+using System.Web.Http;
+using SparRetail.Interop;
 using SparRetail.Models;
 using SparRetail.Products.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
 
 namespace SparRetail.Api.Controllers
 {
     public class ProductController : ApiController, IProductApi
     {
-        protected readonly IProductService productService;
+        protected readonly IProductService ProductService;
 
         public ProductController(IProductService productService)
         {
-            this.productService = productService;
+            ProductService = productService;
         }
 
         [HttpPost]
         public List<Product> GetAllForSupplier(Supplier supplier)
         {
-            return productService.GetAllForSupplier(supplier);
+            return ProductService.GetAllForSupplier(supplier);
+        }
+
+        [HttpPost]
+        public List<Product> AddProducts(List<Product> products)
+        {
+            return ProductService.AddProducts(products);
         }
     }
 }
