@@ -101,11 +101,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataTableAjaxFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\AccountViewModels.cs" />
     <Compile Include="ViewModels\Account\IdentityModels.cs" />
     <Compile Include="ViewModels\Account\ManageViewModels.cs" />
     <Compile Include="ViewModels\Account\Profile.cs" />
+    <Compile Include="ViewModels\DataTables\DataTableColumn.cs" />
+    <Compile Include="ViewModels\DataTables\DataTableJsonReturnObject.cs" />
+    <Compile Include="ViewModels\DataTables\DataTableParam.cs" />
+    <Compile Include="ViewModels\DataTables\DataTableOrder.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\AddProductsToBasketViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderBasketOptionsViewModel.cs" />
     <Compile Include="ViewModels\Retailer\Common\AllSupplierViewModel.cs" />
@@ -115,6 +120,8 @@
     <Compile Include="ViewModels\Retailer\Common\SupplierProductViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderFromSupplierViewModel.cs" />
     <Compile Include="ViewModels\Retailer\BrowseSuppliers\OrderViewModel.cs" />
+    <Compile Include="ViewModels\Retailer\Orders\OpenOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\Retailer\Orders\ProductsOrderViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\NewSupplierViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\OrderHistoryViewModel.cs" />
   </ItemGroup>
@@ -128,6 +135,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

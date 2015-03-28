@@ -10,5 +10,6 @@ namespace SparRetail.Orders.Repositories
     public interface IOrderRepository
     {
         List<Order> AllOrderForSupplier(int supplierId, string supplierDbKey);
+        Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams, string retailerDbKey);
     }
 }

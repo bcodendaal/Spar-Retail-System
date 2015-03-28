@@ -93,5 +93,45 @@ namespace SparRetail.Orders.Repositories
         {
             return QueryOne<OrderBasket>("usp_SelectOrderBasket", new { @BasketId = basketId }, retailerDbKey);
         }
+
+        public Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams, string retailerDbKey)
+        {
+            return QueryMultiple("usp_SelectOpenOrdersPaged",
+                 new
+                 {
+                     @RetailerId = pageParams.RetailerId,
+                     @SearchText = pageParams.SearchText,
+                     @OrderBy = pageParams.OrderBy,
+                     @OrderDirection = pageParams.OrderDirection,
+                     @PageNumber = pageParams.PageNumber,
+                     @PageSize = pageParams.PageSize
+                 },
+                 new Func<List<OpenOrderPageResult>, Page, Page<OpenOrderPageResult>>(
+                     (list, page) => new Page<OpenOrderPageResult>(page, list)),
+                 retailerDbKey);
+        }
+
+        public OpenOrderDetails GetOpenOrderTotals(int orderId, string retailerDbKey)
+        {
+            return QueryOne<OpenOrderDetails>("usp_SelectOpenOrderTotals", new { @OrderId = orderId }, retailerDbKey);
+        }
+
+
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams, string retailerDbKey)
+        {
+            return QueryMultiple("usp_SelectAllOpenOrderProductsForOrderPaged",
+                 new
+                 {
+                     @OpenOrderId = pageParams.OpenOrderId,
+                     @SearchText = pageParams.SearchText,
+                     @OrderBy = pageParams.OrderBy,
+                     @OrderDirection = pageParams.OrderDirection,
+                     @PageNumber = pageParams.PageNumber,
+                     @PageSize = pageParams.PageSize
+                 },
+                 new Func<List<OrderBasketItem>, Page, Page<OrderBasketItem>>(
+                     (list, page) => new Page<OrderBasketItem>(page, list)),
+                 retailerDbKey);
+        }
     }
 }

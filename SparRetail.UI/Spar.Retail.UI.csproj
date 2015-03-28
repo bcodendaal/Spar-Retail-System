@@ -333,6 +333,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomValidation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -398,15 +399,6 @@
     <Content Include="Views\Shared\_RetailerDefault.cshtml" />
     <Content Include="Views\Shared\_SupplierDefault.cshtml" />
     <Content Include="Views\Retailer\Dashboard.cshtml" />
-    <Content Include="Views\Retailer\BrowseSuppliers\Index.cshtml" />
-    <Content Include="Views\Retailer\RetailerOrders\Index.cshtml" />
-    <Content Include="Views\Retailer\RetailerCommon\_AllSupplierProductsOrder.cshtml" />
-    <Content Include="Views\Retailer\RetailerCommon\_AllSuppliersOrder.cshtml" />
-    <Content Include="Views\Retailer\BrowseSuppliers\_OrderBasketOption.cshtml" />
-    <Content Include="Views\Retailer\BrowseSuppliers\_AddProductsToBasket.cshtml" />
-    <Content Include="Views\Retailer\RetailerCommon\OrderBasket.cshtml" />
-    <Content Include="Views\Retailer\RetailerCommon\_OrderBaskets.cshtml" />
-    <Content Include="Views\Retailer\RetailerOpenOrder\OpenBaskets.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -427,6 +419,12 @@
     <Content Include="Views\Supplier\SupplierOrders\Index.cshtml" />
     <Content Include="Views\Supplier\SupplierCommon\OrderHistory.cshtml" />
     <None Include="Properties\PublishProfiles\SparRetail.UI.pubxml" />
+    <Content Include="Views\Retailer\Orders\NewOrder\SelectSupplier.cshtml" />
+    <Content Include="Views\Retailer\Orders\OpenOrders\AddProducts.cshtml" />
+    <Content Include="Views\Retailer\Orders\OpenOrders\AllOpenOrders.cshtml" />
+    <Content Include="Views\Retailer\Orders\OrderHistory\OrderHistory.cshtml" />
+    <Content Include="Views\Retailer\Orders\OpenOrders\OrderDetails.cshtml" />
+    <Content Include="Views\Retailer\Orders\_OpenOrderDetailsHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spar.Retail.UI.Models\Spar.Retail.UI.Models.csproj">
@@ -440,6 +438,10 @@
     <ProjectReference Include="..\SparRetail.Interop\SparRetail.Interop.csproj">
       <Project>{1b5b1899-d697-4050-a31f-cfacd8c4bfee}</Project>
       <Name>SparRetail.Interop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">
+      <Project>{0816E6FB-1C15-488F-9190-98F1D6977BF7}</Project>
+      <Name>SparRetail.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\SparRetail.UI.Controllers\Spar.Retail.UI.Controllers.csproj">
       <Project>{5c62520e-b7be-4007-adf0-bb3fb620f95d}</Project>

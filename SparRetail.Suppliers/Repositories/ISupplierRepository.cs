@@ -12,5 +12,6 @@ namespace SparRetail.Suppliers
         List<Supplier> All();
         Supplier GetById(int supplierId);
         Supplier Create(Supplier supplier);
+        Page<Supplier> GetAllSuppliersForRetailerPaged(SupplierPagedParams pageParam);
     }
 }
