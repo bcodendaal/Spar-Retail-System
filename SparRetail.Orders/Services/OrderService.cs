@@ -24,5 +24,12 @@ namespace SparRetail.Orders.Services
         {
             return orderRepository.AllOrderForSupplier(supplierId, databaseConfigAdapter.GetSupplierDatabaseConfigKey(supplierId));
         }
+
+
+        public Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams)
+        {
+            return orderRepository.GetAllFinalizedOrdersForRetailer(pageParams,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(pageParams.RetailerId));
+        }
     }
 }

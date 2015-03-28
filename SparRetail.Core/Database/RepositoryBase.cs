@@ -1,6 +1,7 @@
 ﻿using SparRetail.Core.Config;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,14 @@ namespace SparRetail.Core.Database
         {
             this.ConfigCollection = configCollection;
         }
-        
+
         protected IDatabaseConfigItem GetConfig(string databaseConfigKey)
         {
             if (ConfigCollection.KeyExists(databaseConfigKey))
                 return ConfigCollection.Get(databaseConfigKey);
             else
                 return LoadConfig(databaseConfigKey);
-         }
+        }
 
         private IDatabaseConfigItem LoadConfig(string databaseConfigKey)
         {
@@ -38,7 +39,7 @@ namespace SparRetail.Core.Database
                     return result.First();
                 }
                 else
-                    throw new KeyNotFoundException("Could not find database config key: " + databaseConfigKey);                    
+                    throw new KeyNotFoundException("Could not find database config key: " + databaseConfigKey);
             }
         }
 
@@ -46,7 +47,7 @@ namespace SparRetail.Core.Database
         {
             using (SqlConnection connection = new SqlConnection(GetConfig(databaseConfigKey).ConnectionString))
             {
-                return connection.Query<T>(storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure).ToList();                
+                return connection.Query<T>(storedProcedure, parameters, null, false, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure).ToList();
             }
         }
 
@@ -68,6 +69,20 @@ namespace SparRetail.Core.Database
                 connection.Execute(storedProcedure, parameters, null, GetConfig(databaseConfigKey).CommandTimeout, System.Data.CommandType.StoredProcedure);
             }
         }
-        
+
+        protected T QueryMultiple<T, T1, T2>(string storedProcedure, object parameters, Func<List<T1>, T2, T> func, string databaseConfigKey) where T : class
+        {
+            using (var connection = new SqlConnection(GetConfig(databaseConfigKey).ConnectionString))
+            {
+                using (var multi = connection.QueryMultiple(storedProcedure, parameters, null, GetConfig(databaseConfigKey).CommandTimeout, CommandType.StoredProcedure))
+                {
+                    return func.Invoke(
+                        multi.Read<T1>().ToList(),
+                        multi.Read<T2>().Single()
+                        );
+                }
+            }
+        }
+
     }
 }

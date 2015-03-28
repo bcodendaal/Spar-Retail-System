@@ -37,10 +37,11 @@ namespace SparRetail.Orders.Services
             this.configCollection = configCollection;
             this.logger = logger;
 
-              bus = ServiceBusFactory.New(sbc => { 
+            bus = ServiceBusFactory.New(sbc =>
+            {
                 Log4NetLogger.Use();
                 sbc.UseRabbitMq();
-                sbc.ReceiveFrom(string.Format("rabbitmq://{0}/{1}", configCollection.Get(SharedConfigKeys.RabbitHost), "orderbasket.finalize.producer"));                
+                sbc.ReceiveFrom(string.Format("rabbitmq://{0}/{1}", configCollection.Get(SharedConfigKeys.RabbitHost), "orderbasket.finalize.producer"));
             });
         }
 
@@ -91,7 +92,7 @@ namespace SparRetail.Orders.Services
 
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
         {
-            bus.Publish<FinalizeOrderCommand>(new FinalizeOrderCommand(){ OrderBasketId = orderBasketId, RetailerId = retailerId });            
+            bus.Publish<FinalizeOrderCommand>(new FinalizeOrderCommand() { OrderBasketId = orderBasketId, RetailerId = retailerId });
         }
 
         public OrderBasket CreateNew(int supplierId, int retailerId, int userId)
@@ -116,6 +117,31 @@ namespace SparRetail.Orders.Services
         public OrderBasket Get(int basketId, int retailerId)
         {
             return orderBasketRepository.Get(basketId, databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId));
+        }
+
+
+        public Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams)
+        {
+            return orderBasketRepository.AllOpenOrdersForRetailerPaged(
+                pageParams,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(pageParams.RetailerId)
+                );
+        }
+
+        public OpenOrderDetails GetOpenOrderTotals(int orderId, int retailerId)
+        {
+            return orderBasketRepository.GetOpenOrderTotals(
+                orderId,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(retailerId)
+                );
+        }
+
+
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams)
+        {
+            return orderBasketRepository.GetOpenOrderItemsPaged(pageParams,
+                databaseConfigAdapter.GetRetailerDatabaseConfigKey(pageParams.RetailerId)
+                );
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SparRetail.Products.Repositories
 {
-    public class ProductRepository : RepositoryBase,  IProductRepository
+    public class ProductRepository : RepositoryBase, IProductRepository
     {
         public ProductRepository(IDatabaseConfigCollection config)
             : base(config)
@@ -33,6 +33,23 @@ namespace SparRetail.Products.Repositories
                     @Barcode = product.Barcode,
                     @CategoryId = product.CategoryId
             }, databaseConfigKey);
+        }
+
+        public Page<Product> GetSupplierProductsPaged(string databaseConfigKey, ProductPagedParams pageParam)
+        {
+            return QueryMultiple("usp_SelectSupplierProductsPaged",
+                new
+                {
+                    @SupplierId = pageParam.SupplierId,
+                    @SearchText = pageParam.SearchText,
+                    @OrderBy = pageParam.OrderBy,
+                    @OrderDirection = pageParam.OrderDirection,
+                    @PageNumber = pageParam.PageNumber,
+                    @PageSize = pageParam.PageSize
+                },
+                new Func<List<Product>, Page, Page<Product>>(
+                    (list, page) => new Page<Product>(page, list)),
+                databaseConfigKey);
         }
     }
 }

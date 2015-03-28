@@ -11,6 +11,7 @@ namespace SparRetail.Orders.Services
     {
         List<OrderBasket> AllForRetailerSupplier(int retailerId, int supplierId);
         List<OrderBasket> AllForRetailer(int retailerId);
+        Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams);
         void AddOrderBasketItem(int retailerId, OrderBasketItem basketItem);
         void UpdateOrderBasketItem(OrderBasketItem basketItem, int retailerId);
         void DeleteOrderBasketItem(OrderBasketItem basketItem, int retailerId);
@@ -18,5 +19,7 @@ namespace SparRetail.Orders.Services
         OrderBasket CreateNew(int supplierId, int retailerId, int userId);
         void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId);
         OrderBasket Get(int basketId, int retailerId);
+        OpenOrderDetails GetOpenOrderTotals(int orderId, int retailerId);
+        Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams);
     }
 }

@@ -25,16 +25,13 @@ namespace SparRetail.Suppliers
             return supplierRepository.All();
         }
 
-
         public Supplier GetById(int supplierId)
         {
             return supplierRepository.GetById(supplierId);
         }
 
-
         public CommandResponse<Supplier> Create(Supplier supplier)
         {
-
             try
             {
                 // Todo: validation of supplier
@@ -48,6 +45,10 @@ namespace SparRetail.Suppliers
             {
                 return new CommandResponse<Supplier> { IsSuccess = false, Model = null, Message = ex.ToString() };
             }
+        }
+        public Page<Supplier> GetAllSuppliersForRetailerPaged(SupplierPagedParams pageParam)
+        {
+            return supplierRepository.GetAllSuppliersForRetailerPaged(pageParam);
         }
     }
 }

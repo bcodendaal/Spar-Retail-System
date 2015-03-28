@@ -66,5 +66,28 @@ namespace SparRetail.ApiBroker.Brokers
         {
             return Get<List<Order>>("AllOrderForSupplier", new Dictionary<string, string> { { "supplierId", supplierId.ToString() } });
         }
+
+
+        public Page<OpenOrderPageResult> AllOpenOrdersForRetailerPaged(OpenOrderPageParams pageParams)
+        {
+            return Post<Page<OpenOrderPageResult>>("AllOpenOrdersForRetailerPaged", pageParams);
+        }
+
+        public OpenOrderDetails GetOpenOrderDetail(int orderId, int retailerId)
+        {
+            return Get<OpenOrderDetails>("GetOpenOrderDetail", new Dictionary<string, string> { { "orderId", orderId.ToString() }, { "retailerId", retailerId.ToString() } });
+        }
+
+
+        public Page<OrderPagedResult> GetAllFinalizedOrdersForRetailer(OrderPageParams pageParams)
+        {
+            return Post<Page<OrderPagedResult>>("GetAllFinalizedOrdersForRetailer", pageParams);
+        }
+
+
+        public Page<OrderBasketItem> GetOpenOrderItemsPaged(OpenOrderItemPageParams pageParams)
+        {
+            return Post<Page<OrderBasketItem>>("GetOpenOrderItemsPaged", pageParams);
+        }
     }
 }

@@ -1,4 +1,0 @@
-D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.dll
-D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.pdb
-D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.dll
-D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.pdb

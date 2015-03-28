@@ -55,13 +55,22 @@
     <Compile Include="Enums\OrderBasketStatus.cs" />
     <Compile Include="Enums\OrderStatus.cs" />
     <Compile Include="Enums\TenantType.cs" />
+    <Compile Include="OpenOrderItemPageParams.cs" />
+    <Compile Include="OpenOrderPageParams.cs" />
+    <Compile Include="OpenOrderDetails.cs" />
+    <Compile Include="OpenOrderPageResult.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderBasket.cs" />
     <Compile Include="OrderBasketItem.cs" />
+    <Compile Include="OrderPageParams.cs" />
+    <Compile Include="OrderPagedResult.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailer.cs" />
     <Compile Include="Supplier.cs" />
+    <Compile Include="ProductPagedParams.cs" />
+    <Compile Include="SupplierPagedParams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

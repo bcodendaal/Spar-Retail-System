@@ -14,7 +14,8 @@ namespace SparRetail.Suppliers
 {
     public class SupplierRepository : RepositoryBase, ISupplierRepository
     {
-        public SupplierRepository(IDatabaseConfigCollection configCollection) : base(configCollection)
+        public SupplierRepository(IDatabaseConfigCollection configCollection)
+            : base(configCollection)
         {
 
         }
@@ -33,6 +34,25 @@ namespace SparRetail.Suppliers
         public Supplier Create(Supplier supplier)
         {
             return QueryOne<Supplier>("usp_InsertSupplier", new { @SupplierName = supplier.SupplierName, @DatabaseConfigKey = supplier.DatabaseConfigKey }, CommonConfigKeys.dbKeyMaster);
+        }
+
+
+        public Page<Supplier> GetAllSuppliersForRetailerPaged(SupplierPagedParams pageParam)
+        {
+
+            return QueryMultiple("usp_SelectAllSuppliersForRetailerPaged",
+                new
+                {
+                    @RetailerId = pageParam.RetailerId,
+                    @SearchText = pageParam.SearchText,
+                    @OrderBy = pageParam.OrderBy,
+                    @OrderDirection = pageParam.OrderDirection,
+                    @PageNumber = pageParam.PageNumber,
+                    @PageSize = pageParam.PageSize
+                },
+                new Func<List<Supplier>, Page, Page<Supplier>>(
+                    (list, page) => new Page<Supplier>(page, list)),
+                CommonConfigKeys.dbKeyMaster);
         }
     }
 }

@@ -11,5 +11,7 @@ namespace SparRetail.Products.Repositories
     {
         List<Product> GetAllForSupplier(Supplier supplier, string databaseConfigKey);
         Product AddProducts(Product products, string databaseConfigKey);
+        Page<Product> GetSupplierProductsPaged(string databaseConfigKey, ProductPagedParams pageParam);
     }
+
 }
