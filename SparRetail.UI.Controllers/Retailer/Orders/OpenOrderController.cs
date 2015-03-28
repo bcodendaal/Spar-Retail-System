@@ -54,8 +54,8 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                 data = result.Results,
                 draw = Convert.ToInt32(param.draw),
                 error = string.Empty,
-                recordsFiltered = result.Results.Count,
-                recordsTotal = result.TotalRows
+                recordsFiltered = result.RowCount,
+                recordsTotal = result.RowCount
             },
                             JsonRequestBehavior.AllowGet);
         }
@@ -90,8 +90,8 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                 data = result.Results,
                 draw = Convert.ToInt32(param.draw),
                 error = string.Empty,
-                recordsFiltered = result.Results.Count,
-                recordsTotal = result.TotalRows
+                recordsFiltered = result.RowCount,
+                recordsTotal = result.RowCount
             },
                             JsonRequestBehavior.AllowGet);
         }
@@ -159,12 +159,12 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
 
 
         public JsonResult UpdateProductQuantity(int basketId, int productId, int supplierId, int quantity)
-        {
+            {
 
 
             var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
             var product =
-                _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x => x.RetailerOrderBasketItemId == productId);
+                _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x => x.ProductId == productId);
             if (quantity == 0)
             {
                 _orderApi.DeleteOrderBasketItem(new OrderBasketItemPost()
@@ -252,8 +252,8 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                 data = result.Results,
                 draw = Convert.ToInt32(param.draw),
                 error = string.Empty,
-                recordsFiltered = result.Results.Count,
-                recordsTotal = result.TotalRows
+                recordsFiltered = result.RowCount,
+                recordsTotal = result.RowCount
             },
                             JsonRequestBehavior.AllowGet);
         }

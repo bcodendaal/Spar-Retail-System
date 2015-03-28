@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
 }
 <div class="well well-sm with-header">
-    <div class="header bordered-azure"><i class="menu-icon fa fa-truck"></i>&nbsp;Select Order</div>
+    <div class="header bordered-azure"><i class="menu-icon glyphicon glyphicon-shopping-cart"></i>&nbsp;Select Order</div>
     <div class="row">
         <div class="col-lg-12 col-sm-12 col-xs-12">
             <div class="well">
@@ -48,28 +48,94 @@
             $('#tblProduct').dataTable({
                 "processing": true,
                 "serverSide": true,
+                "sDom": "Tfltr<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                "language": {
+                    "search": "",
+                    "sLengthMenu": "_MENU_",
+                    "oPaginate": {
+                        "sPrevious": "Prev",
+                        "sNext": "Next"
+                    },
+                    "infoFiltered": ""
+                },
+                "pageLength": 15,
                 "ajax": {
                     "type": "POST",
-                    "url": "@Url.Action("OpenOrdersDataTableAjax", "OpenOrder")"
+                    "url": "@Url.Action("OpenOrdersDataTableAjax", "OpenOrder")",
+                    "complete": function () {
+                        SetUpTabNavigation();
+                    }
                 },
                 "columns": [
-                    { "data": "OrderBasketId" },
-                    { "data": "SupplierName" },
-                    { "data": "SupplierCode" },
-                    { "data": "UserId" },
-                    { "data": "CreatedOn" },
+                    {
+                        "data": "OrderBasketId",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "SupplierName",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "SupplierCode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "UserId",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "CreatedOn",
+                        "type": "date",
+                        "dateFormat": "yy-mm-dd",
+                        "defaultContent": " "
+                    },
                     { "data": "OrderBasketStatus" },
                     {
                         "targets": -1,
                         "data": "OrderBasketId",
+                        "orderable": false,
                         "render": function (data, type, full, meta) {
-                            return '<a href="/OpenOrder/AddProducts/?orderId=' + data + '">Add Products</a> | ' +
-                                '<a href="/OpenOrder/OrderDetail?OpenOrderId=' + data + '">View Order Details</a>';
+                            return '<button data-function="addProduct" class="btn btn-xs btn-azure" onclick="location.href= \'/OpenOrder/AddProducts/?orderId=' + data + '\'"><i class="menu-icon glyphicon glyphicon-shopping-cart"></i>&nbsp;Add Products</button></a>&nbsp;&nbsp;' +
+                                '<button class="btn btn-xs btn-palegreen" data-function="viewOrder" onclick="location.href= \'/OpenOrder/OrderDetail?OpenOrderId=' + data + '\'"><i class="menu-icon glyphicon glyphicon-list-alt"></i>&nbsp;Details</button>';
                         }
                     }
                 ]
             });
 
         });
+
+
+        function SetUpTabNavigation() {
+
+
+            var addButtons = $('[data-function="addProduct"]');
+            var searchButton = $('#tblProduct_filter input[type="search"]');
+            var viewOrderButtons = $('[data-function="viewOrder"]');
+
+            searchButton.focus();
+
+            viewOrderButtons.last().keydown(function (e) {
+                var TABKEY = 9;
+                if (e.keyCode === TABKEY) {
+                    searchButton.focus();
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    }
+                    return false;
+                };
+            });
+
+            searchButton.keydown(function (e) {
+                var TABKEY = 9;
+                if (e.keyCode === TABKEY) {
+                    addButtons.first().focus();
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    }
+                    return false;
+                };
+            });
+
+        };
     </script>
 }

@@ -14,47 +14,45 @@
                 OrderDetails = Model.Order
             })
 
+            <button class="btn btn-info shiny" onclick="location.href='/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId' "> <i class="typcn typcn-document-text"></i>&nbsp;Order Detail</button>
+            <button class="btn btn-success shiny" id="btnFinalize"> <i class="fa fa-check right"></i>&nbsp;Finalize Order</button>
+            <div>&nbsp;</div>
 
-
-            <div class="row">
-                <table class="table table-striped table-bordered table-hover table-condensed" id="tblProduct">
-                    <thead class="flip-content bordered-palegreen">
-                        <tr>
-                            <th>
-                                ProductCode
-                            </th>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Description
-                            </th>
-                            <th>
-                                VAT
-                            </th>
-                            <th>
-                                Barcode
-                            </th>
-                            <th>
-                                Category
-                            </th>
-                            <th>
-                                UnitOfMeasure
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                            <th>
-                                PackSize
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-            <a href="/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId">View All Products Added</a>
-            <button id="btnFinalize">Finalize Order</button>
+            <table class="table table-striped table-bordered table-hover table-condensed" id="tblProduct">
+                <thead class="flip-content bordered-palegreen">
+                    <tr>
+                        <th>
+                            ProductCode
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            VAT
+                        </th>
+                        <th>
+                            Barcode
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            UnitOfMeasure
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            PackSize
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -130,10 +128,9 @@
                         // If a product is already in the Open Order, the user should have te option to update the item with the new quantity
                         if (data.Success) {
                             if (data.DuplicateProduct) {
-                                if (confirm("A duplicate product already exists for this order with quantity " + data.ProductQuantity + ".  Update with new Quantity?")) {
-                                    UpdateProductQuantity(productId, quantity);
-                                }
+                                ConfirmQuantity(data.ProductQuantity,quantity, productId);
                             } else {
+                                Notify('Succesfully added to order.', 'top-right', '5000', 'success', 'fa-check', true);
                                 GetOrderQuantityPrice(); //ToDo:Refactor here
                             }
                         } else {
@@ -164,7 +161,7 @@
                 },
                 success: function(data) {
                     if (data.Success) {
-                        alert("Succesfully Updated Quanitity");
+                        Notify('Succesfully added to order.', 'top-right', '5000', 'success', 'fa-check', true);
                         GetOrderQuantityPrice(); //ToDo:Refactor here
                     } else {
                         alert("Unexpected Server Error");
@@ -183,6 +180,8 @@
             var addButtons = $('[data-function="addproduct"]');
             var quantityText = $('[data-function="quantity"]');
             var searchButton = $('#tblProduct_filter input[type="search"]');
+
+            searchButton.focus();
 
             addButtons.last().keydown(function(e) {
                 var TABKEY = 9;
@@ -212,6 +211,16 @@
             $('#tblProduct').dataTable({
                 "processing": true,
                 "serverSide": true,
+                "sDom": "Tfltr<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                "language": {
+                    "search": "",
+                    "sLengthMenu": "_MENU_",
+                    "oPaginate": {
+                        "sPrevious": "Prev",
+                        "sNext": "Next"
+                    },
+                    "infoFiltered": ""
+                },
                 "pageLength": 25,
                 "ajax": {
                     "type": "POST",
@@ -227,25 +236,46 @@
                     }
                 },
                 "columns": [
-                    { "data": "ProductCode" },
-                    { "data": "ProductName" },
-                    { "data": "ProductDescription" },
-                    { "data": "VAT" },
-                    { "data": "Barcode" },
-                    { "data": "CategoryId" },
-                    { "data": "UnitOfMeasureName" },
-                    { "data": "Price" },
-                    { "data": "PackSize" },
+                    { "data": "ProductCode",
+                        "defaultContent": " " },
+                    { "data": "ProductName",
+                        "defaultContent": " " },
+                    { "data": "ProductDescription",
+                        "defaultContent": " " },
+                    { "data": "VAT",
+                        "defaultContent": " " },
+                    { "data": "Barcode",
+                        "defaultContent": " " },
+                    { "data": "CategoryId",
+                        "defaultContent": " " },
+                    { "data": "UnitOfMeasureName",
+                        "defaultContent": " " },
+                    { "data": "Price",
+                        "defaultContent": " " },
+                    { "data": "PackSize",
+                        "defaultContent": " " },
                     {
                         "targets": -1,
                         "data": "ProductId",
+                        "orderable": false,
                         "render": function(data, type, full, meta) {
-                            return '<input data-validationtype="number" data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
+                            return '<input data-validationtype="number" data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button class="btn btn-xs btn-palegreen" onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Order</button>';
                         }
                     }
                 ]
             });
 
+        };
+
+
+        function ConfirmQuantity(count,newQuantity, productId) {
+
+            bootbox.confirm(count + " unit/s of the same product has already been added to this order.  <br/><br/>Update with to "+newQuantity+"?", function (result) {
+                if (result) {
+                    UpdateProductQuantity(productId, newQuantity);
+                }
+            });
+            $('[data-bb-handler="success"]').focus();
         };
     </script>
 }
