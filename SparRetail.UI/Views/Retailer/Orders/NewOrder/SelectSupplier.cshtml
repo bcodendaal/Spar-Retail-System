@@ -2,82 +2,117 @@
     ViewBag.Title = "New Order";
     Layout = "~/Views/Shared/_RetailerDefault.cshtml";
 }
-<div class="col-xs-12 col-md-12">
-    <div class="widget">
-        <div class="widget-header  with-footer">
-            <span class="widget-caption">Suppliers</span>
-            <div class="widget-buttons">
-                <a href="#" data-toggle="maximize">
-                    <i class="fa fa-expand"></i>
-                </a>
-                <a href="#" data-toggle="collapse">
-                    <i class="fa fa-minus"></i>
-                </a>
-            </div>
-        </div>
-        <div class="widget-body">
-            <div class="table-scrollable">
-                <table id="tblSuppliers" class="table table-bordered table-striped table-condensed flip-content table-hover">
-                    <thead class="flip-content bordered-palegreen">
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Code
-                            </th>
-                            <th>
-                                City
-                            </th>
-                            <th>
-                                Postal code
-                            </th>
-                            <th>
-                                Telephone
-                            </th>
-                            <th>
-                                Fax
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Vat No
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+
+
+
+<div id="myModal" style="display: none;">
+    <div class="row">
+        <div class="col-md-12">
+            Multiple unfinished orders already exists for this supplier. Are you sure you want to create a new order?
         </div>
     </div>
 </div>
 
+<div class="well well-sm with-header">
+
+    <div class="header bordered-azure"><i class="menu-icon fa fa-truck"></i>&nbsp;Select a Supplier</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table id="tblSuppliers" class="table table-bordered table-striped table-condensed flip-content table-hover">
+                <thead class="flip-content bordered-palegreen">
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Code
+                        </th>
+                        <th>
+                            City
+                        </th>
+                        <th>
+                            Postal code
+                        </th>
+                        <th>
+                            Telephone
+                        </th>
+                        <th>
+                            Fax
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Vat No
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @section PageScripts{
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#tblSuppliers').dataTable({
                 "processing": true,
                 "serverSide": true,
+                "sDom": "Tfltr<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                "language": {
+                    "search": "",
+                    "sLengthMenu": "_MENU_",
+                    "oPaginate": {
+                        "sPrevious": "Prev",
+                        "sNext": "Next"
+                    },
+                    "infoFiltered": ""
+                },
+                "pageLength": 50,
                 "ajax": {
                     "type": "POST",
-                    "url": "@Url.Action("SuppliersDataTableAjax", "NewOrder")"
+                    "url": "@Url.Action("SuppliersDataTableAjax", "NewOrder")",
+                    "complete": function() {
+                        SetUpTabNavigation();
+                    }
                 },
                 "columns": [
-                    { "data": "SupplierName" },
+                    {
+                        "data": "SupplierName",
+                        "defaultContent": " "
+                    },
                     { "data": "SupplierCode" },
-                    { "data": "City" },
-                    { "data": "PostalCode" },
-                    { "data": "Telephone" },
-                    { "data": "Fax" },
-                    { "data": "Email" },
-                    { "data": "VATNumber" },
+                    {
+                        "data": "City",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "PostalCode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Telephone",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Fax",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Email",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "VATNumber",
+                        "defaultContent": " "
+                    },
                     {
                         "targets": -1,
                         "data": "SupplierId",
-                        "render": function (data, type, full, meta) {
-                            return '<a onclick="CheckOpenOrdersForSupplier(' + data + ')">Order</a>';
+                        "orderable": false,
+                        "render": function(data, type, full, meta) {
+                            return '<button data-function="createorder" class="btn btn-palegreen btn-xs" onclick="CheckOpenOrdersForSupplier(' + data + ')"><i class="menu-icon glyphicon glyphicon-shopping-cart"></i>&nbsp;Create Order</button>';
                         }
                     }
                 ]
@@ -92,27 +127,79 @@
                 data: {
                     SupplierId: supplierId
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data.Success) {
                         if (data.OrderCount > 0) {
-                            if (confirm(data.OrderCount + " Order/s are currently in an 'Open' state for this Supplier.  Continue to Create New Order?  Cancel redirects to 'Open Orders'")) {
-                                window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
-                            } else {
-                                window.location.replace("/OpenOrder/All");
-                            }
-                        }
-                        else
+                            ConfirmNewOrder(data.OrderCount, supplierId);
+
+                        } else
                             window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
 
                     } else {
                         alert('An Unexpected Error Occured: ' + data.message);
                     }
                 },
-                error: function (e) {
+                error: function(e) {
                     alert('An Unexpected Error Occured: ' + e.message);
                     console.log(e);
                 }
             });
+        };
+
+
+        function SetUpTabNavigation() {
+
+            var addButtons = $('[data-function="createorder"]');
+            var searchButton = $('#tblSuppliers_filter input[type="search"]');
+
+            searchButton.focus();
+
+            addButtons.last().keydown(function(e) {
+                var TABKEY = 9;
+                if (e.keyCode === TABKEY) {
+                    searchButton.focus();
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    }
+                    return false;
+                };
+            });
+
+            searchButton.keydown(function(e) {
+                var TABKEY = 9;
+                if (e.keyCode === TABKEY) {
+                    addButtons.first().focus();
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    }
+                    return false;
+                };
+            });
+
+        };
+
+        function ConfirmNewOrder(count, supplierId) {
+            bootbox.dialog({
+                message: $("#myModal").html(),
+                title: "Confirm New Order",
+                className: "modal-darkorange",
+                buttons: {
+                    success: {
+                        label: "Create New",
+                        className: "btn-palegreen",
+                        callback: function() {
+                            window.location.replace("/NewOrder/CreateNewOrder/?supplierId=" + supplierId);
+                        }
+                    },
+                    "View Orders": {
+                        className: "btn-blue",
+                        callback: function() {
+                            window.location.replace("/OpenOrder/All");
+                        }
+                    }
+                }
+            });
+            $('[data-bb-handler="success"]').focus();
         };
     </script>
 }

@@ -28,6 +28,7 @@ Purchase: http://wrapbootstrap.com
     <link href=@Url.Content("~/assets/css/typicons.min.css") rel="stylesheet" />
     <link href=@Url.Content("~/assets/css/weather-icons.min.css") rel="stylesheet" />
     <link href=@Url.Content("~/assets/css/animate.min.css") rel="stylesheet" />
+    <link href=@Url.Content("~/assets/css/dataTables.bootstrap.css") rel="stylesheet" />
     <link href=@Url.Content("~/Content/Main.css") rel="stylesheet" />
 
     <!--Fonts-->
@@ -410,30 +411,30 @@ Purchase: http://wrapbootstrap.com
                         </a>
                     </li>
                     @*<li>
-                        <a href="#" class="menu-dropdown">
-                            <i class="menu-icon fa fa-truck"></i>
-                            <span class="menu-text"> Suppliers </span>
-                            <i class="menu-expand"></i>
-                        </a>
+                            <a href="#" class="menu-dropdown">
+                                <i class="menu-icon fa fa-truck"></i>
+                                <span class="menu-text"> Suppliers </span>
+                                <i class="menu-expand"></i>
+                            </a>
 
-                        <ul class="submenu">
-                            <li>
-                                <a href="@(Url.Action("Index", "BrowseSuppliers"))">
-                                    <span class="menu-text">Browse My Suppliers</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="@(Url.Action("DataTableTest", "BrowseSuppliers"))">
-                                    <span class="menu-text">DataTable Test</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="menu-text">Search New Suppliers</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>*@
+                            <ul class="submenu">
+                                <li>
+                                    <a href="@(Url.Action("Index", "BrowseSuppliers"))">
+                                        <span class="menu-text">Browse My Suppliers</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@(Url.Action("DataTableTest", "BrowseSuppliers"))">
+                                        <span class="menu-text">DataTable Test</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-text">Search New Suppliers</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>*@
                     <li class="">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon glyphicon glyphicon-shopping-cart"></i>
@@ -473,8 +474,11 @@ Purchase: http://wrapbootstrap.com
                 <!-- /Page Breadcrumb -->
                 <!-- Page Header -->
                 <div class="page-header position-relative">
-                    <br />
-                    @ViewBag.Title
+                    <div class="header-title">
+                        <h1>
+                            @ViewBag.Title
+                        </h1>
+                    </div>
                     <!--Header Buttons-->
                     <div class="header-buttons">
                         <a class="sidebar-toggler" href="#">
@@ -515,6 +519,7 @@ Purchase: http://wrapbootstrap.com
     <script src="~/assets/js/datatable/dataTables.bootstrap.js"></script>
     <script src="~/assets/js/datatable/datatables-init.js"></script>
     <script src="~/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="~/assets/js/bootbox/bootbox.js"></script>
     <script src="~/Scripts/CustomValidation.js"></script>
     @RenderSection("PageScripts", required: false)
 </body>
