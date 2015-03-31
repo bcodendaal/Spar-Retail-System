@@ -63,16 +63,16 @@
         /****************Document Ready *******************/
         $(document).ready(function() {
             InitializeProductTable();
-            GetOrderQuantityPrice();
+            //GetOrderQuantityPrice();
             $('#btnFinalize').click(function() {
-                FinalizeOrder();
+                ConfirmFinalize();
             });
         });
 
         /**************** END Document Ready *******************/
 
 
-        function FinalizeOrder() {
+        //@*function FinalizeOrder() {
             bootbox.confirm("Clicking confirm wil send this order to the supplier.  This is the final step.<br/><br/>Are you sure you want to finalize this order?  ", function(result) {
                 if (result) {
 
@@ -98,9 +98,9 @@
                     });
                 }
             });
-        };
+        };*@
 
-        function GetOrderQuantityPrice() {
+        @*function GetOrderQuantityPrice() {
             $.ajax({
                 url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
                 data: {
@@ -114,7 +114,7 @@
                     console.log(e);
                 }
             });
-        };
+        };*@
 
         function AddProductToOrder(button) {
 
@@ -300,6 +300,51 @@
             });
             $('[data-bb-handler="success"]').focus();
         };
+
+        @*function ConfirmFinalize() {
+
+            $.ajax({
+                url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
+                data: {
+                    orderId: '@Model.Order.OrderBasketId'
+                },
+                success: function(data) {
+                    if (data.TotalProducts > 0) {
+                        $('#finalizeQuantity').text(data.TotalProducts);
+                        $('#finalizePrice').text(data.TotalPrice);
+
+                        bootbox.dialog({
+                            message: $("#confirmFinalize").html(),
+                            title: "Confirm Finalize",
+                            className: "modal-darkorange",
+                            buttons: {
+                                success: {
+                                    label: "Finalize",
+                                    className: "btn-palegreen",
+                                    callback: function() {
+                                        FinalizeOrder();
+                                    }
+                                },
+                                "View Order Details": {
+                                    className: "btn-blue",
+                                    callback: function() {
+                                        window.location = "/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId";
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+
+                        $('#modal-info').modal("show");
+                    }
+
+
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }*@
     </script>
 }
 

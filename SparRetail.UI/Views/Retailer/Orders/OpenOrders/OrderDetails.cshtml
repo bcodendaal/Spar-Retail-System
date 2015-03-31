@@ -54,7 +54,7 @@
         $(document).ready(function() {
             InitializeProductTable();
             $('#btnFinalize').click(function() {
-                FinalizeOrder();
+                ConfirmFinalize();
             });
         });
 
@@ -74,7 +74,7 @@
                     },
                     "infoFiltered": ""
                 },
-                "pageLength": 25,
+                "pageLength": 15,
                 "ajax": {
                     "type": "POST",
                     "url": "@Url.Action("OpenOrderItemDataTableAjax", "OpenOrder")",
@@ -162,23 +162,6 @@
             }
         };
 
-        function GetOrderQuantityPrice() {
-            $.ajax({
-                url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
-                data: {
-                    orderId: '@Model.OrderDetails.OrderBasketId'
-                },
-                success: function(data) {
-                    $('#orderProductTotal').text(data.TotalProducts);
-                    $('#orderPriceTotal').text(data.TotalPrice);
-                },
-                error: function(e) {
-                    console.log(e);
-                }
-            });
-        };
-
-
         function SetUpTabNavigation() {
 
             var addButtons = $('[data-function="updateproduct"]');
@@ -211,33 +194,6 @@
 
         };
 
-
-        function FinalizeOrder() {
-            bootbox.confirm("Clicking confirm wil send this order to the supplier.  This is the final step.<br/><br/>Are you sure you want to finalize this order?  ", function(result) {
-                if (result) {
-                    $.ajax({
-                        url: '@Url.Action("FinalizeOrder", "OpenOrder")',
-                        data: {
-                            orderId: '@Model.OrderDetails.OrderBasketId'
-                        },
-                        success: function(data) {
-                            if (data.Success) {
-                                if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
-                                    window.location.replace("/OrderHistory/OrderHistory");
-                                } else {
-                                    window.location.replace("/RetailerDashboard");
-                                }
-                            } else {
-                                alert("Unexpected error occured");
-                            }
-                        },
-                        error: function(e) {
-                            console.log(e);
-                        }
-                    });
-                }
-            });
-        };
 
     </script>
 }

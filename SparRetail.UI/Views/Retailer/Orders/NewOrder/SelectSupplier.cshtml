@@ -18,7 +18,7 @@
     <div class="header bordered-azure"><i class="menu-icon fa fa-truck"></i>&nbsp;Select a Supplier</div>
     <div class="row">
         <div class="col-xs-12">
-            <table id="tblSuppliers" class="table table-bordered table-striped table-condensed flip-content table-hover">
+            <table id="tblSuppliers" class="table table-striped table-bordered table-hover table-condensed">
                 <thead class="flip-content bordered-palegreen">
                     <tr>
                         <th>
@@ -69,7 +69,7 @@
                     },
                     "infoFiltered": ""
                 },
-                "pageLength": 50,
+                "pageLength": 15,
                 "ajax": {
                     "type": "POST",
                     "url": "@Url.Action("SuppliersDataTableAjax", "NewOrder")",
