@@ -73,24 +73,29 @@
 
 
         function FinalizeOrder() {
-            $.ajax({
-                url: '@Url.Action("FinalizeOrder", "OpenOrder")',
-                data: {
-                    orderId: '@Model.Order.OrderBasketId'
-                },
-                success: function(data) {
-                    if (data.Success) {
-                        if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
-                            window.location.replace("/OrderHistory/OrderHistory");
-                        } else {
-                            window.location.replace("/RetailerDashboard");
+            bootbox.confirm("Clicking confirm wil send this order to the supplier.  This is the final step.<br/><br/>Are you sure you want to finalize this order?  ", function(result) {
+                if (result) {
+
+                    $.ajax({
+                        url: '@Url.Action("FinalizeOrder", "OpenOrder")',
+                        data: {
+                            orderId: '@Model.Order.OrderBasketId'
+                        },
+                        success: function(data) {
+                            if (data.Success) {
+                                if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
+                                    window.location.replace("/OrderHistory/OrderHistory");
+                                } else {
+                                    window.location.replace("/RetailerDashboard");
+                                }
+                            } else {
+                                alert("Unexpected error occured");
+                            }
+                        },
+                        error: function(e) {
+                            console.log(e);
                         }
-                    } else {
-                        alert("Unexpected error occured");
-                    }
-                },
-                error: function(e) {
-                    console.log(e);
+                    });
                 }
             });
         };
@@ -128,7 +133,7 @@
                         // If a product is already in the Open Order, the user should have te option to update the item with the new quantity
                         if (data.Success) {
                             if (data.DuplicateProduct) {
-                                ConfirmQuantity(data.ProductQuantity,quantity, productId);
+                                ConfirmQuantity(data.ProductQuantity, quantity, data.orderBasketItemId);
                             } else {
                                 Notify('Succesfully added to order.', 'top-right', '5000', 'success', 'fa-check', true);
                                 GetOrderQuantityPrice(); //ToDo:Refactor here
@@ -150,12 +155,12 @@
         };
 
 
-        function UpdateProductQuantity(productId, quantity) {
+        function UpdateProductQuantity(orderBasketItemId, quantity) {
             $.ajax({
                 url: '@Url.Action("UpdateProductQuantity", "OpenOrder")',
                 data: {
                     basketId: @Model.Order.OrderBasketId,
-                    productId: productId,
+                    orderBasketItemId: orderBasketItemId,
                     supplierId: @Model.Supplier.SupplierId,
                     quantity: quantity
                 },
@@ -236,24 +241,42 @@
                     }
                 },
                 "columns": [
-                    { "data": "ProductCode",
-                        "defaultContent": " " },
-                    { "data": "ProductName",
-                        "defaultContent": " " },
-                    { "data": "ProductDescription",
-                        "defaultContent": " " },
-                    { "data": "VAT",
-                        "defaultContent": " " },
-                    { "data": "Barcode",
-                        "defaultContent": " " },
-                    { "data": "CategoryId",
-                        "defaultContent": " " },
-                    { "data": "UnitOfMeasureName",
-                        "defaultContent": " " },
-                    { "data": "Price",
-                        "defaultContent": " " },
-                    { "data": "PackSize",
-                        "defaultContent": " " },
+                    {
+                        "data": "ProductCode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "ProductName",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "ProductDescription",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "VAT",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Barcode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "CategoryId",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "UnitOfMeasureName",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Price",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "PackSize",
+                        "defaultContent": " "
+                    },
                     {
                         "targets": -1,
                         "data": "ProductId",
@@ -268,9 +291,9 @@
         };
 
 
-        function ConfirmQuantity(count,newQuantity, productId) {
+        function ConfirmQuantity(count, newQuantity, productId) {
 
-            bootbox.confirm(count + " unit/s of the same product has already been added to this order.  <br/><br/>Update with to "+newQuantity+"?", function (result) {
+            bootbox.confirm(count + " unit/s of the same product has already been added to this order.  <br/><br/>Update with to " + newQuantity + "?", function(result) {
                 if (result) {
                     UpdateProductQuantity(productId, newQuantity);
                 }

@@ -126,7 +126,7 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
             //check if item already exists
             if (basketProducts.Any(x => x.ProductId == productId))
             {
-                return Json(new { Success = true, DuplicateProduct = true, ProductQuantity = basketProducts.First(x => x.ProductId == productId).NumberOfUnits }, JsonRequestBehavior.AllowGet);
+                return Json(new { Success = true, DuplicateProduct = true, ProductQuantity = basketProducts.First(x => x.ProductId == productId).NumberOfUnits, orderBasketItemId = basketProducts.First(x => x.ProductId == productId).RetailerOrderBasketItemId }, JsonRequestBehavior.AllowGet);
             }
             else // if item does not exits, add it to Open Order
             {
@@ -158,13 +158,13 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
         }
 
 
-        public JsonResult UpdateProductQuantity(int basketId, int productId, int supplierId, int quantity)
+        public JsonResult UpdateProductQuantity(int basketId, int orderBasketItemId, int supplierId, int quantity)
             {
 
 
             var supplier = _supplierApi.All().FirstOrDefault(x => x.SupplierId == supplierId);
             var product =
-                _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x => x.ProductId == productId);
+                _orderApi.AllItemsForOrderBasket(basketId, _profileProvider.GetEntityId()).First(x => x.RetailerOrderBasketItemId == orderBasketItemId);
             if (quantity == 0)
             {
                 _orderApi.DeleteOrderBasketItem(new OrderBasketItemPost()
