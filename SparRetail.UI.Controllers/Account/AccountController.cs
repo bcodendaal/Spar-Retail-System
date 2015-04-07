@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using Spar.Retail.UI.Models.Account;
 using SparRetail.UI.Controllers.Providers;
 using SparRetail.Models.Enums;
+using log4net.Core;
 
 namespace SparRetail.UI.Controllers.Account
 {
@@ -20,13 +21,12 @@ namespace SparRetail.UI.Controllers.Account
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private readonly IProfileProvider _profileProvider;
-
         public AccountController(IProfileProvider profileProvider)
         {
             this._profileProvider = profileProvider;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -38,9 +38,9 @@ namespace SparRetail.UI.Controllers.Account
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -82,7 +82,7 @@ namespace SparRetail.UI.Controllers.Account
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
-                case SignInStatus.Success:                     
+                case SignInStatus.Success:
                     return RedirectToLocal(returnUrl, model.Email);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -124,7 +124,7 @@ namespace SparRetail.UI.Controllers.Account
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -143,7 +143,7 @@ namespace SparRetail.UI.Controllers.Account
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return View(new RegisterViewModel() { Success = true });
         }
 
         //
@@ -153,23 +153,31 @@ namespace SparRetail.UI.Controllers.Account
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (ModelState.IsValid)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    return RedirectToAction("Select", "New");
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Select", "New");
+                    }
+                    AddErrors(result);
                 }
-                AddErrors(result);
+            }
+            catch (Exception e)
+            {
+                model.Message = e.ToString();
+                model.Success = false;
             }
 
             // If we got this far, something failed, redisplay form
@@ -451,15 +459,15 @@ namespace SparRetail.UI.Controllers.Account
         {
             if (Url.IsLocalUrl(returnUrl))
             {
-                return Redirect(returnUrl);            
+                return Redirect(returnUrl);
             }
 
             // TODO: if user is retailer go to retailer dashboard. If supplier, go to supplier dashboard
             var tenantType = _profileProvider.GetTenantType(username);
-            if(tenantType == TenantType.Supplier)
+            if (tenantType == TenantType.Supplier)
                 return RedirectToAction("Index", "SupplierDashboard");
-            
-            if(tenantType == TenantType.Retailer)
+
+            if (tenantType == TenantType.Retailer)
                 return RedirectToAction("Index", "RetailerDashboard");
 
             return RedirectToAction("Login", "Account");

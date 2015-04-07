@@ -2,3 +2,10 @@ D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.dll
 D:\Projects\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.pdb
 D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.dll
 D:\Projects\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\bin\Debug\SparRetail.Models.pdb
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\bin\Debug\log4net.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\bin\Debug\log4net.xml
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.csprojResolveAssemblyReference.cache
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.dll
+C:\Projects\Spar Retail System\POC Project\Spar-Retail-System\SparRetail.Models\obj\Debug\SparRetail.Models.pdb

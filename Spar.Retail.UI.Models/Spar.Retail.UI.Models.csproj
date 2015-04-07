@@ -107,6 +107,7 @@
     <Compile Include="ViewModels\Account\IdentityModels.cs" />
     <Compile Include="ViewModels\Account\ManageViewModels.cs" />
     <Compile Include="ViewModels\Account\Profile.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DataTables\DataTableColumn.cs" />
     <Compile Include="ViewModels\DataTables\DataTableJsonReturnObject.cs" />
     <Compile Include="ViewModels\DataTables\DataTableParam.cs" />

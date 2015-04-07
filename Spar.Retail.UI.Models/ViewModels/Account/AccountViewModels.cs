@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Spar.Retail.UI.Models.ViewModels;
 
 namespace Spar.Retail.UI.Models.Account
 {
@@ -62,7 +63,7 @@ namespace Spar.Retail.UI.Models.Account
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterViewModel
+    public class RegisterViewModel : BaseViewModel
     {
         [Required]
         [EmailAddress]
