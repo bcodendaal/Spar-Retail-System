@@ -60,20 +60,9 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Magnum">
-      <HintPath>..\packages\Magnum.2.1.3\lib\NET40\Magnum.dll</HintPath>
-    </Reference>
-    <Reference Include="MassTransit">
-      <HintPath>..\packages\MassTransit.2.9.9\lib\net40\MassTransit.dll</HintPath>
-    </Reference>
-    <Reference Include="MassTransit.Log4NetIntegration">
-      <HintPath>..\packages\MassTransit.Log4Net.2.9.9\lib\net40\MassTransit.Log4NetIntegration.dll</HintPath>
-    </Reference>
-    <Reference Include="MassTransit.Transports.RabbitMq">
-      <HintPath>..\packages\MassTransit.RabbitMQ.2.9.9\lib\net40\MassTransit.Transports.RabbitMq.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client, Version=3.4.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -87,13 +76,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Topshelf">
-      <HintPath>..\packages\Topshelf.3.1.4\lib\net40-full\Topshelf.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderBasketFinalizeHandler.cs" />
     <Compile Include="OrderBasketFinalizeHost.cs" />
+    <Compile Include="OrderFinalizePlugIn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +109,10 @@
     <ProjectReference Include="..\SparRetail.PlugIns.Interop\SparRetail.PlugIns.Interop.csproj">
       <Project>{d751bcb1-ee82-4bf6-9360-271de073e7e4}</Project>
       <Name>SparRetail.PlugIns.Interop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SparRetail.PlugIns\SparRetail.PlugIns.csproj">
+      <Project>{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39}</Project>
+      <Name>SparRetail.PlugIns</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

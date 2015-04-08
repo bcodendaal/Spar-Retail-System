@@ -11,5 +11,7 @@ namespace SparRetail.Interop
     {
         List<Product> GetAllForSupplier(Supplier supplier);
         Page<Product> GetSupplierProductsPaged(ProductPagedParams page);
+
+List<Product> AddProducts(List<Product> products); 
     }
 }

@@ -125,6 +125,8 @@
     <Compile Include="ViewModels\Retailer\Orders\ProductsOrderViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\NewSupplierViewModel.cs" />
     <Compile Include="ViewModels\Supplier\Common\OrderHistoryViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\Product\AddProductViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\Product\AllProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SparRetail.Models\SparRetail.Models.csproj">

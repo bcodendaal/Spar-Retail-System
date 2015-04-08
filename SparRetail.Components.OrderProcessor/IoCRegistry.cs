@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using SparRetail.Core.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace SparRetail.Components.OrderProcessor
 {
     public static class IoCRegistry
     {
-        public static void Configure(ContainerBuilder builder)
+        public static void Configure(ContainerBuilder builder, IConfigCollection configCollection)
         {
             builder.RegisterType<OrderProcessorWorker>().As<IOrderProcessorWorker>().SingleInstance();
             builder.RegisterType<OrderProcessWorkerRepository>().As<IOrderProcessorWorkerRepository>().SingleInstance();
-            SparRetail.Core.IoCRegistry.Configure(builder);
+            SparRetail.Core.IoCRegistry.Configure(builder, configCollection);
             SparRetail.Orders.IoCRegistry.Configure(builder);
             SparRetail.DatabaseConfigAdapter.IoCRegistry.Configure(builder);
             SparRetail.Retailers.IoCRegistry.Configure(builder);

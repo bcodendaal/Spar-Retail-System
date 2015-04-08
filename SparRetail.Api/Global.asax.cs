@@ -26,7 +26,8 @@ namespace SparRetail.Api
                 dbConfig.Add(new DatabaseConfigItem() { Key = CommonConfigKeys.dbKeyMaster, ConnectionString = encryption.Decrypt(ConfigurationManager.ConnectionStrings["master"].ConnectionString), CommandTimeout = 100 });
                 builder.RegisterInstance(dbConfig).As<IDatabaseConfigCollection>().SingleInstance();
                 builder.RegisterApiControllers(SparRetail.Api.Controllers.IoCRegistry.GetAssembly()).InstancePerRequest();
-                SparRetail.Api.Controllers.IoCRegistry.Configure(builder);
+                var configCollection = new ConfigCollection(new ConfigRepository());
+                SparRetail.Api.Controllers.IoCRegistry.Configure(builder, configCollection);
             });
 
             

@@ -16,9 +16,23 @@ namespace SparRetail.Products.Repositories
         {
         }
 
-        public List<Product> GetAllForSupplier(Supplier supplier)
+        public List<Product> GetAllForSupplier(Supplier supplier, string databaseConfigKey)
         {
-            return QueryList<Product>("usp_SelectProductsForSupplier", new { SupplierId = supplier.SupplierId }, supplier.DatabaseConfigKey);
+            return QueryList<Product>("usp_SelectProductsForSupplier", new { SupplierId = supplier.SupplierId }, databaseConfigKey);
+        }
+
+        public Product AddProducts(Product product, string databaseConfigKey)
+        {
+            return QueryOne<Product>("usp_InsertProduct", 
+                new {
+                    @SupplierId = product.SupplierId,
+                    @ProductCode = product.ProductCode,
+                    @ProductName = product.ProductName,
+                    @ProductDescription = product.ProductDescription,
+                    @VAT  = product.VAT,
+                    @Barcode = product.Barcode,
+                    @CategoryId = product.CategoryId
+            }, databaseConfigKey);
         }
 
         public Page<Product> GetSupplierProductsPaged(string databaseConfigKey, ProductPagedParams pageParam)

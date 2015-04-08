@@ -9,6 +9,6 @@ namespace Spar.Retail.UI.Models.ViewModels.Retailer.Common
 {
     public class AllSupplierViewModel
     {
-        public List<Supplier> Suppliers { get; set; }
+        public List<SparRetail.Models.Supplier> Suppliers { get; set; }
     }
 }

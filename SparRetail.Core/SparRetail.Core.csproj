@@ -39,6 +39,12 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.3.4.0\lib\net35\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -73,6 +79,13 @@
     <Compile Include="IoCRegistry.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Messaging\ExchangeSettings.cs" />
+    <Compile Include="Messaging\HostSettings.cs" />
+    <Compile Include="Messaging\IMessageProducer.cs" />
+    <Compile Include="Messaging\MessageConstants.cs" />
+    <Compile Include="Messaging\MessageProducer.cs" />
+    <Compile Include="Messaging\QueueSettings.cs" />
+    <Compile Include="Messaging\RabbitHostConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

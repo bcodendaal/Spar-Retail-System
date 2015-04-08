@@ -9,5 +9,6 @@ namespace SparRetail.Core.Config
     public interface IConfigCollection
     {
         string Get(string configKey);
+        List<ConfigItem> All();
     }
 }

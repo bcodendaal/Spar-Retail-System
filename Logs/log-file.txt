@@ -52,3 +52,875 @@ DEBUG - Endpoint: http://localhost:6837/api/
 DEBUG - Call to http://localhost:6837/api/ succesful
 DEBUG - Result received:
 DEBUG - [{"ProductId":4,"SupplierId":3,"ProductCode":"CCC","ProductName":"Chocolate Chip Cookies","ProductDescription":"Cookies with bits of chocolate in them","VAT":0.0,"Barcode":"1231234","CategoryId":1,"UnitOfMeasureProductId":0,"UnitOfMeasureId":0,"UnitOfMeasureName":null,"Price":0.0,"PackSize":0,"CreatedOn":"2015/03/24 10:14:09 PM"},{"ProductId":5,"SupplierId":3,"ProductCode":"GSC","ProductName":"Ginger Snap Cookies","ProductDescription":"Cookies with ginger flavouring. Golden brown","VAT":0.0,"Barcode":"43124231","CategoryId":1,"UnitOfMeasureProductId":0,"UnitOfMeasureId":0,"UnitOfMeasureName":null,"Price":0.0,"PackSize":0,"CreatedOn":"2015/03/24 10:14:09 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"ProductId":4,"SupplierId":3,"ProductCode":"CCC","ProductName":"Chocolate Chip Cookies","ProductDescription":"Cookies with bits of chocolate in them","VAT":0.0,"Barcode":"1231234","CategoryId":1,"UnitOfMeasureProductId":0,"UnitOfMeasureId":0,"UnitOfMeasureName":null,"Price":0.0,"PackSize":0,"CreatedOn":"2015/03/24 10:14:09 PM"},{"ProductId":5,"SupplierId":3,"ProductCode":"GSC","ProductName":"Ginger Snap Cookies","ProductDescription":"Cookies with ginger flavouring. Golden brown","VAT":0.0,"Barcode":"43124231","CategoryId":1,"UnitOfMeasureProductId":0,"UnitOfMeasureId":0,"UnitOfMeasureName":null,"Price":0.0,"PackSize":0,"CreatedOn":"2015/03/24 10:14:09 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"RetailerId":1006,"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"}],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - []
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"OrderBasket":{"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Created new Order Basket"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"}],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"}],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - []
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"OrderBasket":{"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"},"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Created new Order Basket"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gouda","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gouda","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - []
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"},{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":200,"TotalProducts":1,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gouda","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gouda","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"m","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"me","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"mel","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melr","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melro","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melros","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melrose","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melros","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melro","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"melr","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"mel","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}],"SearchText":"me","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"m","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":200,"TotalProducts":1,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":200,"TotalProducts":1,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":200,"TotalProducts":1,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"},{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"m","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"mi","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"mil","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"milk","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"mil","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"mi","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"m","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"gouda","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"goud","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"gou","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"go","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"}],"SearchText":"g","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"a","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"ab","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"abc","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"abcd","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"abc","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"ab","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"a","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1031,"OrderBasketId":1074,"ProductId":2,"ProductName":"Gouda Cheese","ProductCode":"CHE","BarCode":null,"UnitOfMeasure":"Kilogram","NumberOfUnits":1,"PricePerUnit":200.0,"TotalPrice":200.0,"CreatedOn":"2015-03-28T14:46:20.41"},{"RetailerOrderBasketItemId":1032,"OrderBasketId":1074,"ProductId":1,"ProductName":"2L Milk","ProductCode":"MILK","BarCode":"ABCD","UnitOfMeasure":"Bottle","NumberOfUnits":123,"PricePerUnit":15.0,"TotalPrice":1845.0,"CreatedOn":"2015-03-28T14:48:06.72"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A slab of gouda cheesee","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":5,"UnitOfMeasureName":"Kilogram","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A wheel of melrose cheese. Soft","VAT":0.0,"Barcode":null,"CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Pack","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":2,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":85.0,"PackSize":6,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"ABCD","CategoryId":1,"UnitOfMeasureProductId":3,"UnitOfMeasureId":3,"UnitOfMeasureName":"Bottle","Price":850.0,"PackSize":60,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+ERROR - {"Message":"An error has occurred.","ExceptionMessage":"An error occurred when trying to create a controller of type 'OrderController'. Make sure that the controller has a parameterless public constructor.","ExceptionType":"System.InvalidOperationException","StackTrace":"   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)\r\n   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"An exception was thrown while invoking the constructor 'Void .ctor(System.Collections.Generic.IEnumerable`1[SparRetail.Core.Messaging.HostSettings], System.Collections.Generic.IEnumerable`1[SparRetail.Core.Messaging.ExchangeSettings])' on type 'MessageProducer'. ---> Object reference not set to an instance of an object. (See inner exception for details.)","ExceptionType":"Autofac.Core.DependencyResolutionException","StackTrace":"   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Activators.Reflection.AutowiringParameter.<>c__DisplayClass2.<CanSupplyValue>b__0()\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Activators.Reflection.AutowiringParameter.<>c__DisplayClass2.<CanSupplyValue>b__0()\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)\r\n   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)\r\n   at Autofac.Integration.WebApi.AutofacWebApiDependencyScope.GetService(Type serviceType)\r\n   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.GetInstanceOrActivator(HttpRequestMessage request, Type controllerType, Func`1& activator)\r\n   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"Object reference not set to an instance of an object.","ExceptionType":"System.NullReferenceException","StackTrace":"   at SparRetail.Core.Messaging.MessageProducer.<Initialize>b__0(HostSettings x) in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 28\r\n   at System.Collections.Generic.List`1.ForEach(Action`1 action)\r\n   at SparRetail.Core.Messaging.MessageProducer.Initialize() in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 26\r\n   at SparRetail.Core.Messaging.MessageProducer..ctor(IEnumerable`1 hostSettings, IEnumerable`1 exchangeSettings) in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 19\r\n   at lambda_method(Closure , Object[] )\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()"}}}
+DEBUG - Endpoint: http://localhost:6837/api/
+ERROR - {"Message":"An error has occurred.","ExceptionMessage":"An error occurred when trying to create a controller of type 'OrderController'. Make sure that the controller has a parameterless public constructor.","ExceptionType":"System.InvalidOperationException","StackTrace":"   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)\r\n   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"An exception was thrown while invoking the constructor 'Void .ctor(System.Collections.Generic.IEnumerable`1[SparRetail.Core.Messaging.HostSettings], System.Collections.Generic.IEnumerable`1[SparRetail.Core.Messaging.ExchangeSettings])' on type 'MessageProducer'. ---> None of the specified endpoints were reachable (See inner exception for details.)","ExceptionType":"Autofac.Core.DependencyResolutionException","StackTrace":"   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Activators.Reflection.AutowiringParameter.<>c__DisplayClass2.<CanSupplyValue>b__0()\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Activators.Reflection.AutowiringParameter.<>c__DisplayClass2.<CanSupplyValue>b__0()\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()\r\n   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()\r\n   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)\r\n   at Autofac.Core.Resolving.InstanceLookup.Execute()\r\n   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)\r\n   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)\r\n   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)\r\n   at Autofac.Integration.WebApi.AutofacWebApiDependencyScope.GetService(Type serviceType)\r\n   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.GetInstanceOrActivator(HttpRequestMessage request, Type controllerType, Func`1& activator)\r\n   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"None of the specified endpoints were reachable","ExceptionType":"RabbitMQ.Client.Exceptions.BrokerUnreachableException","StackTrace":"   at RabbitMQ.Client.ConnectionFactory.CreateConnection()\r\n   at SparRetail.Core.Messaging.RabbitHostConnection.Initialize() in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\RabbitHostConnection.cs:line 39\r\n   at SparRetail.Core.Messaging.MessageProducer.<Initialize>b__0(HostSettings x) in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 29\r\n   at System.Collections.Generic.List`1.ForEach(Action`1 action)\r\n   at SparRetail.Core.Messaging.MessageProducer.Initialize() in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 26\r\n   at SparRetail.Core.Messaging.MessageProducer..ctor(IEnumerable`1 hostSettings, IEnumerable`1 exchangeSettings) in d:\\Projects\\Spar-Retail-System-dev\\SparRetail.Core\\Messaging\\MessageProducer.cs:line 19\r\n   at lambda_method(Closure , Object[] )\r\n   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"Connection failed","ExceptionType":"RabbitMQ.Client.Exceptions.ConnectFailureException","StackTrace":"   at RabbitMQ.Client.Impl.SocketFrameHandler.Connect(TcpClient socket, AmqpTcpEndpoint endpoint, Int32 timeout)\r\n   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, ObtainSocket socketFactory, Int32 timeout)\r\n   at RabbitMQ.Client.Framing.Impl.ProtocolBase.CreateFrameHandler(AmqpTcpEndpoint endpoint, ObtainSocket socketFactory, Int32 timeout)\r\n   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler()\r\n   at RabbitMQ.Client.ConnectionFactory.CreateConnection()","InnerException":{"Message":"An error has occurred.","ExceptionMessage":"No connection could be made because the target machine actively refused it 127.0.0.1:5672","ExceptionType":"System.Net.Sockets.SocketException","StackTrace":"   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)\r\n   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)\r\n   at RabbitMQ.Client.Impl.SocketFrameHandler.Connect(TcpClient socket, AmqpTcpEndpoint endpoint, Int32 timeout)"}}}}}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"}],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"}],"SearchText":"","OrderBy":"SupplierName","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"OrderBasketId":1074,"RetailerId":1006,"Retailer":{"RetailerId":1006,"DatabaseConfigKey":"dbRetailer","RetailerCode":null,"StoreCode":null,"RetailerName":"Spar Milnerton","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"Province":null,"PostalCode":null,"VatNumber":null,"CreatedOn":"2015-03-28T14:37:02.127"},"SupplierId":2,"Supplier":{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":33,"SupplierId":2,"ProductCode":"CHE3","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":35,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":4800.0,"PackSize":24,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":34,"SupplierId":2,"ProductCode":"MEL2","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":37,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":480.0,"PackSize":24,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"4321","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":32,"SupplierId":2,"ProductCode":"MILK2","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"431234","CategoryId":1,"UnitOfMeasureProductId":34,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":24,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":33,"SupplierId":2,"ProductCode":"CHE3","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":35,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":4800.0,"PackSize":24,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":34,"SupplierId":2,"ProductCode":"MEL2","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":37,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":480.0,"PackSize":24,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"4321","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":32,"SupplierId":2,"ProductCode":"MILK2","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"431234","CategoryId":1,"UnitOfMeasureProductId":34,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":24,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":33,"SupplierId":2,"ProductCode":"CHE3","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":35,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":4800.0,"PackSize":24,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":34,"SupplierId":2,"ProductCode":"MEL2","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":37,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":480.0,"PackSize":24,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"4321","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":32,"SupplierId":2,"ProductCode":"MILK2","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"431234","CategoryId":1,"UnitOfMeasureProductId":34,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":24,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":33,"SupplierId":2,"ProductCode":"CHE3","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":35,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":4800.0,"PackSize":24,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":34,"SupplierId":2,"ProductCode":"MEL2","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":37,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":480.0,"PackSize":24,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"4321","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":32,"SupplierId":2,"ProductCode":"MILK2","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"431234","CategoryId":1,"UnitOfMeasureProductId":34,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":24,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"},{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":2,"SupplierId":2,"ProductCode":"CHE","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":4,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":200.0,"PackSize":1,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":33,"SupplierId":2,"ProductCode":"CHE3","ProductName":"Gouda Cheese","ProductDescription":"A 400g slab of gouda cheesee","VAT":0.0,"Barcode":"412341","CategoryId":1,"UnitOfMeasureProductId":35,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":4800.0,"PackSize":24,"CreatedOn":"2015/02/07 09:39:31 PM"},{"ProductId":3,"SupplierId":2,"ProductCode":"MEL","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":5,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":20.0,"PackSize":1,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":34,"SupplierId":2,"ProductCode":"MEL2","ProductName":"Melrose Cheese","ProductDescription":"A 600g wheel of melrose cheese. Soft","VAT":0.0,"Barcode":"34134","CategoryId":1,"UnitOfMeasureProductId":37,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":480.0,"PackSize":24,"CreatedOn":"2015/02/07 09:40:24 PM"},{"ProductId":1,"SupplierId":2,"ProductCode":"MILK","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"4321","CategoryId":1,"UnitOfMeasureProductId":1,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":15.0,"PackSize":1,"CreatedOn":"2015/02/07 09:35:49 PM"},{"ProductId":32,"SupplierId":2,"ProductCode":"MILK2","ProductName":"2L Milk","ProductDescription":"A 2 litre bottle of milk","VAT":0.0,"Barcode":"431234","CategoryId":1,"UnitOfMeasureProductId":34,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":24,"CreatedOn":"2015/02/07 09:35:49 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":2045,"TotalProducts":2,"OrderBasketId":1074,"RetailerId":1006,"Retailer":null,"SupplierId":2,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:45:49.85"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","TotalProducts":2,"TotalPrice":2045,"SupplierId":2,"OrderId":0,"RetailerId":1006,"Retailer":null,"Supplier":null,"UserId":1,"OrderStatus":1,"OrderDate":"2015-04-08T22:01:12.137"}],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","TotalProducts":2,"TotalPrice":2045,"SupplierId":2,"OrderId":0,"RetailerId":1006,"Retailer":null,"Supplier":null,"UserId":1,"OrderStatus":1,"OrderDate":"2015-04-08T22:01:12.137"}],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":6,"SupplierId":1,"ProductCode":"BM","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":6,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":35.0,"PackSize":1,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":13,"SupplierId":1,"ProductCode":"BM2","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":13,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":350.0,"PackSize":10,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":10,"SupplierId":1,"ProductCode":"BSCR","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":10,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":42.0,"PackSize":1,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":17,"SupplierId":1,"ProductCode":"BSCR2","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":17,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":420.0,"PackSize":10,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":12,"SupplierId":1,"ProductCode":"CHCC","ProductName":"Chocolate chip cookies","ProductDescription":"Pack containing 20 chocolate chip coocies","VAT":0.0,"Barcode":"11877954","CategoryId":1,"UnitOfMeasureProductId":12,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":26.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":19,"SupplierId":1,"ProductCode":"CHCC2","ProductName":"Chocolate chip cookies","ProductDescription":"Chocolate chip coocies 400g","VAT":0.0,"Barcode":"55887778896","CategoryId":1,"UnitOfMeasureProductId":21,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":260.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":8,"SupplierId":1,"ProductCode":"CHKCPR","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"11657984","CategoryId":1,"UnitOfMeasureProductId":8,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":55.0,"PackSize":1,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":15,"SupplierId":1,"ProductCode":"CHKCPR2","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"964747474","CategoryId":1,"UnitOfMeasureProductId":15,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":550.0,"PackSize":10,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":11,"SupplierId":1,"ProductCode":"GGBC","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"11987946","CategoryId":1,"UnitOfMeasureProductId":11,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":36.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":18,"SupplierId":1,"ProductCode":"GGBC2","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"119425687946","CategoryId":1,"UnitOfMeasureProductId":20,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":9,"SupplierId":1,"ProductCode":"HWR","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"11654987","CategoryId":1,"UnitOfMeasureProductId":9,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":44.0,"PackSize":1,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":16,"SupplierId":1,"ProductCode":"HWR2","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"66887788","CategoryId":1,"UnitOfMeasureProductId":16,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":440.0,"PackSize":10,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":7,"SupplierId":1,"ProductCode":"MSL","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"116549874","CategoryId":1,"UnitOfMeasureProductId":7,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":29.0,"PackSize":1,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":14,"SupplierId":1,"ProductCode":"MSL2","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"787866417","CategoryId":1,"UnitOfMeasureProductId":14,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":290.0,"PackSize":10,"CreatedOn":"2015/03/31 02:28:00 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":0,"TotalProducts":0,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - []
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"},{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":6,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":null,"AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-04-07T19:25:09.99"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"ProductId":6,"SupplierId":1,"ProductCode":"BM","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":6,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":35.0,"PackSize":1,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":7,"SupplierId":1,"ProductCode":"MSL","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"116549874","CategoryId":1,"UnitOfMeasureProductId":7,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":29.0,"PackSize":1,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":8,"SupplierId":1,"ProductCode":"CHKCPR","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"11657984","CategoryId":1,"UnitOfMeasureProductId":8,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":55.0,"PackSize":1,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":9,"SupplierId":1,"ProductCode":"HWR","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"11654987","CategoryId":1,"UnitOfMeasureProductId":9,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":44.0,"PackSize":1,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":10,"SupplierId":1,"ProductCode":"BSCR","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":10,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":42.0,"PackSize":1,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":11,"SupplierId":1,"ProductCode":"GGBC","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"11987946","CategoryId":1,"UnitOfMeasureProductId":11,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":36.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":12,"SupplierId":1,"ProductCode":"CHCC","ProductName":"Chocolate chip cookies","ProductDescription":"Pack containing 20 chocolate chip coocies","VAT":0.0,"Barcode":"11877954","CategoryId":1,"UnitOfMeasureProductId":12,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":26.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":13,"SupplierId":1,"ProductCode":"BM2","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":13,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":350.0,"PackSize":10,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":14,"SupplierId":1,"ProductCode":"MSL2","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"787866417","CategoryId":1,"UnitOfMeasureProductId":14,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":290.0,"PackSize":10,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":15,"SupplierId":1,"ProductCode":"CHKCPR2","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"964747474","CategoryId":1,"UnitOfMeasureProductId":15,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":550.0,"PackSize":10,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":16,"SupplierId":1,"ProductCode":"HWR2","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"66887788","CategoryId":1,"UnitOfMeasureProductId":16,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":440.0,"PackSize":10,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":17,"SupplierId":1,"ProductCode":"BSCR2","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":17,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":420.0,"PackSize":10,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":18,"SupplierId":1,"ProductCode":"GGBC2","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"119425687946","CategoryId":1,"UnitOfMeasureProductId":20,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":19,"SupplierId":1,"ProductCode":"CHCC2","ProductName":"Chocolate chip cookies","ProductDescription":"Chocolate chip coocies 400g","VAT":0.0,"Barcode":"55887778896","CategoryId":1,"UnitOfMeasureProductId":21,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":260.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:53 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":35,"TotalProducts":1,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"RetailerOrderBasketItemId":1049,"OrderBasketId":1073,"ProductId":6,"ProductName":"Butter Milk Rusks","ProductCode":"BM","BarCode":"11234566","UnitOfMeasure":"Single Item","NumberOfUnits":1,"PricePerUnit":35.0,"TotalPrice":35.0,"CreatedOn":"2015-04-08T22:02:17.483"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"},{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":6,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":null,"AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-04-07T19:25:09.99"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"ProductId":6,"SupplierId":1,"ProductCode":"BM","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":6,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":35.0,"PackSize":1,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":7,"SupplierId":1,"ProductCode":"MSL","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"116549874","CategoryId":1,"UnitOfMeasureProductId":7,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":29.0,"PackSize":1,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":8,"SupplierId":1,"ProductCode":"CHKCPR","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"11657984","CategoryId":1,"UnitOfMeasureProductId":8,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":55.0,"PackSize":1,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":9,"SupplierId":1,"ProductCode":"HWR","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"11654987","CategoryId":1,"UnitOfMeasureProductId":9,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":44.0,"PackSize":1,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":10,"SupplierId":1,"ProductCode":"BSCR","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":10,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":42.0,"PackSize":1,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":11,"SupplierId":1,"ProductCode":"GGBC","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"11987946","CategoryId":1,"UnitOfMeasureProductId":11,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":36.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":12,"SupplierId":1,"ProductCode":"CHCC","ProductName":"Chocolate chip cookies","ProductDescription":"Pack containing 20 chocolate chip coocies","VAT":0.0,"Barcode":"11877954","CategoryId":1,"UnitOfMeasureProductId":12,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":26.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":13,"SupplierId":1,"ProductCode":"BM2","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":13,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":350.0,"PackSize":10,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":14,"SupplierId":1,"ProductCode":"MSL2","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"787866417","CategoryId":1,"UnitOfMeasureProductId":14,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":290.0,"PackSize":10,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":15,"SupplierId":1,"ProductCode":"CHKCPR2","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"964747474","CategoryId":1,"UnitOfMeasureProductId":15,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":550.0,"PackSize":10,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":16,"SupplierId":1,"ProductCode":"HWR2","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"66887788","CategoryId":1,"UnitOfMeasureProductId":16,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":440.0,"PackSize":10,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":17,"SupplierId":1,"ProductCode":"BSCR2","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":17,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":420.0,"PackSize":10,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":18,"SupplierId":1,"ProductCode":"GGBC2","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"119425687946","CategoryId":1,"UnitOfMeasureProductId":20,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":19,"SupplierId":1,"ProductCode":"CHCC2","ProductName":"Chocolate chip cookies","ProductDescription":"Chocolate chip coocies 400g","VAT":0.0,"Barcode":"55887778896","CategoryId":1,"UnitOfMeasureProductId":21,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":260.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:53 PM"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":735,"TotalProducts":2,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":735,"TotalProducts":2,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1049,"OrderBasketId":1073,"ProductId":6,"ProductName":"Butter Milk Rusks","ProductCode":"BM","BarCode":"11234566","UnitOfMeasure":"Single Item","NumberOfUnits":1,"PricePerUnit":35.0,"TotalPrice":35.0,"CreatedOn":"2015-04-08T22:02:17.483"},{"RetailerOrderBasketItemId":1050,"OrderBasketId":1073,"ProductId":13,"ProductName":"Butter Milk Rusks","ProductCode":"BM2","BarCode":"11234566","UnitOfMeasure":"Crate","NumberOfUnits":2,"PricePerUnit":350.0,"TotalPrice":700.0,"CreatedOn":"2015-04-08T22:02:24.187"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"},{"SupplierId":2,"DatabaseConfigKey":"dbSupplier","SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","AddressLine1":"44 Dairy Road","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 684 8977","Fax":"021 497 6874","Email":"gpastures@telkom.co.za","PostalCode":"7600","VATNumber":"321654987","CreatedOn":"2015-02-01T21:47:26.173"},{"SupplierId":3,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cookies Pty Ltd","SupplierCode":"CK","AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-03-01T11:59:23.763"},{"SupplierId":4,"DatabaseConfigKey":"dbSupplier","SupplierName":"Stellenbosch Organic Fruits","SupplierCode":"SBS","AddressLine1":"1 Boulevard Blues","AddressLine2":"Stellenboch","AddressLine3":null,"City":"Cape Town","Telephone":"021 987 4568","Fax":null,"Email":"sov@gmail.com","PostalCode":"7600","VATNumber":"0289468","CreatedOn":"2015-03-14T18:17:14.91"},{"SupplierId":5,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":"CBC","AddressLine1":"Spiceroute road 15","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 986 4687","Fax":null,"Email":"cbc@mail.com","PostalCode":"7600","VATNumber":"5465416","CreatedOn":"2015-03-14T18:19:42.03"},{"SupplierId":6,"DatabaseConfigKey":"dbSupplier","SupplierName":"Cape Brewing Company","SupplierCode":null,"AddressLine1":null,"AddressLine2":null,"AddressLine3":null,"City":null,"Telephone":null,"Fax":null,"Email":null,"PostalCode":null,"VATNumber":null,"CreatedOn":"2015-04-07T19:25:09.99"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - [{"RetailerOrderBasketItemId":1049,"OrderBasketId":1073,"ProductId":6,"ProductName":"Butter Milk Rusks","ProductCode":"BM","BarCode":"11234566","UnitOfMeasure":"Single Item","NumberOfUnits":1,"PricePerUnit":35.0,"TotalPrice":35.0,"CreatedOn":"2015-04-08T22:02:17.483"},{"RetailerOrderBasketItemId":1050,"OrderBasketId":1073,"ProductId":13,"ProductName":"Butter Milk Rusks","ProductCode":"BM2","BarCode":"11234566","UnitOfMeasure":"Crate","NumberOfUnits":2,"PricePerUnit":350.0,"TotalPrice":700.0,"CreatedOn":"2015-04-08T22:02:24.187"}]
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"RetailerOrderBasketItemId":1049,"OrderBasketId":1073,"ProductId":6,"ProductName":"Butter Milk Rusks","ProductCode":"BM","BarCode":"11234566","UnitOfMeasure":"Single Item","NumberOfUnits":3,"PricePerUnit":35.0,"TotalPrice":105.0,"CreatedOn":"2015-04-08T22:02:17.483"},{"RetailerOrderBasketItemId":1050,"OrderBasketId":1073,"ProductId":13,"ProductName":"Butter Milk Rusks","ProductCode":"BM2","BarCode":"11234566","UnitOfMeasure":"Crate","NumberOfUnits":2,"PricePerUnit":350.0,"TotalPrice":700.0,"CreatedOn":"2015-04-08T22:02:24.187"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":805,"TotalProducts":2,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}],"SearchText":"","OrderBy":"OrderBasketId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":805,"TotalProducts":2,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"SupplierId":1,"DatabaseConfigKey":"dbSupplier","SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","AddressLine1":"12 Sunset Street","AddressLine2":"Stellenbosch","AddressLine3":null,"City":"Cape Town","Telephone":"021 965 6498","Fax":"021 897 6354","Email":"maryrusk@gmail.com","PostalCode":"7600","VATNumber":"123456789","CreatedOn":"2015-02-01T21:42:50.97"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"ProductId":6,"SupplierId":1,"ProductCode":"BM","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":6,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":35.0,"PackSize":1,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":13,"SupplierId":1,"ProductCode":"BM2","ProductName":"Butter Milk Rusks","ProductDescription":"Buttermilk rusks 400g","VAT":0.0,"Barcode":"11234566","CategoryId":1,"UnitOfMeasureProductId":13,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":350.0,"PackSize":10,"CreatedOn":"2015/03/31 02:25:57 PM"},{"ProductId":10,"SupplierId":1,"ProductCode":"BSCR","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":10,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":42.0,"PackSize":1,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":17,"SupplierId":1,"ProductCode":"BSCR2","ProductName":"Butterscotch Rusks","ProductDescription":"Butterscotch rusks 400g","VAT":0.0,"Barcode":"11987954","CategoryId":1,"UnitOfMeasureProductId":17,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":420.0,"PackSize":10,"CreatedOn":"2015/03/31 02:32:26 PM"},{"ProductId":12,"SupplierId":1,"ProductCode":"CHCC","ProductName":"Chocolate chip cookies","ProductDescription":"Pack containing 20 chocolate chip coocies","VAT":0.0,"Barcode":"11877954","CategoryId":1,"UnitOfMeasureProductId":12,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":26.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":19,"SupplierId":1,"ProductCode":"CHCC2","ProductName":"Chocolate chip cookies","ProductDescription":"Chocolate chip coocies 400g","VAT":0.0,"Barcode":"55887778896","CategoryId":1,"UnitOfMeasureProductId":21,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":260.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:53 PM"},{"ProductId":8,"SupplierId":1,"ProductCode":"CHKCPR","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"11657984","CategoryId":1,"UnitOfMeasureProductId":8,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":55.0,"PackSize":1,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":15,"SupplierId":1,"ProductCode":"CHKCPR2","ProductName":"Chocolate Chip rusks","ProductDescription":"Chocolate Chip Rusks 400g","VAT":0.0,"Barcode":"964747474","CategoryId":1,"UnitOfMeasureProductId":15,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":550.0,"PackSize":10,"CreatedOn":"2015/03/31 02:29:00 PM"},{"ProductId":11,"SupplierId":1,"ProductCode":"GGBC","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"11987946","CategoryId":1,"UnitOfMeasureProductId":11,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":36.0,"PackSize":1,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":18,"SupplierId":1,"ProductCode":"GGBC2","ProductName":"Gingerbread cookies","ProductDescription":"Gingerbread cookies 400g","VAT":0.0,"Barcode":"119425687946","CategoryId":1,"UnitOfMeasureProductId":20,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":360.0,"PackSize":10,"CreatedOn":"2015/03/31 02:33:01 PM"},{"ProductId":9,"SupplierId":1,"ProductCode":"HWR","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"11654987","CategoryId":1,"UnitOfMeasureProductId":9,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":44.0,"PackSize":1,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":16,"SupplierId":1,"ProductCode":"HWR2","ProductName":"Wholewheet Rusks","ProductDescription":"Wholewheet rusks 400g","VAT":0.0,"Barcode":"66887788","CategoryId":1,"UnitOfMeasureProductId":16,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":440.0,"PackSize":10,"CreatedOn":"2015/03/31 02:31:23 PM"},{"ProductId":7,"SupplierId":1,"ProductCode":"MSL","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"116549874","CategoryId":1,"UnitOfMeasureProductId":7,"UnitOfMeasureId":1,"UnitOfMeasureName":"Single Item","Price":29.0,"PackSize":1,"CreatedOn":"2015/03/31 02:28:00 PM"},{"ProductId":14,"SupplierId":1,"ProductCode":"MSL2","ProductName":"Muesli Rusks","ProductDescription":"Rusks made with mueseli 400g","VAT":0.0,"Barcode":"787866417","CategoryId":1,"UnitOfMeasureProductId":14,"UnitOfMeasureId":2,"UnitOfMeasureName":"Crate","Price":290.0,"PackSize":10,"CreatedOn":"2015/03/31 02:28:00 PM"}],"SearchText":"","OrderBy":"ProductCode","OrderDirection":1,"PageNumber":1,"PageSize":25,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"TotalPrice":805,"TotalProducts":2,"OrderBasketId":1073,"RetailerId":1006,"Retailer":null,"SupplierId":1,"Supplier":null,"UserId":1,"OrderBasketStatus":0,"CreatedOn":"2015-03-28T14:44:47.463"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"IsCallSuccess":true,"IsCommandSuccess":true,"Message":"Success"}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","TotalProducts":2,"TotalPrice":2045,"SupplierId":2,"OrderId":0,"RetailerId":1006,"Retailer":null,"Supplier":null,"UserId":1,"OrderStatus":1,"OrderDate":"2015-04-08T22:01:12.137"}],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}
+DEBUG - Endpoint: http://localhost:6837/api/
+DEBUG - Call to http://localhost:6837/api/ succesful
+DEBUG - Result received:
+DEBUG - {"Results":[{"SupplierName":"Green Pastures Dairy","SupplierCode":"DAIRY2","TotalProducts":2,"TotalPrice":2045,"SupplierId":2,"OrderId":0,"RetailerId":1006,"Retailer":null,"Supplier":null,"UserId":1,"OrderStatus":1,"OrderDate":"2015-04-08T22:01:12.137"},{"SupplierName":"Mary's Rusks","SupplierCode":"RUSK1","TotalProducts":2,"TotalPrice":805,"SupplierId":1,"OrderId":0,"RetailerId":1006,"Retailer":null,"Supplier":null,"UserId":1,"OrderStatus":1,"OrderDate":"2015-04-08T22:03:08.653"}],"SearchText":"","OrderBy":"OrderId","OrderDirection":1,"PageNumber":1,"PageSize":10,"TotalRows":0}

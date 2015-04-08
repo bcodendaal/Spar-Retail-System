@@ -65,7 +65,7 @@ namespace SparRetail.Components.OrderProcessor
              * Send email to supplier
              */
             logger.Info(string.Format("Received message."));
-            logger.Info(string.Format(JsonConvert.SerializeObject(command)));
+            logger.Info(JsonConvert.SerializeObject(command));
             try
             {
                 // Get the basket and its items

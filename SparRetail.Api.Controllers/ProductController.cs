@@ -1,12 +1,9 @@
-﻿using SparRetail.Interop;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Http;
+using SparRetail.Interop;
 using SparRetail.Models;
 using SparRetail.Products.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
 using SparRetail.Core.Logging;
 using SparRetail.Suppliers;
 
@@ -14,14 +11,14 @@ namespace SparRetail.Api.Controllers
 {
     public class ProductController : ApiController, IProductApi
     {
-        protected readonly IProductService productService;
+        protected readonly IProductService ProductService;
         private readonly ISupplierService supplierService;
         protected readonly ILogger logger;
         private const string TagGroup = "ProductController";
 
         public ProductController(IProductService productService, ILogger logger, ISupplierService supplierService)
         {
-            this.productService = productService;
+            ProductService = productService;
             this.logger = logger;
             this.supplierService = supplierService;
         }
@@ -29,7 +26,7 @@ namespace SparRetail.Api.Controllers
         [HttpPost]
         public List<Product> GetAllForSupplier(Supplier supplier)
         {
-            return productService.GetAllForSupplier(supplier);
+            return ProductService.GetAllForSupplier(supplier);
         }
 
         [HttpPost]
@@ -37,13 +34,18 @@ namespace SparRetail.Api.Controllers
         {
             try
             {
-                return productService.GetSupplierProductsPaged(page);
+                return ProductService.GetSupplierProductsPaged(page);
             }
             catch (Exception e)
             {
                 logger.Error(TagGroup, "GetSupplierProductsPaged", e.ToString());
                 return new Page<Product>();
             }
+        }
+   [HttpPost]
+        public List<Product> AddProducts(List<Product> products)
+        {
+            return ProductService.AddProducts(products);
         }
     }
 }

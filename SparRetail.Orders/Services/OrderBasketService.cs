@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SparRetail.Core.Messaging;
 
 namespace SparRetail.Orders.Services
 {
@@ -24,11 +25,11 @@ namespace SparRetail.Orders.Services
         protected readonly IRetailerService retailerService;
         protected readonly ILogger logger;
         protected readonly IConfigCollection configCollection;
-        protected readonly IServiceBus bus;
+        protected readonly IMessageProducer MessageProducer;
 
         private const string TagGroup = "OrderBasketService";
 
-        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, IConfigCollection configCollection, ILogger logger)
+        public OrderBasketService(IOrderBasketRepository orderBasketRepository, IDatabaseConfigAdapter databaseConfigAdapter, ISupplierService supplierService, IRetailerService retailerService, IConfigCollection configCollection, ILogger logger, IMessageProducer messageProducer)
         {
             this.orderBasketRepository = orderBasketRepository;
             this.databaseConfigAdapter = databaseConfigAdapter;
@@ -36,13 +37,8 @@ namespace SparRetail.Orders.Services
             this.retailerService = retailerService;
             this.configCollection = configCollection;
             this.logger = logger;
+            MessageProducer = messageProducer;
 
-            bus = ServiceBusFactory.New(sbc =>
-            {
-                Log4NetLogger.Use();
-                sbc.UseRabbitMq();
-                sbc.ReceiveFrom(string.Format("rabbitmq://{0}/{1}", configCollection.Get(SharedConfigKeys.RabbitHost), "orderbasket.finalize.producer"));
-            });
         }
 
 
@@ -92,7 +88,7 @@ namespace SparRetail.Orders.Services
 
         public void FinaliseOrder(int orderBasketId, DateTime orderDate, int retailerId)
         {
-            bus.Publish<FinalizeOrderCommand>(new FinalizeOrderCommand() { OrderBasketId = orderBasketId, RetailerId = retailerId });
+            MessageProducer.PublishMessage(MessageConstants.FinalizeOrderExchangeKey, new List<object> { new FinalizeOrderCommand() { OrderBasketId = orderBasketId, RetailerId = retailerId } }, MessageConstants.FinalizeOrderRoutingKey);
         }
 
         public OrderBasket CreateNew(int supplierId, int retailerId, int userId)
