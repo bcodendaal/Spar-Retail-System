@@ -11,6 +11,7 @@ using SparRetail.Components.OrderProcessor;
 using SparRetail.PlugIns.Interop;
 using SparRetail.Core.Constants;
 using System.Configuration;
+using SparRetail.Core.Messaging;
 
 namespace SparRetail.PlugIns.OrderBasketFinalize.ConsoleHost
 {
@@ -42,8 +43,10 @@ namespace SparRetail.PlugIns.OrderBasketFinalize.ConsoleHost
                 var dbConfig = new DatabaseConfigCollection();
                 dbConfig.Add(new DatabaseConfigItem() { Key = CommonConfigKeys.dbKeyMaster, ConnectionString = encryption.Decrypt(ConfigurationManager.ConnectionStrings["master"].ConnectionString), CommandTimeout = 100 });
                 builder.RegisterInstance(dbConfig).As<IDatabaseConfigCollection>().SingleInstance();
-                SparRetail.Components.OrderProcessor.IoCRegistry.Configure(builder);
+                SparRetail.Components.OrderProcessor.IoCRegistry.Configure(builder, new ConfigCollection(new ConfigRepository()));
                 builder.RegisterType<OrderBasketFinalizeHost>().As<IHost>().SingleInstance();
+                builder.RegisterInstance(new QueueSettings { QueueName = "order.finalize", RoutingKey = "order.finalise" });
+                builder.RegisterType<OrderFinalizePlugIn>().As<OrderFinalizePlugIn>().SingleInstance();
             });
         }
     }

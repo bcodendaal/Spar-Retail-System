@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using SparRetail.ApiBroker;
 using SparRetail.ApiBroker.Brokers;
+using SparRetail.Core.Config;
 using SparRetail.Interop;
 using SparRetail.UI.Controllers.Providers;
 using System;
@@ -19,9 +20,9 @@ namespace SparRetail.UI.Controllers
         {
             return Assembly.GetExecutingAssembly();
         }
-        public static void Configure(ContainerBuilder builder)
+        public static void Configure(ContainerBuilder builder, IConfigCollection configCollection)
         {
-            SparRetail.Core.IoCRegistry.Configure(builder);
+            SparRetail.Core.IoCRegistry.Configure(builder, configCollection);
 
             var apiconfig = new ApiBrokerConfig() { EndPoint = ConfigurationManager.AppSettings["ApiEndpoint"].ToString() };
             builder.RegisterInstance(apiconfig).As<IApiBrokerConfig>().SingleInstance();

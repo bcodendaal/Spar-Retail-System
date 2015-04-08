@@ -38,9 +38,10 @@ namespace SparRetail.Products.Services
 
         public Page<Product> GetSupplierProductsPaged(ProductPagedParams page)
         {
-            return productRepository.GetSupplierProductsPaged(databaseConfigAdapter.GetSupplierDatabaseConfigKey(page.SupplierId), page);
+            return ProductRepository.GetSupplierProductsPaged(databaseConfigAdapter.GetSupplierDatabaseConfigKey(page.SupplierId), page);
         }
-public List<Product> AddProducts(List<Product> products)
+        
+        public List<Product> AddProducts(List<Product> products)
         {
             var resultsList = new List<Product>();
 

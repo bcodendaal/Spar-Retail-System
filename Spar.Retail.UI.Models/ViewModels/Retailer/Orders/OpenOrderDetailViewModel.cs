@@ -10,6 +10,6 @@ namespace Spar.Retail.UI.Models.ViewModels.Retailer.Orders
     public class OpenOrderDetailViewModel
     {
         public OpenOrderDetails OrderDetails { get; set; }
-        public Supplier Supplier { get; set; }
+        public SparRetail.Models.Supplier Supplier { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using SparRetail.Interop;
 using SparRetail.Models;
@@ -33,7 +34,7 @@ namespace SparRetail.Api.Controllers
         {
             try
             {
-                return productService.GetSupplierProductsPaged(page);
+                return ProductService.GetSupplierProductsPaged(page);
             }
             catch (Exception e)
             {

@@ -24,5 +24,10 @@ namespace SparRetail.Core.Config
 
             return AllItems.First(x => x.Key == configKey).Value;
         }
+
+        public List<ConfigItem> All()
+        {
+            return AllItems;
+        }
     }
 }

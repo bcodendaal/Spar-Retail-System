@@ -13,6 +13,7 @@ using SparRetail.ApiBroker.Brokers;
 using SparRetail.Interop;
 using SparRetail.UI.Controllers.Providers;
 using SparRetail.UI.Controllers;
+using SparRetail.Core.Config;
 
 
 namespace Spar.Retail.UI
@@ -34,7 +35,9 @@ namespace Spar.Retail.UI
                 //builder.RegisterType<OrderBroker>().As<IOrderApi>().SingleInstance();
                 //builder.RegisterType<ProductBroker>().As<IProductApi>().SingleInstance();
                 //builder.RegisterType<SupplierBroker>().As<ISupplierApi>().SingleInstance();
-                IoCRegistry.Configure(builder);
+
+                var config = GetConfigCollection();
+                IoCRegistry.Configure(builder, config);
                 builder.RegisterControllers(SparRetail.UI.Controllers.IoCRegistry.GetAssembly());
                 //builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
@@ -43,6 +46,11 @@ namespace Spar.Retail.UI
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));
             log4net.Config.XmlConfigurator.Configure();
+        }
+
+        private IConfigCollection GetConfigCollection()
+        {
+            return new ConfigCollection(new ConfigRepository());
         }
     }
 }
