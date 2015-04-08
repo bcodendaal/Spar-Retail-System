@@ -54,8 +54,8 @@ namespace SparRetail.UI.Controllers.Retailer.Orders
                 data = result.Results,
                 draw = Convert.ToInt32(param.draw),
                 error = string.Empty,
-                recordsFiltered = result.Results.Count,
-                recordsTotal = result.TotalRows
+                recordsFiltered = result.RowCount,
+                recordsTotal = result.RowCount
             },
             JsonRequestBehavior.AllowGet);
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Profile;
 using System.Web.Security;
+using SparRetail.Core.Logging;
 
 
 namespace SparRetail.UI.Controllers.New
@@ -42,16 +43,16 @@ namespace SparRetail.UI.Controllers.New
             if (retailerApi == null)
                 throw new NullReferenceException("RetailerApi cannot be null");
 
-            
+
             var result = retailerApi.Create(new Models.Retailer() { RetailerName = retailer.RetailerName });
             if (result == null)
                 throw new NullReferenceException("Result cannnot be null");
             if (result.IsCallSuccess && result.IsCommandSuccess)
             {
                 // TODO: associate user with retailer.
-                if(User == null)
+                if (User == null)
                     throw new NullReferenceException("User cannot be null");
-                if(User.Identity == null)
+                if (User.Identity == null)
                     throw new NullReferenceException("UserIdendity cannot be null");
 
                 var profile = ProfileBase.Create(User.Identity.Name, true);
@@ -63,7 +64,7 @@ namespace SparRetail.UI.Controllers.New
                 profile.Save();
 
                 return RedirectToAction("Index", "RetailerDashboard");
-            }            
+            }
 
             return View();
         }

@@ -13,6 +13,7 @@ namespace SparRetail.UI.Controllers.Providers
     public class ProfileProvider : IProfileProvider
     {
         protected ICacheBroker cacheBroker;
+
         public ProfileProvider(ICacheBroker cacheBroker)
         {
             this.cacheBroker = cacheBroker;

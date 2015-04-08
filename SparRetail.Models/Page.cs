@@ -14,7 +14,7 @@ namespace SparRetail.Models
         public int OrderDirection { get; set; }
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
-        public int TotalRows { get; set; }
+        public int RowCount { get; set; }
     }
 
     public class Page<T> : Page
@@ -31,7 +31,7 @@ namespace SparRetail.Models
             OrderDirection = page.OrderDirection;
             PageNumber = page.PageNumber;
             PageSize = page.PageSize;
-            TotalRows = page.TotalRows;
+            RowCount = page.RowCount;
         }
 
         public List<T> Results { get; set; }

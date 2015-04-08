@@ -1,0 +1,16 @@
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\SparRetail.Core.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\SparRetail.Core.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Autofac.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Dapper.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\log4net.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Autofac.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Dapper.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Dapper.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\log4net.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\obj\Debug\SparRetail.Core.csprojResolveAssemblyReference.cache
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\obj\Debug\SparRetail.Core.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\obj\Debug\SparRetail.Core.pdb
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\RabbitMQ.Client.dll
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\Spar-Retail-System-dev\SparRetail.Core\bin\Debug\RabbitMQ.Client.xml

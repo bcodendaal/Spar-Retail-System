@@ -14,47 +14,52 @@
                 OrderDetails = Model.Order
             })
 
-
-
-            <div class="row">
-                <table class="table table-striped table-bordered table-hover table-condensed" id="tblProduct">
-                    <thead class="flip-content bordered-palegreen">
-                        <tr>
-                            <th>
-                                ProductCode
-                            </th>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Description
-                            </th>
-                            <th>
-                                VAT
-                            </th>
-                            <th>
-                                Barcode
-                            </th>
-                            <th>
-                                Category
-                            </th>
-                            <th>
-                                UnitOfMeasure
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                            <th>
-                                PackSize
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+            <button class="btn btn-info shiny" onclick="location.href='/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId' "> <i class="typcn typcn-document-text"></i>&nbsp;Order Detail</button>
+            <button class="btn btn-success shiny" id="btnFinalize"> <i class="fa fa-check right"></i>&nbsp;Finalize Order</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="well with-header">
+            <div class="header bordered-blue">
+                <i class="fa fa-truck"></i>&nbsp;Supplier Products:
             </div>
-            <a href="/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId">View All Products Added</a>
-            <button id="btnFinalize">Finalize Order</button>
+            <table class="table table-striped table-bordered table-hover table-condensed" id="tblProduct">
+                <thead class="flip-content bordered-palegreen">
+                    <tr>
+                        <th>
+                            ProductCode
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            VAT
+                        </th>
+                        <th>
+                            Barcode
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            UnitOfMeasure
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            PackSize
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -65,39 +70,44 @@
         /****************Document Ready *******************/
         $(document).ready(function() {
             InitializeProductTable();
-            GetOrderQuantityPrice();
+            //GetOrderQuantityPrice();
             $('#btnFinalize').click(function() {
-                FinalizeOrder();
+                ConfirmFinalize();
             });
         });
 
         /**************** END Document Ready *******************/
 
 
-        function FinalizeOrder() {
-            $.ajax({
-                url: '@Url.Action("FinalizeOrder", "OpenOrder")',
-                data: {
-                    orderId: '@Model.Order.OrderBasketId'
-                },
-                success: function(data) {
-                    if (data.Success) {
-                        if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
-                            window.location.replace("/OrderHistory/OrderHistory");
-                        } else {
-                            window.location.replace("/RetailerDashboard");
+        //@*function FinalizeOrder() {
+            bootbox.confirm("Clicking confirm wil send this order to the supplier.  This is the final step.<br/><br/>Are you sure you want to finalize this order?  ", function(result) {
+                if (result) {
+
+                    $.ajax({
+                        url: '@Url.Action("FinalizeOrder", "OpenOrder")',
+                        data: {
+                            orderId: '@Model.Order.OrderBasketId'
+                        },
+                        success: function(data) {
+                            if (data.Success) {
+                                if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
+                                    window.location.replace("/OrderHistory/OrderHistory");
+                                } else {
+                                    window.location.replace("/RetailerDashboard");
+                                }
+                            } else {
+                                alert("Unexpected error occured");
+                            }
+                        },
+                        error: function(e) {
+                            console.log(e);
                         }
-                    } else {
-                        alert("Unexpected error occured");
-                    }
-                },
-                error: function(e) {
-                    console.log(e);
+                    });
                 }
             });
-        };
+        };*@
 
-        function GetOrderQuantityPrice() {
+        @*function GetOrderQuantityPrice() {
             $.ajax({
                 url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
                 data: {
@@ -111,7 +121,7 @@
                     console.log(e);
                 }
             });
-        };
+        };*@
 
         function AddProductToOrder(button) {
 
@@ -130,10 +140,9 @@
                         // If a product is already in the Open Order, the user should have te option to update the item with the new quantity
                         if (data.Success) {
                             if (data.DuplicateProduct) {
-                                if (confirm("A duplicate product already exists for this order with quantity " + data.ProductQuantity + ".  Update with new Quantity?")) {
-                                    UpdateProductQuantity(productId, quantity);
-                                }
+                                ConfirmQuantity(data.ProductQuantity, quantity, data.orderBasketItemId);
                             } else {
+                                Notify('Succesfully added to order.', 'top-right', '5000', 'success', 'fa-check', true);
                                 GetOrderQuantityPrice(); //ToDo:Refactor here
                             }
                         } else {
@@ -153,18 +162,18 @@
         };
 
 
-        function UpdateProductQuantity(productId, quantity) {
+        function UpdateProductQuantity(orderBasketItemId, quantity) {
             $.ajax({
                 url: '@Url.Action("UpdateProductQuantity", "OpenOrder")',
                 data: {
                     basketId: @Model.Order.OrderBasketId,
-                    productId: productId,
+                    orderBasketItemId: orderBasketItemId,
                     supplierId: @Model.Supplier.SupplierId,
                     quantity: quantity
                 },
                 success: function(data) {
                     if (data.Success) {
-                        alert("Succesfully Updated Quanitity");
+                        Notify('Succesfully added to order.', 'top-right', '5000', 'success', 'fa-check', true);
                         GetOrderQuantityPrice(); //ToDo:Refactor here
                     } else {
                         alert("Unexpected Server Error");
@@ -183,6 +192,8 @@
             var addButtons = $('[data-function="addproduct"]');
             var quantityText = $('[data-function="quantity"]');
             var searchButton = $('#tblProduct_filter input[type="search"]');
+
+            searchButton.focus();
 
             addButtons.last().keydown(function(e) {
                 var TABKEY = 9;
@@ -212,6 +223,16 @@
             $('#tblProduct').dataTable({
                 "processing": true,
                 "serverSide": true,
+                "sDom": "Tfltr<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                "language": {
+                    "search": "",
+                    "sLengthMenu": "_MENU_",
+                    "oPaginate": {
+                        "sPrevious": "Prev",
+                        "sNext": "Next"
+                    },
+                    "infoFiltered": ""
+                },
                 "pageLength": 25,
                 "ajax": {
                     "type": "POST",
@@ -227,26 +248,110 @@
                     }
                 },
                 "columns": [
-                    { "data": "ProductCode" },
-                    { "data": "ProductName" },
-                    { "data": "ProductDescription" },
-                    { "data": "VAT" },
-                    { "data": "Barcode" },
-                    { "data": "CategoryId" },
-                    { "data": "UnitOfMeasureName" },
-                    { "data": "Price" },
-                    { "data": "PackSize" },
+                    {
+                        "data": "ProductCode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "ProductName",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "ProductDescription",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "VAT",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Barcode",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "CategoryId",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "UnitOfMeasureName",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "Price",
+                        "defaultContent": " "
+                    },
+                    {
+                        "data": "PackSize",
+                        "defaultContent": " "
+                    },
                     {
                         "targets": -1,
                         "data": "ProductId",
+                        "orderable": false,
                         "render": function(data, type, full, meta) {
-                            return '<input data-validationtype="number" data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '">Add To Order</button>';
+                            return '<input data-validationtype="number" data-function="quantity" data id="quantity_' + data + '" type="number"></input>&nbsp; <button class="btn btn-xs btn-palegreen" onclick="AddProductToOrder($(this));" data-function="addproduct" data-productid="' + data + '"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Order</button>';
                         }
                     }
                 ]
             });
 
         };
+
+
+        function ConfirmQuantity(count, newQuantity, productId) {
+
+            bootbox.confirm(count + " unit/s of the same product has already been added to this order.  <br/><br/>Update with to " + newQuantity + "?", function(result) {
+                if (result) {
+                    UpdateProductQuantity(productId, newQuantity);
+                }
+            });
+            $('[data-bb-handler="success"]').focus();
+        };
+
+        @*function ConfirmFinalize() {
+
+            $.ajax({
+                url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
+                data: {
+                    orderId: '@Model.Order.OrderBasketId'
+                },
+                success: function(data) {
+                    if (data.TotalProducts > 0) {
+                        $('#finalizeQuantity').text(data.TotalProducts);
+                        $('#finalizePrice').text(data.TotalPrice);
+
+                        bootbox.dialog({
+                            message: $("#confirmFinalize").html(),
+                            title: "Confirm Finalize",
+                            className: "modal-darkorange",
+                            buttons: {
+                                success: {
+                                    label: "Finalize",
+                                    className: "btn-palegreen",
+                                    callback: function() {
+                                        FinalizeOrder();
+                                    }
+                                },
+                                "View Order Details": {
+                                    className: "btn-blue",
+                                    callback: function() {
+                                        window.location = "/OpenOrder/OrderDetail?OpenOrderId=@Model.Order.OrderBasketId";
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+
+                        $('#modal-info').modal("show");
+                    }
+
+
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }*@
     </script>
 }
 

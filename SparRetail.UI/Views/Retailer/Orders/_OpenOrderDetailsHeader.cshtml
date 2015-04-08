@@ -1,29 +1,69 @@
 ﻿@model Spar.Retail.UI.Models.ViewModels.Retailer.Orders.OpenOrderDetailViewModel
 
+<div id="confirmFinalize" style="display: none;">
+    <div class="row">
+        <div class="col-md-12">
+            Finalize and send order to @Model.Supplier.SupplierName?
+            <br />
+            <br />
+            Quantity: <span id="finalizeQuantity"></span>
+            <br />
+            Price: R<span id="finalizePrice"></span>
+        </div>
+    </div>
+</div>
 
-<div class="row">
+
+<div id="modal-info" class="modal modal-message modal-info fade" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="modal-title">Order Products</div>
+
+            <div class="modal-body">Add some products to the order before finalizing.</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div>
+
+
+<div class="row invoice-container">
     <div class="col-xs-5">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h6>Supplier: @Model.Supplier.SupplierName</h6>
             </div>
             <div class="panel-body">
-                <ul>
-                    <li>
-                        @Model.Supplier.SupplierCode
-                    </li>
-                    <li>@Model.Supplier.VATNumber</li>
-                    <li>@Model.Supplier.Telephone</li>
-                    <li>@Model.Supplier.Fax</li>
-                    <li>
-                        @Model.Supplier.AddressLine1<br />
-                        @Model.Supplier.AddressLine2<br />
-                        @Model.Supplier.AddressLine3
-                    </li>
-                    <li>
-                        @Model.Supplier.PostalCode
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <ul>
+                            <li>
+                                Supplier Code: @Model.Supplier.SupplierCode
+                            </li>
+                            <li>Vat Number: @Model.Supplier.VATNumber</li>
+                            <li>Telephone: @Model.Supplier.Telephone</li>
+                            <li>Fax: @Model.Supplier.Fax</li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <ul>
+                            <li>
+                                Address:<br />
+                                @Model.Supplier.AddressLine1<br />
+                                @Model.Supplier.AddressLine2<br />
+                                @Model.Supplier.AddressLine3
+                            </li>
+                            <li>
+                                Postal Code: @Model.Supplier.PostalCode
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -34,7 +74,7 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-4">
                         <ul>
                             <li>
                                 Status: @Model.OrderDetails.OrderBasketStatus
@@ -45,8 +85,14 @@
                             <li>
                                 Created on: @Model.OrderDetails.CreatedOn
                             </li>
+                            <li>&nbsp;</li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul>
                             <li>
-                                Products <label id="orderProductTotal">@Model.OrderDetails.TotalProducts</label>
+                                Products: <label id="orderProductTotal">@Model.OrderDetails.TotalProducts</label>
                             </li>
                             <li>
                                 Total Price : <label id="orderPriceTotal">@Model.OrderDetails.TotalPrice</label>
@@ -58,3 +104,95 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    function ConfirmFinalize() {
+
+        $.ajax({
+            url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
+            data: {
+                orderId: '@Model.OrderDetails.OrderBasketId'
+            },
+            success: function (data) {
+                if (data.TotalProducts > 0) {
+                    $('#finalizeQuantity').text(data.TotalProducts);
+                    $('#finalizePrice').text(data.TotalPrice);
+
+                    bootbox.dialog({
+                        message: $("#confirmFinalize").html(),
+                        title: "Confirm Finalize",
+                        className: "modal-darkorange",
+                        buttons: {
+                            success: {
+                                label: "Finalize",
+                                className: "btn-palegreen",
+                                callback: function () {
+                                    FinalizeOrder();
+                                }
+                            },
+                            "View Order Details": {
+                                className: "btn-blue",
+                                callback: function () {
+                                    window.location = "/OpenOrder/OrderDetail?OpenOrderId=@Model.OrderDetails.OrderBasketId";
+                                }
+                            }
+                        }
+                    });
+                } else {
+
+                    $('#modal-info').modal("show");
+                }
+
+
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+    }
+
+    function FinalizeOrder() {
+        bootbox.confirm("Clicking confirm wil send this order to the supplier.  This is the final step.<br /><br />Are you sure you want to finalize this order?  ", function (result) {
+            if (result) {
+                $.ajax({
+                    url: '@Url.Action("FinalizeOrder", "OpenOrder")',
+                    data: {
+                        orderId: '@Model.OrderDetails.OrderBasketId'
+                    },
+                    success: function (data) {
+                        if (data.Success) {
+                            if (confirm('Succesully Finalized Order.  Redirect To Order History?')) {
+                                window.location.replace("/OrderHistory/OrderHistory");
+                            } else {
+                                window.location.replace("/RetailerDashboard");
+                            }
+                        } else {
+                            alert("Unexpected error occured");
+                        }
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+            }
+        });
+    };
+
+    function GetOrderQuantityPrice() {
+        $.ajax({
+            url: '@Url.Action("GetOpenOrderTotals", "OpenOrder")',
+            data: {
+                orderId: '@Model.OrderDetails.OrderBasketId'
+            },
+            success: function (data) {
+                $('#orderProductTotal').text(data.TotalProducts);
+                $('#orderPriceTotal').text(data.TotalPrice);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+    };
+
+</script>
