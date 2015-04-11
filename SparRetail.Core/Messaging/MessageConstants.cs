@@ -11,5 +11,7 @@ namespace SparRetail.Core.Messaging
         public const string FinalizeOrderExchangeKey = "finalizeorder";
         public const string FinalizeOrderRoutingKey = "order.finalise";
 
+        public const string MailExchangeKey = "mail";
+
     }
 }

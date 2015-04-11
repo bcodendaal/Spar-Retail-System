@@ -6,24 +6,39 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using SparRetail.Core.Messaging;
 
 namespace SparRetail.Core.Email
 {
     public class Mailer : IMailer
     {
-        public void SendMail(string body)
+        protected readonly IMessageProducer messageProducer;
+
+        public Mailer(IMessageProducer messageProducer)
         {
-            MailMessage message = new MailMessage("me@email.com", "pieter.roodt@gmail.com");
-            SmtpClient client = new SmtpClient();
-            client.Port = 587;
-            client.Timeout = 10000;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = true;
-            client.UseDefaultCredentials = false;
-            client.Host = "smtp.gmail.com";
-            client.Credentials = new NetworkCredential("pieter.roodt", "lolnoob101");
-            message.Subject = "test mail";
-            message.BodyEncoding = UTF8Encoding.UTF8;
+            this.messageProducer = messageProducer;
+        }
+
+        public void QueueEmail(string body, string subject, string recipient, string from)
+        {
+            messageProducer.PublishMessage(MessageConstants.MailExchangeKey, new List<object> { new MailInfo { Body = body, From = from, Recipient = recipient, Subject = subject } }, "#", null);
+        }
+
+        public void SendMail(string body, string subject, string recipient, string from)
+        {
+            var message = new MailMessage(from, recipient);
+            var client = new SmtpClient
+            {
+                Port = 587,
+                Timeout = 10000,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                EnableSsl = true,
+                UseDefaultCredentials = false,
+                Host = "smtp.gmail.com",
+                Credentials = new NetworkCredential("pieter.roodt", "lolnoob101")
+            };
+            message.Subject = subject;
+            message.BodyEncoding = Encoding.UTF8;
             message.Body = body;
             client.Send(message);
             Trace.WriteLine(body);

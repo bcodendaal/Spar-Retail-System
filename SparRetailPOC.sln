@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.PlugIns.Interop"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.PlugIns", "SparRetail.PlugIns\SparRetail.PlugIns.csproj", "{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.Components.MailMan", "SparRetail.Components.MailMan\SparRetail.Components.MailMan.csproj", "{E4514B32-A5E7-4837-960C-73C63DFBC382}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparRetail.PlugIns.MailMan.ConsoleHost", "SparRetail.PlugIns.MailMan.ConsoleHost\SparRetail.PlugIns.MailMan.ConsoleHost.csproj", "{A227DF7A-EA26-49BF-877A-39D929739447}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -144,6 +148,14 @@ Global
 		{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4514B32-A5E7-4837-960C-73C63DFBC382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4514B32-A5E7-4837-960C-73C63DFBC382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4514B32-A5E7-4837-960C-73C63DFBC382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4514B32-A5E7-4837-960C-73C63DFBC382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A227DF7A-EA26-49BF-877A-39D929739447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A227DF7A-EA26-49BF-877A-39D929739447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A227DF7A-EA26-49BF-877A-39D929739447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A227DF7A-EA26-49BF-877A-39D929739447}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,5 +181,7 @@ Global
 		{851CB3A4-0086-46EC-99CE-A25ABF45AFF7} = {4074D673-9FC0-4EAB-8DA1-70BD50F27C26}
 		{D751BCB1-EE82-4BF6-9360-271DE073E7E4} = {4074D673-9FC0-4EAB-8DA1-70BD50F27C26}
 		{8E4C84A0-E0D1-4B81-B984-F0C6BD9C6E39} = {4074D673-9FC0-4EAB-8DA1-70BD50F27C26}
+		{E4514B32-A5E7-4837-960C-73C63DFBC382} = {A8E4F933-E213-4616-9C95-D3B1E98FC699}
+		{A227DF7A-EA26-49BF-877A-39D929739447} = {4074D673-9FC0-4EAB-8DA1-70BD50F27C26}
 	EndGlobalSection
 EndGlobal

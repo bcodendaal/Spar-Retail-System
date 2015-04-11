@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using Newtonsoft.Json;
+using SparRetail.Models;
 
 namespace SparRetail.Components.OrderProcessor
 {
@@ -76,10 +77,13 @@ namespace SparRetail.Components.OrderProcessor
                 var retailerConfigKey = databaseConfigAdapter.GetRetailerDatabaseConfigKey(basket.RetailerId);
                 var supplierConfigKey = databaseConfigAdapter.GetSupplierDatabaseConfigKey(basket.SupplierId);
 
+                // Returns array of int
+                // [0] Retailer's OrderId
+                // [1] Supplier's OrderId
                 var orderIds = processorWorkerRepository.InsertOrders(basket, items, retailerConfigKey, supplierConfigKey);
    
                 // Send email
-                mailer.SendMail("You have succesfully placed an order!");
+                SendEmails(basket, orderIds[0], orderIds[1]);
 
                 logger.Info("Operation successful");
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = true, Message = "Success" };
@@ -91,6 +95,18 @@ namespace SparRetail.Components.OrderProcessor
                 return new ResponseModel { IsCallSuccess = true, IsCommandSuccess = false, Message = ex.ToString() };
             }
 
+        }
+
+        private void SendEmails(OrderBasket basket, int retailerOrderId, int supplierOrderId)
+        {
+            var supplier = supplierService.GetById(basket.SupplierId);
+            var retailer = retailerService.GetById(basket.RetailerId);
+            
+            if (!string.IsNullOrWhiteSpace(retailer.Email))
+                mailer.QueueEmail("You have succesfully placed an order!\nOrderId: " + retailerOrderId, "Order confirmation", retailer.Email, "onlineretail@onlineretail.com");
+
+            if(!string.IsNullOrWhiteSpace(supplier.Email))
+                mailer.QueueEmail("You have received a new order!\nOrderId: " + supplierOrderId, "Order confirmation", supplier.Email, "onlineretail@onlineretail.com");
         }
     }
 }

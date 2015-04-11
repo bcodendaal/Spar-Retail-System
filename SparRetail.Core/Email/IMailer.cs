@@ -8,6 +8,7 @@ namespace SparRetail.Core.Email
 {
     public interface IMailer
     {
-        void SendMail(string body);
+        void QueueEmail(string body, string subject, string recipient, string from);
+        void SendMail(string body, string subject, string recipient, string from);
     }
 }
